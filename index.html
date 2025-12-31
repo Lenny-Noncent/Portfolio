@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// HEAD ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<head>
+    <!-- Meta & Other Data -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lenny Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/variables.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/projects-cards.css"/>
+</head>
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// BODY ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<body>
+
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="./resources/videos/Background.mp4" type="video/mp4"/>
+        Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+    
+    <!-- Header Section -->
+    <div class="header" id="header">
+        <h1>
+            Lenny Noncent
+            <small>Étudiant en formation Game Programming</small>
+        </h1>
+        <div class="links">
+            <div class="resume">CV ></div>
+        </div>
+    </div>
+
+    <!-- Section 1: About Me -->
+    <div class="section" id="section-about-me">
+        <h1>À propos de moi</h1>
+        <p>
+            Bonjour !<br>
+            Je m'appelle Lenny et je suis actuellement en 3ème année de Game Programming<br>
+            à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux<br>
+            vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes<br>
+            connaissances et améliorer mes compétences.
+        </p>
+    </div>
+
+    <!-- Section 2: My Projects -->
+    <div class="section" id="section-my-projects">
+        <h1>Mes Réalisations</h1>
+        <p>
+            Voici quelques projets que j'ai réalisé durant ces dernières années. Cliquez sur<br>
+            l'un d'eux pour en découvrir d'avantage.
+        </p>
+
+        <!-- Projects Cards Grid -->
+        <div class="projects-cards-grid" id="projects-cards-grid"></div>
+    </div>
+
+</body>
+
+<!-- ########################################################################################## -->
+<!-- ///////////////////////////////////////// SCRIPTS //////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<!-- Scripts -->
+<script src="./js/projects-cards.js"></script>
+<script src="./js/main.js"></script>
+</html>
