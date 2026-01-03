@@ -10,13 +10,13 @@
 
 @media (max-width: 768px) {
     html {
-        font-size: 14.5px;
+        font-size: 13px;
     }
 }
 
 @media (max-width: 480px) {
     html {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
 
@@ -49,6 +49,16 @@ p {
     font-size: var(--normal-font-size);
     font-weight: normal;
     color: whitesmoke;
+}
+
+/* ------------------------------------------ Btn-Link ----------------------------------------- */
+
+.btn-link {
+
+    /* Layout */
+    display: inline-block;
+    line-height: 0;
+    text-decoration: none;
 }
 
 /* ############################################################################################# */
@@ -87,7 +97,7 @@ p {
     z-index: 1000;
     width: 100%;
     height: 150px;
-    padding: 0 50px 0 50px;
+    padding: 0 5% 0 5%;
 
     /* Content Layout */
     justify-content: space-between;
@@ -135,6 +145,55 @@ p {
 
     /* Layout */
     display: flex;
+    height: 100px;
+    width: 50%;
+
+    /* Content Layout */
+    justify-content: end;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+/* --------------------------------------- Header - Icons -------------------------------------- */
+
+.header .icons {
+
+    /* Layout */
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+
+    /* Content Layout */
+    gap: 1.5vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* --------------------------------------- Header - Icon --------------------------------------- */
+
+.header .icon {
+
+    /* Layout */
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    min-height: 0;
+    width: calc(50px * 1vw / 1vh);
+    height: calc(50px * 1vw / 1vh);
+    max-width: 50px;
+    max-height: 50px;
+    flex-shrink: 1;
+
+    /* Style */
+    transition: all 0.2s ease;
+    opacity: 0.35;
+}
+
+.header .icon:hover,
+.header .icon:active {
+
+    /* Style */
+    opacity: 1;
 }
 
 /* ---------------------------------- Header - Links - Resume ---------------------------------- */
@@ -187,6 +246,9 @@ p {
 
     /* Content Layout */
     justify-content: center;
+
+    /* Style */
+    background-color: var(--color-2);
 }
 
 /* ---------------------------------------- Section - H1 --------------------------------------- */
@@ -204,7 +266,19 @@ p {
 
     /* Layout */
     text-align: center;
-    margin: 10px 0 10px 0;
+    margin: 10px 20% 10px 20%;
+}
+
+@media (max-width: 900px) {
+    .section p {
+        margin: 10px 15% 10px 15%;
+    }
+}
+
+@media (max-width: 700px) {
+    .section p {
+        margin: 10px 10% 10px 10%;
+    }
 }
 
 /* ############################################################################################# */
@@ -220,6 +294,7 @@ p {
     padding-top: 20vh;
 
     /* Style */
+    background-color: transparent;
     background-image: linear-gradient(transparent, rgb(from var(--color-2) r g b / 70%), var(--color-2));
 }
 
@@ -236,19 +311,58 @@ p {
 #section-about-me p {
 
     /* Layout */
-    margin: 20px 0 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* ############################################################################################# */
-/* //////////////////////////////////// SECTION MY PROJECTS //////////////////////////////////// */
+/* ////////////////////////////////// SECTION TECHNICAL SKILLS ///////////////////////////////// */
 /* ############################################################################################# */
 
-/* ------------------------------------ Section-my-projects ------------------------------------ */
+/* -------------------------------------- Technical-Skills ------------------------------------- */
 
-#section-my-projects {
+.technical-skills {
 
     /* Layout */
+    display: flex;
+    margin: 5px 5% 0 5%;
+
+    /* Content Layout */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ---------------------------------------- Force-Break ---------------------------------------- */
+
+.force-break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------- Skill-Tag ----------------------------------------- */
+
+skill-tag {
+
+    /* Layout */
+    padding: 10px 15px;
+
+    /* Font */
+    color: var(--color-5);
+    font-weight: bold;
 
     /* Style */
-    background-color: var(--color-2);
+    border: solid var(--color-5) 2px;
+    border-radius: 5px;
+}
+
+skill-tag.dark {
+
+    /* Font */
+    color: var(--color-3);
+
+    /* Style */
+    border-color: var(--color-3);
 }
