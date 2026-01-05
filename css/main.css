@@ -316,6 +316,109 @@ p {
 }
 
 /* ############################################################################################# */
+/* //////////////////////////////////// SECTION EXPERIENCES //////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ----------------------------------- Experiences-Container ----------------------------------- */
+
+.experiences-container {
+
+    /* Layout */
+    display: grid;
+    margin: 10px 5% 0 5%;
+    
+    /* Content Layout */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    gap: 20px;
+}
+
+/* -------------------------------------- Experience-Card -------------------------------------- */
+
+.experience-card {
+
+    /* Layout */
+    padding: 50px 30px 50px 30px;
+
+    /* Content Layout */
+    text-align: left;
+
+    /* Style */
+    background-color: var(--color-1);
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 20px;
+}
+
+/* ---------------------------------- Experience-Card - Title ---------------------------------- */
+
+.experience-card .title {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ------------------------------------ Experience-Card - H1 ----------------------------------- */
+
+.experience-card h1 {
+
+    /* Layout */
+    display: flex;
+    margin: 0;
+    padding-right: 20px;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 10px;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--header-2-font-size);
+    color: var(--color-5);
+}
+
+/* ------------------------------------ Experience-Card - H2 ----------------------------------- */
+
+.experience-card h2 {
+
+    /* Layout */
+    margin: 0;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+    color: var(--color-5);
+}
+
+/* ------------------------------------ Experience-Card - P ------------------------------------ */
+
+.experience-card p {
+
+    /* Layout */
+    margin: 10px 0 0 0;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--small-font-size);
+    font-weight: normal;
+    color: var(--color-3);
+}
+
+/* ----------------------------------- Experience-Card - Icon ---------------------------------- */
+
+.experience-card .icon {
+
+    /* Layout */
+    width: 30px;
+    height: 30px;
+
+    /* Style */
+    filter: brightness(0) saturate(100%) invert(92%) sepia(67%) saturate(6869%) hue-rotate(150deg) brightness(105%) contrast(92%);
+}
+
+/* ############################################################################################# */
 /* ////////////////////////////////// SECTION TECHNICAL SKILLS ///////////////////////////////// */
 /* ############################################################################################# */
 

@@ -7,24 +7,12 @@
 .projects-cards-grid {
 
     /* Layout */
-    margin: 60px 100px 0 100px;
+    display: grid;
+    margin: 60px 5% 0 5%;
 
     /* Content Layout */
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
-    gap: 30px;
-}
-
-@media (max-width: 900px) {
-    .projects-cards-grid {
-        margin: 60px 40px 0 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .projects-cards-grid {
-        margin: 60px 20px 0 20px;
-    }
+    gap: 20px;
 }
 
 /* ############################################################################################# */
