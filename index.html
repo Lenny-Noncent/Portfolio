@@ -9,12 +9,12 @@
     <!-- Meta & Other Data -->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Lenny Portfolio</title>
+    <title>Lenny Noncent | Portfolio</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="./css/variables.css"/>
     <link rel="stylesheet" href="./css/main.css"/>
-    <link rel="stylesheet" href="./css/projects-cards.css"/>
+    <link rel="stylesheet" href="./css/main-page.css"/>
 </head>
 
 <!-- ########################################################################################## -->
@@ -48,106 +48,116 @@
         </div>
     </div>
 
-    <!-- Section 1: About Me -->
-    <div class="section" id="section-about-me">
-        <h1>À propos de moi</h1>
-        <p>
-            Bonjour !<br>
-            Je m'appelle Lenny et je suis actuellement en 3ème année de Game Programming
-            à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
-            vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
-            connaissances et améliorer mes compétences.
-        </p>
-    </div>
+    <!-- Sections Container -->
+    <div class="sections-container">
 
-    <!-- Section 2: My Projects -->
-    <div class="section" id="section-my-projects">
-        <h1>Mes Réalisations</h1>
-        <p>
-            Voici quelques projets que j'ai réalisé durant ces dernières années. Cliquez sur
-            l'un d'eux pour en découvrir d'avantage.
-        </p>
+        <!-- Section 1: About Me -->
+        <div class="section" id="section-about-me">
+            <h1>À propos de moi</h1>
+            <p>
+                Bonjour !<br>
+                Je m'appelle Lenny et je suis actuellement en 3ème année de Game Programming
+                à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
+                vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
+                connaissances et améliorer mes compétences.
+            </p>
+        </div>
 
-        <!-- Projects Cards Grid -->
-        <div class="projects-cards-grid" id="projects-cards-grid"></div>
-    </div>
+        <!-- Section 2: My Projects -->
+        <div class="section" id="section-my-projects">
+            <h1>Mes Réalisations</h1>
+            <p>
+                Voici quelques projets que j'ai réalisé durant ces dernières années. Cliquez sur
+                l'un d'eux pour en découvrir d'avantage.
+            </p>
 
-    <!-- Section 3: Experiences -->
-    <div class="section" id="section-experiences">
-        <h1>Expériences</h1>
-        <div class="experiences-container">
+            <!-- Projects Cards Grid -->
+            <div class="projects-cards-grid" id="projects-cards-grid"></div>
+        </div>
 
-            <!-- Dev Mobile Unity - iRiS Intuition -->
-            <div class="experience-card">
-                <div class="title">
-                    <h1>Concepteur Gameplay Unreal Engine 5 - CFOSN (Gendarmerie Nationale)</h1>
-                    <h2>oct. 2025 - aujourd'hui</h2>
+        <!-- Section 3: Experiences -->
+        <div class="section" id="section-experiences">
+            <h1>Expériences</h1>
+            <div class="experiences-container">
+
+                <!-- Dev Mobile Unity - iRiS Intuition -->
+                <div class="experience-card">
+                    <div class="title">
+                        <h1>Concepteur Gameplay Unreal Engine 5 - CFOSN (Gendarmerie Nationale)</h1>
+                        <h2>oct. 2025 - aujourd'hui</h2>
+                    </div>
+                    <p>
+                        Contribution, dans le cadre d’un contrat d’apprentissage de 2 ans,
+                        au développement et à l’évolution de Simugend, simulateur tactique 3D utilisé
+                        pour l’entraînement opérationnel des unités d’intervention
+                    </p>
                 </div>
-                <p>
-                    Contribution, dans le cadre d’un contrat d’apprentissage de 2 ans,
-                    au développement et à l’évolution de Simugend, simulateur tactique 3D utilisé
-                    pour l’entraînement opérationnel des unités d’intervention
-                </p>
-            </div>
 
-            <!-- Dev Mobile Unity - iRiS Intuition -->
-            <div class="experience-card">
-                <div class="title">
-                    <h1>Développeur Mobile Unity - iRiS Intuition</h1>
-                    <h2>févr. 2025 - avr. 2025</h2>
+                <!-- Dev Mobile Unity - iRiS Intuition -->
+                <div class="experience-card">
+                    <div class="title">
+                        <h1>Développeur Mobile Unity - iRiS Intuition</h1>
+                        <h2>févr. 2025 - avr. 2025</h2>
+                    </div>
+                    <p>Stage de 3 mois sur Unity, dédié à l’amélioration de jeux mobiles ludiques destinés à entraîner l’intuition</p>
                 </div>
-                <p>Stage de 3 mois sur Unity, dédié à l’amélioration de jeux mobiles ludiques destinés à entraîner l’intuition</p>
-            </div>
 
-            <!-- Isart Digital -->
-            <div class="experience-card">
-                <div class="title">
-                    <h1>
-                        <img class="icon" src="./resources/icons/Icon-Education.svg">
-                        Isart Digital Paris
-                    </h1>
-                    <h2>2022 - Aujourd'hui</h2>
+                <!-- Isart Digital -->
+                <div class="experience-card">
+                    <div class="title">
+                        <h1>
+                            <img class="icon" src="./resources/icons/Icon-Education.svg">
+                            Isart Digital Paris
+                        </h1>
+                        <h2>2022 - Aujourd'hui</h2>
+                    </div>
+                    <p>Master en Game Programming</p>
                 </div>
-                <p>Master en Game Programming</p>
             </div>
         </div>
+
+        <!-- Section 4: Technical Skills -->
+        <div class="section" id="section-technical-skills">
+            <h1>Compétences Techniques</h1>
+            <div class="technical-skills">
+
+                <!-- Programming Languages -->
+                <skill-tag>C</skill-tag>
+                <skill-tag>C++</skill-tag>
+                <skill-tag>C#</skill-tag>
+                <skill-tag>Python</skill-tag>
+
+                <!-- Engines -->
+                <skill-tag>Unreal Engine</skill-tag>
+                <skill-tag>Unity</skill-tag>
+                <div class="force-break"></div>
+
+                <!-- Graphics & Libs -->
+                <skill-tag class="dark">ImGui</skill-tag>
+                <skill-tag class="dark">GLFW</skill-tag>
+                <skill-tag class="dark">OpenGL</skill-tag>
+                <skill-tag class="dark">RayLib</skill-tag>
+
+                <!-- Tools -->
+                <skill-tag class="dark">Visual Studio</skill-tag>
+                <skill-tag class="dark">Rider</skill-tag>
+                <skill-tag class="dark">Git</skill-tag>
+                <skill-tag class="dark">Perforce</skill-tag>
+                <div class="force-break"></div>
+
+                <!-- Core Game Systems -->
+                <skill-tag class="dark">Physics Programming</skill-tag>
+                <skill-tag class="dark">AI Programming</skill-tag>
+                <skill-tag class="dark">Networking</skill-tag>
+                <skill-tag class="dark">Optimization</skill-tag>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Section 4: Technical Skills -->
-    <div class="section" id="section-technical-skills">
-        <h1>Compétences Techniques</h1>
-        <div class="technical-skills">
-
-            <!-- Programming Languages -->
-            <skill-tag>C</skill-tag>
-            <skill-tag>C++</skill-tag>
-            <skill-tag>C#</skill-tag>
-            <skill-tag>Python</skill-tag>
-
-            <!-- Engines -->
-            <skill-tag>Unreal Engine</skill-tag>
-            <skill-tag>Unity</skill-tag>
-            <div class="force-break"></div>
-
-            <!-- Graphics & Libs -->
-            <skill-tag class="dark">ImGui</skill-tag>
-            <skill-tag class="dark">GLFW</skill-tag>
-            <skill-tag class="dark">OpenGL</skill-tag>
-            <skill-tag class="dark">RayLib</skill-tag>
-
-            <!-- Tools -->
-            <skill-tag class="dark">Visual Studio</skill-tag>
-            <skill-tag class="dark">Rider</skill-tag>
-            <skill-tag class="dark">Git</skill-tag>
-            <skill-tag class="dark">Perforce</skill-tag>
-            <div class="force-break"></div>
-
-            <!-- Core Game Systems -->
-            <skill-tag class="dark">Physics Programming</skill-tag>
-            <skill-tag class="dark">AI Programming</skill-tag>
-            <skill-tag class="dark">Networking</skill-tag>
-            <skill-tag class="dark">Optimization</skill-tag>
-        </div>
+    <!-- Page Bottom -->
+    <div class="page-bottom">
+        <p>lenny.noncent.pro@gmail.com</p>
     </div>
 </body>
 

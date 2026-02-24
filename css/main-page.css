@@ -1,0 +1,519 @@
+/* ############################################################################################# */
+/* /////////////////////////////////////////// HEADER ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ------------------------------------------- Header ------------------------------------------ */
+
+.header {
+
+    /* Style */
+    background-color: rgb(from var(--color-1) r g b / 60%);
+}
+
+.header.scrolled {
+
+    /* Style */
+    background-color: var(--color-1);
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////// BACKGROUND VIDEO ///////////////////////////////////// */
+/* ############################################################################################# */
+
+.background-video {
+
+    /* Layout */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Style */
+    background: var(--color-2);
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// SECTION ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ------------------------------------- Sections-Container ------------------------------------ */
+
+.sections-container {
+
+    /* Layout */
+    position: relative;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(from var(--color-2) r g b / 40%) 25vh,
+        rgb(from var(--color-2) r g b / 80%) 50vh,
+        rgb(from var(--color-2) r g b / 80%) calc(100% - 60vh),
+        rgb(from var(--color-2) r g b / 100%) calc(100% - 20vh),
+        rgb(from var(--color-2) r g b / 100%) 100%
+    );
+}
+
+/* ------------------------------------------ Section ------------------------------------------ */
+
+.section {
+
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    /* Content Layout */
+    justify-content: center;
+
+    /* Style */
+    background: transparent;
+}
+
+/* ---------------------------------------- Section - H1 --------------------------------------- */
+
+.section h1 {
+
+    /* Layout */
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+/* ---------------------------------------- Section - P ---------------------------------------- */
+
+.section p {
+
+    /* Layout */
+    text-align: center;
+    margin: 10px 20% 10px 20%;
+}
+
+@media (max-width: 900px) {
+    .section p {
+        margin: 10px 15% 10px 15%;
+    }
+}
+
+@media (max-width: 700px) {
+    .section p {
+        margin: 10px 10% 10px 10%;
+    }
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////// SECTION ABOUT ME ///////////////////////////////////// */
+/* ############################################################################################# */
+
+/* -------------------------------------- Section-about-me ------------------------------------- */
+
+#section-about-me {
+
+    /* Layout */
+    margin-top: 65vh;
+    padding-top: 20vh;
+
+    /* Style */
+    background: transparent;
+    /* background-color: transparent;
+    background-image: linear-gradient(transparent, rgb(from var(--color-2) r g b / 70%), var(--color-2)); */
+}
+
+/* ----------------------------------- Section-about-me - H1 ----------------------------------- */
+
+#section-about-me h1 {
+
+    /* Layout */
+    margin: 30px 0 30px 0;
+}
+
+/* ------------------------------------ Section-about-me - P ----------------------------------- */
+
+#section-about-me p {
+
+    /* Layout */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////// SECTION MY PROJECTS //////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ------------------------------------ Projects-cards-grid ------------------------------------ */
+
+.projects-cards-grid {
+
+    /* Layout */
+    display: grid;
+    margin: 60px 5% 0 5%;
+
+    /* Content Layout */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 20px;
+}
+
+/* ---------------------------------------- Project-card --------------------------------------- */
+
+.project-card {
+
+    /* Layout */
+    position: relative;
+    aspect-ratio: 1 / 0.8;
+
+    /* Content Layout */
+    overflow: hidden;
+
+    /* Style */
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 20px;
+}
+
+/* --------------------------------- Project-card - Background --------------------------------- */
+
+.project-card .background {
+
+    /* Layout */
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 70px);
+    object-fit: cover;
+
+    /* Style */
+    background-color: var(--color-2);
+    transition: all var(--project-card-transition-duration) var(--project-card-easing);
+}
+
+.project-card:hover .background,
+.project-card:active .background {
+
+    /* Style */
+    transform: scale(1.2);
+}
+
+/* ----------------------------------- Project-card - Content ---------------------------------- */
+
+.project-card .content {
+
+    /* Layout */
+    display: flex;
+    position: absolute;
+    width: 101%;
+    height: 100%;
+
+    /* Content Layout */
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* ------------------------------------ Project-card - Tags ------------------------------------ */
+
+.project-card .tags {
+
+    /* Layout */
+    display: flex;
+    height: 15px;
+    padding: 15px 30px 15px 30px;
+
+    /* Content Layout */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    /* Style */
+    translate: 0 1px;
+    backdrop-filter: blur(1px);
+    background-color: rgb(from var(--color-2) r g b / 75%);
+}
+
+/* ---------------------------------- Project-card - Tag-Region ---------------------------------- */
+
+.project-card .tag-region {
+
+    /* Layout */
+    display: flex;
+    height: 100%;
+    width: auto;
+    
+    /* Content Layout */
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+}
+
+/* ------------------------------ Project-card - Tag-Region - Span ----------------------------- */
+
+.project-card .tag-region span {
+
+    /* Font */
+    color: white;
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+}
+
+/* ---------------------------------- Project-card - Tag-Icon ---------------------------------- */
+
+.project-card .tag-icon {
+
+    /* Layout */
+    height: 15px;
+    width: 15px;
+}
+
+/* ---------------------------------- Project-card - Text-area --------------------------------- */
+
+.project-card .text-area {
+
+    /* Layout */
+    padding: 10px 30px 20px 30px;
+    height: 50px;
+    z-index: 100;
+
+    /* Style */
+    background-color: var(--color-1);
+    box-shadow: rgb(from var(--color-3) r g b / 50%) 0 -10px 20px;
+    transition: all var(--project-card-transition-duration) var(--project-card-easing);
+}
+
+.project-card:hover .text-area,
+.project-card:active .text-area {
+
+    /* Layout */
+    height: 45%;
+
+    /* Style */
+    box-shadow: rgb(from var(--color-5) r g b / 50%) 0 -10px 20px;
+    background-color: whitesmoke;
+}
+
+/* ------------------------------------- Project-card - H1 ------------------------------------- */
+
+.project-card h1 {
+
+    /* Layout */
+    margin: 0;
+
+    /* Font */
+    color: var(--color-4);
+    font-size: var(--header-2-font-size);
+    font-weight: bold;
+    text-align: left;
+
+    /* Style */
+    transition: all var(--project-card-transition-duration) var(--project-card-easing);
+}
+
+.project-card:hover h1,
+.project-card:active h1 {
+
+    /* Style */
+    color: var(--color-3);
+}
+
+/* ------------------------------------- Project-card - H2 ------------------------------------- */
+
+.project-card h2 {
+
+    /* Layout */
+    margin: 0;
+
+    /* Font */
+    color: var(--color-3);
+    font-size: var(--normal-font-size);
+    font-weight: lighter;
+    text-align: left;
+
+    /* Style */
+    transition: all var(--project-card-transition-duration) var(--project-card-easing);
+}
+
+.project-card:hover h2,
+.project-card:active h2 {
+
+    /* Style */
+    color: var(--color-2);
+}
+
+/* -------------------------------------- Project-card - P ------------------------------------- */
+
+.project-card p {
+
+    /* Layout */
+    margin: 15px 30px 0 0;
+
+    /* Font */
+    color: rgb(from var(--color-3) r g b / 0%);
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+    text-align: justify;
+
+    /* Style */
+    transition: all var(--project-card-transition-duration) var(--project-card-easing);
+}
+
+.project-card:hover p,
+.project-card:active p {
+
+    /* Font */
+    color: var(--color-2);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////// SECTION EXPERIENCES //////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ----------------------------------- Experiences-Container ----------------------------------- */
+
+.experiences-container {
+
+    /* Layout */
+    display: grid;
+    margin: 10px 5% 0 5%;
+    
+    /* Content Layout */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    gap: 20px;
+}
+
+/* -------------------------------------- Experience-Card -------------------------------------- */
+
+.experience-card {
+
+    /* Layout */
+    padding: 50px 30px 50px 30px;
+
+    /* Content Layout */
+    text-align: left;
+
+    /* Style */
+    background-color: var(--color-1);
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 20px;
+}
+
+/* ---------------------------------- Experience-Card - Title ---------------------------------- */
+
+.experience-card .title {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ------------------------------------ Experience-Card - H1 ----------------------------------- */
+
+.experience-card h1 {
+
+    /* Layout */
+    display: flex;
+    margin: 0;
+    padding-right: 20px;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 10px;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--header-2-font-size);
+    color: var(--color-4);
+}
+
+/* ------------------------------------ Experience-Card - H2 ----------------------------------- */
+
+.experience-card h2 {
+
+    /* Layout */
+    margin: 0;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+    color: var(--color-4);
+}
+
+/* ------------------------------------ Experience-Card - P ------------------------------------ */
+
+.experience-card p {
+
+    /* Layout */
+    margin: 10px 20% 0 0;
+
+    /* Font */
+    text-align: justify;
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+    color: whitesmoke;
+}
+
+/* ----------------------------------- Experience-Card - Icon ---------------------------------- */
+
+.experience-card .icon {
+
+    /* Layout */
+    width: 30px;
+    height: 30px;
+
+    /* Style */
+    filter: brightness(0) saturate(100%) invert(92%) sepia(67%) saturate(6869%) hue-rotate(150deg) brightness(105%) contrast(92%);
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////// SECTION TECHNICAL SKILLS ///////////////////////////////// */
+/* ############################################################################################# */
+
+/* -------------------------------------- Technical-Skills ------------------------------------- */
+
+.technical-skills {
+
+    /* Layout */
+    display: flex;
+    margin: 5px 5% 0 5%;
+
+    /* Content Layout */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ---------------------------------------- Force-Break ---------------------------------------- */
+
+.force-break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------- Skill-Tag ----------------------------------------- */
+
+skill-tag {
+
+    /* Layout */
+    padding: 10px 15px;
+
+    /* Font */
+    color: var(--color-5);
+    font-weight: bold;
+
+    /* Style */
+    border: solid var(--color-5) 2px;
+    border-radius: 5px;
+}
+
+skill-tag.dark {
+
+    /* Font */
+    color: var(--color-3);
+
+    /* Style */
+    border-color: var(--color-3);
+}
+

@@ -22,3 +22,6 @@ window.addEventListener("scroll", () => {
 // ################################################################################################
 
 createProjectCards();
+if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+}

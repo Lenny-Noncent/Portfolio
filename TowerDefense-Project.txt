@@ -1,0 +1,55 @@
+Info du projet:
+- Role: Game Programmeur
+- Team Size: 1
+- Duration: 2 semaines
+- Langage: C++
+- Tags: Visual Studio, ImGui
+
+A propos de:
+Ce jeu est un Tower Defense réalisé durant ma première année d'étude à Isart DIGITAL. Dans ce jeu, défendez votre base en plaçant des tourelles de tout type sur le terrain, ou en les améliorant afin d'éliminer les ennemis qui tente d'y entre. Le jeu n'a pas de fin mais les vagues d'ennemis deviennt de plus en plus difficile au cours du temps.
+
+
+I - Intro:
+Durant la création de ce jeu, mon objectif était de mettre l'accent sur le visuel et sur la modularité. Ainsi, j'ai eu l'occasion de travailler et de créer plusieurs système qui m'ont beaucoup appris. Par exemple: système de Création de map avec des tiles en se basant sur un fichier txt éditable. Système d'effets joueable. Système d'animation des ennemis et des tourelles. Système de vague qui augmente la difficulté au fur et a mesure et basé sur des fichier de config .txt et système de tile pr placer les tourelles.
+
+
+II - Tile Map:
+La map est constitué d'une Grille qu'on remplie avec des tiles. Pour cela, la map est basé sur un fichier txt qui définie l'emplacement de chaque type de tile sur cette grille avec des caractères.
+
+Exemple:
+TTTTTTTTTTTTTTTTTTTT
+TTTTT@@@@@TTT@@@@@TT
+TTT@@@@@@@@@@@@@@@@@
+TT@@      @@@       
+TTT@ @@@@ @@@ @@@@@@
+     @@         @@@#
+#B@@@@@ @ @@@ @ @@##
+TT#@@B@   @@@   @@#B
+TTTB#@@@@@@@@@@@@#BT
+TTTTTB##BB####BBBTTT
+TTTTTTTTTTTTTTTTTTTT
+
+Ici:
+- T représente un arbre (T = Tree)
+- B représente un buisson (B = Bush)
+- @ représente un emplacement pour une tourelle
+- ' ' un espace représente le chemin
+
+Ainsi, au chargement du jeu, le fichier map.txt est chargé et on regarde chaque caractère et on le remplace par le type de tile. 
+D'ailleurs pour les chemins, la logique est un peu plus complexe. En effet, il existe différentes tiles pour un meme chemin en fonction du point d'entré et de sorti de ce chemin. 
+Pour cela je calcule un entier (int) qui est déterminé en fonction des tiles environnantes (en croix autour de mon path).
+Par exemple:
+- Si la tuile du bas est un path, je rajoute +1 a l'entier.
+- Si la tuile de droite est un path, je rajoute +10 à l'entier.
+- Si la tuile du haut est un path, je rajoute +100 à l'entier.
+- Si la tuile de gauche est un path, je rajoute +1000 à l'entier.
+
+Ainsi, si l'entier retourné est 1010, alors la tuile a afiché est un Path LR (Left -> Right).
+Autre exemple, si j'ai 1001, la tuile a affiché est un path LU (Left -> Up).
+
+Ce système est très pratique et robuste mais aujourd'hui si je recodais le jeu, je changerais l'entier par un bit array car en soit ce sont seulement des flags que nous activons ou non pour déterminer quels tiles aux alontours sont des chemins (Paths), car les Bit Array sont plus opti en terme de mémoire et rapidité.
+
+De plus, les tuiles de chemins ne sont pas les seuls a etre spéciales, en effet, les tuiles d'arbre sont séléctionnées aléatoirement a la génération entre plsrs design de d'arbre afin d'avoir un rendu plus naturel et mois répétitif.
+
+
+III - 

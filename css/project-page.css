@@ -1,0 +1,138 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////// MAIN SECTION /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ---------------------------------------- Main-Section --------------------------------------- */
+
+.main-section {
+
+    /* Layout */
+    margin: calc(var(--header-height) + 20px) 5% 0 5%;
+}
+
+/* ----------------------------------- Main-Section - Back-btn --------------------------------- */
+
+.main-section .back-btn {
+
+    /* Layout */
+    display: flex;
+    height: 100%;
+    width: auto;
+    padding: 20px 0 20px 0;
+    
+    /* Content Layout */
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+}
+
+/* ------------------------------- Main-Section - Back-btn - Span ------------------------------ */
+
+.main-section .back-btn span {
+
+    /* Layout */
+    translate: 0 -1px;
+
+    /* Font */
+    color: var(--color-4);
+    font-size: var(--header-2-font-size);
+    font-weight: normal;
+
+    /* Style */
+    transition: all 0.2s ease;
+}
+
+
+.main-section .back-btn:active span,
+.main-section .back-btn:hover span {
+
+    /* Font */
+    color: whitesmoke;
+}
+
+/* ------------------------------- Main-Section - Back-btn - Icon ------------------------------ */
+
+.main-section .back-btn .icon {
+
+    /* Layout */
+    height: 15px;
+    width: 15px;
+
+    /* Style */
+    filter: brightness(0) saturate(100%) invert(70%) sepia(12%) saturate(1777%) hue-rotate(136deg) brightness(90%) contrast(89%);
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////// PROJECT VIDEO /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* --------------------------------------- Project-video --------------------------------------- */
+
+.project-video {
+
+    /* Layout */
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    justify-self: center;
+}
+
+/* ----------------------------------- Project-video - Iframe ---------------------------------- */
+
+.project-video iframe {
+
+    /* Layout */
+    aspect-ratio: 16 / 9;
+}
+
+/* ############################################################################################# */
+/* ///////////////////////////////////////// MAIN INFOS //////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ----------------------------------------- Main-Infos ---------------------------------------- */
+
+.main-infos {
+
+    /* Layout */
+    display: grid;
+    margin: 20px 0 20px 0;
+    
+    /* Content Layout */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    gap: 20px;
+}
+
+/* --------------------------------------- Main-Info-Card -------------------------------------- */
+
+.main-info-card {
+
+    /* Layout */
+    padding: 40px 30px 40px 30px;
+
+    /* Content Layout */
+    text-align: left;
+
+    /* Style */
+    background-color: var(--color-1);
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 20px;
+}
+
+/* ------------------------------------ Main-Info-Card - H1 ------------------------------------ */
+
+.main-info-card h1 {
+
+    /* Font */
+    font-size: var(--header-2-font-size);
+    color: var(--color-4);
+}
+
+/* ------------------------------------- Main-Info-Card - P ------------------------------------ */
+
+.main-info-card p {
+
+    /* Font */
+    text-align: justify;
+    font-size: var(--small-font-size);
+    font-weight: lighter;
+    color: whitesmoke;
+}

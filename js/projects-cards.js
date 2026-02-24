@@ -6,8 +6,9 @@
 const projectsGrid = document.getElementById("projects-cards-grid");
 
 // Other Data
-const projectsData = [
+const projectsCardsData = [
     {
+        id: "project-2023-02",
         name: "Geo Storm",
         date: "2023",
         duration: "1 semaine",
@@ -20,13 +21,14 @@ const projectsData = [
             " L'objectif est de survivre le plus longtemps possible face aux ennemis et obtenir le score le plus élevé."
     },
     {
+        id: "project-2023-01",
         name: "Tower Defense",
         date: "2023",
         duration: "2 semaines",
         role: "Game Programmer",
         teamSize: 1,
         language: "C++",
-        tags: ["Visual Studio", ],
+        tags: ["Visual Studio", "ImGui"],
         video: "./resources/videos/TowerDefense-Demo.mp4",
         description: "J'ai réalisé seul ce Tower Defense sur Visual Studio en C++. " +
             "L'objectif est de survivre le plus longtemps possible en posant des tourelles " +
@@ -39,6 +41,14 @@ const projectsData = [
 // ################################################################################################
 
 // ---------------------------------------- Card Listeners ----------------------------------------
+
+/**
+ * @param {string} id
+ */
+function onClick(id)
+{
+    window.location.href = `./${id}.html`;
+}
 
 /**
  * @param {HTMLVideoElement} video
@@ -69,7 +79,7 @@ function onVideoEnded(video) {
 function createProjectCards()
 {
     // Loop on each project data
-    projectsData.forEach(project => {
+    projectsCardsData.forEach(project => {
 
         // Create card base UI Element
         // ---------------------------
@@ -130,6 +140,7 @@ function createProjectCards()
 
         // Add Listeners
         // -------------
+        card.addEventListener("click", () => onClick(project.id));
         card.addEventListener("mouseenter", () => onMouseEnter(video));
         video.addEventListener("ended", () => onVideoEnded(video));
 
