@@ -117,8 +117,6 @@
 
     /* Style */
     background: transparent;
-    /* background-color: transparent;
-    background-image: linear-gradient(transparent, rgb(from var(--color-2) r g b / 70%), var(--color-2)); */
 }
 
 /* ----------------------------------- Section-about-me - H1 ----------------------------------- */
@@ -252,7 +250,7 @@
     /* Font */
     color: white;
     font-size: var(--small-font-size);
-    font-weight: lighter;
+    font-weight: var(--light-font-weight);
 }
 
 /* ---------------------------------- Project-card - Tag-Icon ---------------------------------- */
@@ -287,7 +285,7 @@
 
     /* Style */
     box-shadow: rgb(from var(--color-5) r g b / 50%) 0 -10px 20px;
-    background-color: whitesmoke;
+    background-color: var(--color-white);
 }
 
 /* ------------------------------------- Project-card - H1 ------------------------------------- */
@@ -300,7 +298,7 @@
     /* Font */
     color: var(--color-4);
     font-size: var(--header-2-font-size);
-    font-weight: bold;
+    font-weight: var(--bold-font-weight);
     text-align: left;
 
     /* Style */
@@ -324,7 +322,7 @@
     /* Font */
     color: var(--color-3);
     font-size: var(--normal-font-size);
-    font-weight: lighter;
+    font-weight: var(--light-font-weight);
     text-align: left;
 
     /* Style */
@@ -348,7 +346,7 @@
     /* Font */
     color: rgb(from var(--color-3) r g b / 0%);
     font-size: var(--small-font-size);
-    font-weight: lighter;
+    font-weight: var(--light-font-weight);
     text-align: justify;
 
     /* Style */
@@ -384,7 +382,9 @@
 .experience-card {
 
     /* Layout */
+    position: relative;
     padding: 50px 30px 50px 30px;
+    height: 60px;
 
     /* Content Layout */
     text-align: left;
@@ -392,23 +392,60 @@
     /* Style */
     background-color: var(--color-1);
     box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 20px;
+    transition: all var(--experience-card-transition-duration) ease-out;
 }
 
-/* ---------------------------------- Experience-Card - Title ---------------------------------- */
+.experience-card:hover {
 
-.experience-card .title {
+    /* Style */
+    background-color: rgb(from var(--color-white) r g b / 90%);
+}
+
+/* ------------------------------- Experience-Card - Main-Content ------------------------------ */
+
+.experience-card .main-content {
 
     /* Layout */
     display: flex;
+    position: absolute;
 
     /* Content Layout */
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Style */
+    opacity: 1;
+    transition: all var(--experience-card-transition-duration) ease-in-out;
 }
 
-/* ------------------------------------ Experience-Card - H1 ----------------------------------- */
+.experience-card:hover .main-content {
 
-.experience-card h1 {
+    /* Style */
+    opacity: 0;
+}
+
+/* ------------------------------ Experience-Card - Detail-Content ----------------------------- */
+
+.experience-card .detail-content {
+
+    /* Layout */
+    width: 100%;
+    height: 100%;
+
+    /* Style */
+    opacity: 0;
+    transition: all var(--experience-card-transition-duration) ease-in-out;
+}
+
+.experience-card:hover .detail-content {
+
+    /* Style */
+    opacity: 1;
+}
+
+/* ---------------------------- Experience-Card - Main-Content - H1 ---------------------------- */
+
+.experience-card .main-content h1 {
 
     /* Layout */
     display: flex;
@@ -425,9 +462,9 @@
     color: var(--color-4);
 }
 
-/* ------------------------------------ Experience-Card - H2 ----------------------------------- */
+/* ---------------------------- Experience-Card - Main-Content - H2 ---------------------------- */
 
-.experience-card h2 {
+.experience-card .main-content h2 {
 
     /* Layout */
     margin: 0;
@@ -435,34 +472,38 @@
     /* Font */
     text-align: left;
     font-size: var(--small-font-size);
-    font-weight: lighter;
+    font-weight: var(--light-font-weight);
     color: var(--color-4);
 }
 
-/* ------------------------------------ Experience-Card - P ------------------------------------ */
+/* --------------------------- Experience-Card - Main-Content - Icon --------------------------- */
 
-.experience-card p {
-
-    /* Layout */
-    margin: 10px 20% 0 0;
-
-    /* Font */
-    text-align: justify;
-    font-size: var(--small-font-size);
-    font-weight: lighter;
-    color: whitesmoke;
-}
-
-/* ----------------------------------- Experience-Card - Icon ---------------------------------- */
-
-.experience-card .icon {
+.experience-card .main-content .icon {
 
     /* Layout */
     width: 30px;
     height: 30px;
 
     /* Style */
-    filter: brightness(0) saturate(100%) invert(92%) sepia(67%) saturate(6869%) hue-rotate(150deg) brightness(105%) contrast(92%);
+    filter: brightness(0) saturate(100%) invert(58%) sepia(57%) saturate(4038%) hue-rotate(147deg) brightness(99%) contrast(101%);
+}
+
+/* ---------------------------- Experience-Card - Detail-Content - P --------------------------- */
+
+.experience-card .detail-content p {
+
+    /* Layout */
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    /* Font */
+    text-align: left;
+    font-size: var(--small-font-size);
+    font-weight: var(--light-font-weight);
+    color: var(--color-2);
 }
 
 /* ############################################################################################# */

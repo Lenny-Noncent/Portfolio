@@ -1,16 +1,12 @@
 :root {
 
     /* MAIN COLORS */
-    /* --color-1: #021A23;
-    --color-2: #042835;
-    --color-3: #235F75;
-    --color-4: #47BAC3;
-    --color-5: #6EF5F5; */
     --color-1: #00212e;
     --color-2: #002c3c;
     --color-3: #005878;
     --color-4: #00bbca;
     --color-5: #00ffff;
+    --color-white: rgb(225, 225, 225);
 
     /* FONT */
 
@@ -20,8 +16,13 @@
     --normal-font-size: 1.2rem;
     --small-font-size: 1rem;
 
+    /* Font Weight */
+    --bold-font-weight: 700;
+    --normal-font-weight: 400;
+    --light-font-weight: 200;
+
     /* Font Family */
-    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     /* OTHER */
 
@@ -29,6 +30,7 @@
     --header-height: 150px;
     
     /* Project Cards */
-    --project-card-transition-duration: 1s;
+    --project-card-transition-duration: 1.5s;
+    --experience-card-transition-duration: 0.2s;
     --project-card-easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
