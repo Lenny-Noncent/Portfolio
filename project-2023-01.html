@@ -11,9 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lenny Noncent | Portfolio</title>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="./css/variables.css"/>
-    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/shared.css"/>
     <link rel="stylesheet" href="./css/project-page.css"/>
 </head>
 
@@ -23,24 +28,8 @@
 
 <body>
 
-    <!-- Header Section -->
-    <div class="header" id="header">
-        <h1>
-            Lenny Noncent
-            <small>Étudiant en formation Game Programming</small>
-        </h1>
-        <div class="links">
-            <div class="icons">
-                <a href="https://www.linkedin.com/in/lenny-noncent-049492335/" target="_blank" rel="noopener noreferrer" class="btn-link">
-                    <img class="icon" src="./resources/icons/Icon-Linkedin.svg">
-                </a>
-                <a href="https://github.com/Lenny-Noncent" target="_blank" rel="noopener noreferrer" class="btn-link">
-                    <img class="icon" src="./resources/icons/Icon-Github.svg">
-                </a>
-            </div>
-            <div class="resume">CV ></div>
-        </div>
-    </div>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Section -->
     <div class="main-section">
@@ -79,17 +68,16 @@
             <!-- Project Info -->
             <div class="main-info-card">
                 <h1>Informations</h1>
-                <h2></h2>
+                <div class="row-info">
+                    <img class="icon" src="./resources/icons/Icon-Members.svg">
+                    <span>${project.teamSize}</span>
+                </div>
             </div>
         </div>
     </div>
 
-    
-    
     <!-- Page Bottom -->
-    <div class="page-bottom">
-        <p>lenny.noncent.pro@gmail.com</p>
-    </div>
+    <div id="page-bottom-placeholder"></div>
 </body>
 
 <!-- ########################################################################################## -->
@@ -97,4 +85,5 @@
 <!-- ########################################################################################## -->
 
 <!-- Scripts -->
+<script src="./js/shared.js"></script>
 </html>

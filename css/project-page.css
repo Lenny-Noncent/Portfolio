@@ -133,6 +133,44 @@
     /* Font */
     text-align: justify;
     font-size: var(--small-font-size);
-    font-weight: lighter;
+    font-weight: var(--light-font-weight);
     color: whitesmoke;
 }
+
+/* --------------------------------- Main-Info-Card - Row-Info --------------------------------- */
+
+.main-info-card .row-info {
+
+    /* Layout */
+    display: flex;
+    height: 100%;
+    width: auto;
+    
+    /* Content Layout */
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+}
+
+/* ------------------------------ Main-Info-Card - Row-Info - Icon ----------------------------- */
+
+.main-info-card .row-info .icon {
+
+    /* Layout */
+    height: 15px;
+    width: 15px;
+}
+
+/* ------------------------------ Main-Info-Card - Row-Info - Span ----------------------------- */
+
+.main-info-card .row-info span {
+
+    /* Font */
+    color: white;
+    font-size: var(--small-font-size);
+    font-weight: var(--light-font-weight);
+}
+
+
+
