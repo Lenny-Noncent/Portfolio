@@ -78,10 +78,10 @@
 .btn-ghost:active {
 
     /* Style */
-    border-color: rgb(from var(--color-4) r g b / 60%);
+    border-color: rgb(from var(--color-accent-primary) r g b / 60%);
 
     /* Font */
-    color: var(--color-4);
+    color: var(--color-accent-primary);
 }
 
 /* ############################################################################################# */

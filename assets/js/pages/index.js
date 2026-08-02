@@ -21,7 +21,6 @@ function initParallaxFx(targetSelector, referenceSelector, maxOffsetFactor, spee
         const scroll = window.scrollY;
         const maxOffset = reference.clientHeight * maxOffsetFactor;
         const offset = maxOffset * (1 - Math.exp(-scroll * speed));
-
         target.style.transform = `translateY(${offset}rem)`;
     }
 
@@ -55,6 +54,5 @@ function initStats() {
 
 document.addEventListener("DOMContentLoaded", () => {
     initParallaxFx("#floating-icons", ".hero-portrait", 0.015, 0.0025);
-    initParallaxFx("#hero-background", ".section.hero", 0.02, 0.002);
     initStats();
 })

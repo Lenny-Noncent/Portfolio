@@ -22,6 +22,31 @@
     }
 }
 
+.hero .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image: radial-gradient(ellipse 110% 75% at 0% 0%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
+}
+
+.hero .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 8%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 8%) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 75% 60% at 15% 48%, black 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 55% 45% at 15% 48%, black 0%, transparent 85%);
+}
+
 .hero-text {
     opacity: 0;
     animation: fade-in 800ms ease-out forwards;
@@ -43,7 +68,7 @@
     margin: 0 0 20px 0;
 
     /* Font */
-    color: var(--color-4);
+    color: var(--color-accent-primary);
     font-family: var(--font-family-mono);
     font-size: 1.1rem;
     font-weight: var(--normal-font-weight);
@@ -86,31 +111,6 @@
     mask-image: linear-gradient(to bottom, black 75%, transparent 96%);
 }
 
-.hero .bg-fx-glow {
-
-    /* Layout */
-    position: absolute;
-    inset: 0;
-
-    /* Style */
-    background-image: radial-gradient(ellipse 110% 75% at 0% 0%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
-}
-
-.hero .bg-fx-grid {
-
-    /* Layout */
-    position: absolute;
-    inset: 0;
-
-    /* Style */
-    background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 20%, transparent 85%);
-    -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
-}
-
 /* ############################################################################################# */
 /* /////////////////////////////////////// FLOATING ICON /////////////////////////////////////// */
 /* ############################################################################################# */
@@ -133,7 +133,7 @@
     height: 4rem;
 
     /* Font */
-    color: var(--color-4);
+    color: var(--color-accent-primary);
     font-size: 0.95rem;
 
     /* Style */
@@ -149,7 +149,7 @@
     height: 7rem;
 
     /* Font */
-    color: var(--color-4);
+    color: var(--color-accent-primary);
     font-size: 2rem;
 
     /* Style */
@@ -166,7 +166,7 @@
     height: 5rem;
 
     /* Font */
-    color: var(--color-5);
+    color: var(--color-accent-secondary);
     font-size: 2rem;
 
     /* Style */
@@ -241,5 +241,34 @@
 #stat-technologies-used {
     opacity: 0;
     animation: fade-in 800ms ease-out 1200ms forwards;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// MY PROJECTS //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.my-projects .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image: radial-gradient(ellipse 120% 50% at 100% 80%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
+}
+
+.my-projects .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
 }
 

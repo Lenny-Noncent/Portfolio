@@ -48,4 +48,8 @@
 
     --radius: 10px;
     --header-height: 110px;
+
+    /* ================ OTHER ================ */
+
+    --project-card-transition: all 0.25s cubic-bezier(0.5, 1, 0.89, 1);
 }

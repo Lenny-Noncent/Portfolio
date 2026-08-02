@@ -1,0 +1,148 @@
+/* ############################################################################################# */
+/* /////////////////////////////////////// PROJECT CARDS /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.project-cards {
+
+    /* Layout */
+    display: grid;
+
+    /* Content Layout */
+    gap: 26px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// PROJECT CARD /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.project-card {
+
+    /* Content Layout */
+    overflow: hidden;
+
+    /* Style */
+    border-radius: 22px;
+    border: solid 1px var(--color-line);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 25%);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.7);
+    transition: var(--project-card-transition);
+}
+
+.project-card:hover {
+
+    /* Layout */
+    transform: translateY(-6px);
+
+    /* Style */
+    border-color: rgb(from var(--color-accent-primary) r g b / 45%);
+    box-shadow: 0 0 40px -10px rgb(from var(--color-accent-primary) r g b / 45%);
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIA /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+.project-card-media {
+
+    /* Layout */
+    position: relative;
+    aspect-ratio: 4 / 3;
+}
+
+.project-card-media .media {
+
+    /* Layout */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    
+    /* Style */
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 96%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 96%);
+    transition: var(--project-card-transition);
+}
+
+.project-card:hover .project-card-media .media {
+
+    /* Style */
+    transform: scale(1.08);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// TEXT /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+.project-card-text {
+
+    /* Layout */
+    display: flex;
+    gap: 10px;
+    padding: 22px;
+    
+    /* Content Layout */
+    flex-direction: column;
+}
+
+.project-card h1 {
+
+    /* Font */
+    color: whitesmoke;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+}
+
+.project-card p {
+
+    /* Layout */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+
+    /* Font */
+    color: var(--color-3);
+    font-size: var(--small-font-size);
+    font-weight: var(--light-font-weight);
+    line-height: 1.5;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// BADGES ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+.project-card-badges {
+
+    /* Layout */
+    display: flex;
+    
+    /* Content Layout */
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-card-badge {
+
+    /* Layout */
+    display: inline-flex;
+    padding: 7px 13px;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 6px;
+
+    /* Style */
+    background-color: rgb(from var(--color-3) r g b / 12%);
+    border-radius: var(--btn-radius);
+
+    /* Font */
+    color: var(--color-3);
+    font-size: 0.8rem;
+    font-family: var(--font-family-mono);
+    white-space: nowrap;
+}
+
