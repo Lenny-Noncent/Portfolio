@@ -6,20 +6,24 @@
 <!-- ########################################################################################## -->
 
 <head>
-    <!-- Meta & Other Data -->
+    <!-- Meta & other data -->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lenny Noncent | Portfolio</title>
+    
+    <!-- Link to fontawesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-    <!-- Font -->
+    <!-- Link for google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./css/variables.css"/>
-    <link rel="stylesheet" href="./css/shared.css"/>
-    <link rel="stylesheet" href="./css/main-page.css"/>
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/assets/css/pages/index.css"/>
 </head>
 
 <!-- ########################################################################################## -->
@@ -27,138 +31,109 @@
 <!-- ########################################################################################## -->
 
 <body>
+    <!-- Home Marker -->
+    <div id="home"></div>
 
-    <!-- Background Video -->
-    <video class="background-video" autoplay muted loop>
-        <source src="./resources/videos/Background.mp4" type="video/mp4"/>
-        Votre navigateur ne supporte pas la vidéo HTML5.
-    </video>
-    
+    <!--========-->
     <!-- Header -->
+    <!--========-->
+
+    <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Sections Container -->
-    <div class="sections-container">
+    <!-- Navigation links -->
+    <template id="header-nav">
+        <a href="#home">Accueil</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+    </template>
 
-        <!-- Section 1: About Me -->
-        <div class="section" id="section-about-me">
-            <h1>À propos de moi</h1>
+    <!--===============-->
+    <!-- SECTION: HERO -->
+    <!--===============-->
+    <div class="section hero">
+
+        <!-- Background -->
+        <div class="background" id="hero-background">
+            <div class="bg-fx-glow"></div>
+            <div class="bg-fx-grid"></div>
+        </div>
+
+        <!-- Hero Text -->
+        <div class="hero-text">
+            <h1 class="hero-role">Game<br>Programmer</h1>
+            <h2 class="hero-title">Lenny Noncent</h2>
             <p>
-                Bonjour !<br>
-                Je m'appelle Lenny et je suis actuellement en 3ème année de Game Programming
+                Bonjour ! Je m'appelle Lenny et je suis actuellement en 5ème année de Game Programming
                 à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
                 vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
                 connaissances et améliorer mes compétences.
             </p>
-        </div>
+            <div class="hero-actions">
+                <a href="mailto:lenny.noncent.pro@gmail.com" class="btn btn-solid">Me contacter</a>
+                <a href="#section-my-projects" class="btn btn-ghost">&gt; Voir mes projets</a>
+            </div>
 
-        <!-- Section 2: My Projects -->
-        <div class="section" id="section-my-projects">
-            <h1>Mes Réalisations</h1>
-            <p>
-                Voici quelques projets que j'ai réalisé durant ces dernières années. Cliquez sur
-                l'un d'eux pour en découvrir d'avantage.
-            </p>
+            <!-- Stats Strip -->
+            <div class="stats-strip">
 
-            <!-- Projects Cards Grid -->
-            <div class="projects-cards-grid" id="projects-cards-grid"></div>
-        </div>
-
-        <!-- Section 3: Experiences -->
-        <div class="section" id="section-experiences">
-            <h1>Expériences</h1>
-            <div class="experiences-container">
-
-                <!-- Dev Mobile Unity - iRiS Intuition -->
-                <div class="experience-card">
-                    <div class="main-content">
-                        <h1>Concepteur Gameplay Unreal Engine 5 - CFOSN (Gendarmerie Nationale)</h1>
-                        <h2>oct. 2025 - aujourd'hui</h2>
-                    </div>
-                    <div class="detail-content">
-                        <p>
-                            Contribution, dans le cadre d’un contrat d’apprentissage de 2 ans,
-                            au développement et à l’évolution de Simugend, simulateur tactique 3D utilisé
-                            pour l’entraînement opérationnel des unités d’intervention
-                        </p>
-                    </div>
+                <!-- Stat: years of study -->
+                <div class="stat" id="stat-years-of-study">
+                    <span class="stat-value counter-up" data-counter-target="4" data-counter-suffix="+">0</span>
+                    <span class="stat-label">années de formation</span>
                 </div>
 
-                <!-- Dev Mobile Unity - iRiS Intuition -->
-                <div class="experience-card">
-                    <div class="main-content">
-                        <h1>Développeur Mobile Unity - iRiS Intuition</h1>
-                        <h2>févr. 2025 - avr. 2025</h2>
-                    </div>
-                    <div class="detail-content">
-                        <p>Stage de 3 mois sur Unity, dédié à l’amélioration de jeux mobiles ludiques destinés à entraîner l’intuition</p>
-                    </div>
+                <!-- Stat: Completed projects -->
+                <div class="stat" id="stat-completed-projects">
+                    <span class="stat-value counter-up" data-counter-target="35" data-counter-suffix="+">0</span>
+                    <span class="stat-label">projets réalisés</span>
                 </div>
 
-                <!-- Isart Digital -->
-                <div class="experience-card">
-                    <div class="main-content">
-                        <h1>
-                            <img class="icon" src="./resources/icons/Icon-Education.svg">
-                            Isart Digital Paris
-                        </h1>
-                        <h2>2022 - Aujourd'hui</h2>
-                    </div>
-                    <div class="detail-content">
-                        <p>Master en Game Programming</p>
-                    </div>
+                <!-- Stat: Technologies used -->
+                <div class="stat" id="stat-technologies-used">
+                    <span class="stat-value counter-up" data-counter-target="10" data-counter-suffix="+">0</span>
+                    <span class="stat-label">Technologies utilisées</span>
                 </div>
             </div>
         </div>
 
-        <!-- Section 4: Technical Skills -->
-        <div class="section" id="section-technical-skills">
-            <h1>Compétences Techniques</h1>
-            <div class="technical-skills">
+        <!-- Hero Portrait -->
+        <div class="hero-portrait">
 
-                <!-- Programming Languages -->
-                <skill-tag>C</skill-tag>
-                <skill-tag>C++</skill-tag>
-                <skill-tag>C#</skill-tag>
-                <skill-tag>Python</skill-tag>
-
-                <!-- Engines -->
-                <skill-tag>Unreal Engine</skill-tag>
-                <skill-tag>Unity</skill-tag>
-                <div class="force-break"></div>
-
-                <!-- Graphics & Libs -->
-                <skill-tag class="dark">ImGui</skill-tag>
-                <skill-tag class="dark">GLFW</skill-tag>
-                <skill-tag class="dark">OpenGL</skill-tag>
-                <skill-tag class="dark">RayLib</skill-tag>
-
-                <!-- Tools -->
-                <skill-tag class="dark">Visual Studio</skill-tag>
-                <skill-tag class="dark">Rider</skill-tag>
-                <skill-tag class="dark">Git</skill-tag>
-                <skill-tag class="dark">Perforce</skill-tag>
-                <div class="force-break"></div>
-
-                <!-- Core Game Systems -->
-                <skill-tag class="dark">Physics Programming</skill-tag>
-                <skill-tag class="dark">AI Programming</skill-tag>
-                <skill-tag class="dark">Networking</skill-tag>
-                <skill-tag class="dark">Optimization</skill-tag>
+            <!-- Floating Icons -->
+            <div class="floating-icons" id="floating-icons">
+                <div class="floating-icon" id="floating-icon-cpp">C++</div>
+                <div class="floating-icon" id="floating-icon-code">&lt;/&gt;</div>
+                <div class="floating-icon" id="floating-icon-gamepad">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 25 H49 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 a8 8 0 0 1 -6.2 -2.9 l-4.4 -5.1 H24.6 l-4.4 5.1 A8 8 0 0 1 14 51 A10 10 0 0 1 4 41 v-6 A10 10 0 0 1 15 25 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+                        <path d="M18.5 33 v6 M15.5 36 h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        <circle cx="45.5" cy="32.5" r="1.9" fill="currentColor"/>
+                        <circle cx="49.5" cy="36.5" r="1.9" fill="currentColor"/>
+                    </svg>
+                </div>
             </div>
-        </div>
 
+            <!-- Photo -->
+            <img class="hero-portrait-photo" src="/assets/images/lenny-photo.png" alt="Photo de Lenny Noncent">
+        </div>
     </div>
 
-    <!-- Page Bottom -->
-    <div id="page-bottom-placeholder"></div>
+    <!--======================-->
+    <!-- SECTION: MY PROJECTS -->
+    <!--======================-->
+    <div class="section" id="section-my-projects">
+        <div class="section-head">
+            <h1>Mes Projets</h1>
+        </div>
+    </div>
+
 </body>
 
 <!-- ########################################################################################## -->
 <!-- ///////////////////////////////////////// SCRIPTS //////////////////////////////////////// -->
 <!-- ########################################################################################## -->
 
-<!-- Scripts -->
-<script src="./js/main-page.js"></script>
-<script src="./js/shared.js"></script>
+<script type="module" src="/assets/js/main.js"></script>
+<script type="module" src="/assets/js/pages/index.js"></script>
 </html>

@@ -1,0 +1,52 @@
+/* ############################################################################################# */
+/* /////////////////////////////////////// FLOATING ICON /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.floating-icon {
+
+    /* Layout */
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+
+    /* Content Layout */
+    align-items: center;
+    justify-content: center;
+
+    /* Style */
+    background-color: rgb(from var(--color-bg-primary) r g b / 55%);
+    border: solid 1px var(--color-line);
+    border-radius: var(--radius);
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 10px 24px -8px rgba(0, 0, 0, 0.5),
+        0 0 20px -4px rgb(from var(--color-accent-primary) r g b / 35%);
+    pointer-events: none;
+    animation: icon-float 6s ease-in-out infinite;
+
+    /* Font */
+    font-size: 0.95rem;
+    font-family: var(--font-family-mono);
+    font-weight: var(--font-weight-bold);
+}
+
+.floating-icon svg {
+
+    /* Layout */
+    width: 50%;
+    height: 50%;
+}
+
+@keyframes icon-float {
+    0%   { transform: translateY(0)     rotate(-4deg); }
+    50%  { transform: translateY(-1.5rem) rotate(4deg);  }
+    100% { transform: translateY(0)     rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-icon {
+        animation: none;
+    }
+}
