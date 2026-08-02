@@ -3,7 +3,6 @@ import { toggleViewportClass } from "./utils/observer.js";
 
 // Components
 import { initHeader } from "./components/header.js";
-import { initCounters } from "./components/counter.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// LISTENERS //////////////////////////////////////////

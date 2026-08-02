@@ -7,7 +7,7 @@ import { loadComponent } from "../utils/components.js";
 export async function initHeader() {
 
     // Load component 
-    const header = await loadComponent("header-placeholder", "/components/header.html");
+    const header = await loadComponent("header-placeholder", "./components/header.html");
     if (!header) return;
 
     // Inject nav links in header
