@@ -6,7 +6,7 @@
 
     /* Layout */
     display: inline-flex;
-    padding: 15px 28px;
+    padding: 1.1rem 2rem;
 
     /* Content Layout */
     align-items: center;
@@ -66,7 +66,7 @@
 .btn-ghost {
 
     /* Style */
-    border: solid 1px var(--color-line);
+    border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from var(--color-bg-primary) r g b / 40%);
     backdrop-filter: blur(6px);
 

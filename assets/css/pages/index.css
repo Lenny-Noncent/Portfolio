@@ -40,9 +40,9 @@
 
     /* Style */
     background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 8%) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 8%) 1px, transparent 1px);
-    background-size: 48px 48px;
+        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 75% 60% at 15% 48%, black 20%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 15% 48%, black 0%, transparent 85%);
 }
@@ -265,9 +265,9 @@
 
     /* Style */
     background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) 1px, transparent 1px);
-    background-size: 48px 48px;
+        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 20%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
 }

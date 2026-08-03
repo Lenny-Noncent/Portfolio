@@ -12,7 +12,7 @@
     z-index: 1000;
     width: 100%;
     height: var(--header-height);
-    padding: 0 5% 0 5%;
+    padding: 0 5%;
 
     /* Content Layout */
     justify-content: space-between;
@@ -22,7 +22,7 @@
     /* Style */
     backdrop-filter: blur(16px);
     background-color: rgb(from var(--color-bg-secondary) r g b / 55%);
-    border-bottom: solid 1px var(--color-line);
+    border-bottom: solid var(--line-thickness) var(--color-line);
     animation: header-animation both ease-out;
     animation-timeline: scroll(root block);
     animation-range: 0px 25vh;
@@ -90,7 +90,7 @@
 
     /* Layout */
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 0.3rem;
 
     /* Font */
     color: var(--color-text);
@@ -110,7 +110,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px;
+    height: var(--line-thickness);
 
     /* Content */
     content: "";
@@ -167,7 +167,7 @@
 .header .links .resume {
 
     /* Layout */
-    padding: 11px 20px;
+    padding: 0.8rem 1.45rem;
 
     /* Content Layout */
     gap: 6px;
