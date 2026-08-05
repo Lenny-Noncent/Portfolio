@@ -17,24 +17,23 @@
     /* Content Layout */
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
 
     /* Style */
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(1.2rem);
     background-color: rgb(from var(--color-bg-secondary) r g b / 55%);
     border-bottom: solid var(--line-thickness) var(--color-line);
     animation: header-animation both ease-out;
     animation-timeline: scroll(root block);
-    animation-range: 0px 25vh;
+    animation-range: 0 25vh;
 }
 
 @keyframes header-animation {
     from {
-        box-shadow: rgb(from black r g b / 25%) 0px 10px 10px;
+        box-shadow: rgb(from black r g b / 25%) 0 0.8rem 0.8rem;
         background-color: rgb(from var(--color-bg-secondary) r g b / 55%);
     }
     to {
-        box-shadow: rgb(from black r g b / 50%) 0px 10px 15px;
+        box-shadow: rgb(from black r g b / 50%) 0 0.8rem 1rem;
         background-color: rgb(from var(--color-bg-secondary) r g b / 85%);
     }
 }
@@ -62,7 +61,7 @@
 
     /* Layout */
     display: block;
-    margin-top: 6px;
+    margin-top: 0.5rem;
 
     /* Font */
     font-family: var(--font-family-mono);
@@ -170,10 +169,10 @@
     padding: 0.8rem 1.45rem;
 
     /* Content Layout */
-    gap: 6px;
+    gap: 0.5rem;
 
     /* Style */
-    border: solid 1px var(--color-accent-primary);
+    border: solid var(--line-thickness) var(--color-accent-primary);
     background-color: transparent;
 
     /* Font */
@@ -191,13 +190,10 @@
 .header .links .resume:hover,
 .header .links .resume:active {
 
-    /* Layout */
-    transform: translateY(-2px);
-
     /* Style */
     background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
     border-color: transparent;
-    box-shadow: 0 8px 24px -6px rgb(from var(--color-accent-primary) r g b / 60%);
+    box-shadow: 0 0.6rem 1.8rem -0.5rem rgb(from var(--color-accent-primary) r g b / 60%);
 
     /* Font */
     color: var(--color-bg-primary);

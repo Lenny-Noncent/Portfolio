@@ -17,12 +17,10 @@
 
     /* Style */
     background-color: rgb(from var(--color-bg-primary) r g b / 55%);
-    border: solid 1px var(--color-line);
+    border: solid var(--line-thickness) var(--color-line);
     border-radius: var(--radius);
-    backdrop-filter: blur(6px);
-    box-shadow:
-        0 10px 24px -8px rgba(0, 0, 0, 0.5),
-        0 0 20px -4px rgb(from var(--color-accent-primary) r g b / 35%);
+    backdrop-filter: blur(0.4rem);
+    box-shadow: 0 0 1.45rem -0.3rem rgb(from var(--color-accent-primary) r g b / 35%);
     pointer-events: none;
     animation: icon-float 6s ease-in-out infinite;
 

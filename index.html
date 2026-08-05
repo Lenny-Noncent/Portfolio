@@ -44,7 +44,7 @@
     <!-- Navigation links -->
     <template id="header-nav">
         <a href="#home">Accueil</a>
-        <a href="#projects">Projets</a>
+        <a href="#my-projects">Projets</a>
         <a href="#contact">Contact</a>
     </template>
 
@@ -59,65 +59,73 @@
             <div class="bg-fx-grid"></div>
         </div>
 
-        <!-- Hero Text -->
-        <div class="hero-text">
-            <h1 class="hero-role">Game<br>Programmer</h1>
-            <h2 class="hero-title">Lenny Noncent</h2>
-            <p>
-                Bonjour ! Je m'appelle Lenny et je suis actuellement en 5ème année de Game Programming
-                à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
-                vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
-                connaissances et améliorer mes compétences.
-            </p>
-            <div class="hero-actions">
-                <a href="mailto:lenny.noncent.pro@gmail.com" class="btn btn-solid">Me contacter</a>
-                <a href="#section-my-projects" class="btn btn-ghost">&gt; Voir mes projets</a>
-            </div>
+        <!-- Section Container -->
+        <div class="section-container hero">
 
-            <!-- Stats Strip -->
-            <div class="stats-strip">
-
-                <!-- Stat: years of study -->
-                <div class="stat" id="stat-years-of-study">
-                    <span class="stat-value counter-up" data-counter-target="4" data-counter-suffix="+">0</span>
-                    <span class="stat-label">années de formation</span>
+            <!-- Hero Text -->
+            <div class="hero-text">
+                <h1 class="hero-title">Game<br>Programmer</h1>
+                <h2 class="hero-subtitle">Lenny Noncent</h2>
+                <p>
+                    Bonjour ! Je m'appelle Lenny et je suis actuellement en 5ème année de Game Programming
+                    à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
+                    vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
+                    connaissances et améliorer mes compétences.
+                </p>
+                <div class="hero-actions">
+                    <a href="mailto:lenny.noncent.pro@gmail.com" class="btn btn-solid">Me contacter</a>
+                    <a href="#section-my-projects" class="btn btn-ghost">&gt; Voir mes projets</a>
                 </div>
 
-                <!-- Stat: Completed projects -->
-                <div class="stat" id="stat-completed-projects">
-                    <span class="stat-value counter-up" data-counter-target="35" data-counter-suffix="+">0</span>
-                    <span class="stat-label">projets réalisés</span>
-                </div>
+                <!-- Stats Strip -->
+                <div class="stats-strip">
 
-                <!-- Stat: Technologies used -->
-                <div class="stat" id="stat-technologies-used">
-                    <span class="stat-value counter-up" data-counter-target="10" data-counter-suffix="+">0</span>
-                    <span class="stat-label">Technologies utilisées</span>
-                </div>
-            </div>
-        </div>
+                    <!-- Stat: years of study -->
+                    <div class="stat" id="stat-years-of-study">
+                        <span class="stat-value counter-up" data-counter-target="4" data-counter-suffix="+">0</span>
+                        <span class="stat-label">années de formation</span>
+                    </div>
 
-        <!-- Hero Portrait -->
-        <div class="hero-portrait">
+                    <!-- Stat: Completed projects -->
+                    <div class="stat" id="stat-completed-projects">
+                        <span class="stat-value counter-up" data-counter-target="35" data-counter-suffix="+">0</span>
+                        <span class="stat-label">projets réalisés</span>
+                    </div>
 
-            <!-- Floating Icons -->
-            <div class="floating-icons" id="floating-icons">
-                <div class="floating-icon" id="floating-icon-cpp">C++</div>
-                <div class="floating-icon" id="floating-icon-code">&lt;/&gt;</div>
-                <div class="floating-icon" id="floating-icon-gamepad">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 25 H49 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 a8 8 0 0 1 -6.2 -2.9 l-4.4 -5.1 H24.6 l-4.4 5.1 A8 8 0 0 1 14 51 A10 10 0 0 1 4 41 v-6 A10 10 0 0 1 15 25 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-                        <path d="M18.5 33 v6 M15.5 36 h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                        <circle cx="45.5" cy="32.5" r="1.9" fill="currentColor"/>
-                        <circle cx="49.5" cy="36.5" r="1.9" fill="currentColor"/>
-                    </svg>
+                    <!-- Stat: Technologies used -->
+                    <div class="stat" id="stat-technologies-used">
+                        <span class="stat-value counter-up" data-counter-target="10" data-counter-suffix="+">0</span>
+                        <span class="stat-label">Technologies utilisées</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Photo -->
-            <img class="hero-portrait-photo" src="./assets/images/lenny-photo.png" alt="Photo de Lenny Noncent">
+            <!-- Hero Portrait -->
+            <div class="hero-portrait">
+
+                <!-- Floating Icons -->
+                <div class="floating-icons" id="floating-icons">
+                    <div class="floating-icon" id="floating-icon-cpp">C++</div>
+                    <div class="floating-icon" id="floating-icon-code">&lt;/&gt;</div>
+                    <div class="floating-icon" id="floating-icon-gamepad">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 25 H49 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 a8 8 0 0 1 -6.2 -2.9 l-4.4 -5.1 H24.6 l-4.4 5.1 A8 8 0 0 1 14 51 A10 10 0 0 1 4 41 v-6 A10 10 0 0 1 15 25 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+                            <path d="M18.5 33 v6 M15.5 36 h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                            <circle cx="45.5" cy="32.5" r="1.9" fill="currentColor"/>
+                            <circle cx="49.5" cy="36.5" r="1.9" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Photo -->
+                <img class="hero-portrait-photo" src="./assets/images/lenny-photo.png" alt="Photo de Lenny Noncent">
+            </div>
+
         </div>
     </div>
+
+    <!-- My Projects Marker -->
+    <div id="my-projects"></div>
 
     <!--======================-->
     <!-- SECTION: MY PROJECTS -->
@@ -130,62 +138,67 @@
             <div class="bg-fx-grid"></div>
         </div>
 
-        <!-- Section Head -->
-        <div class="section-head">
-            <h1>Mes Projets</h1>
-        </div>
+        <!-- Section Container -->
+        <div class="section-container my-projects">
 
-        <!-- Section Content -->
-        <div class="section-content">
+            <!-- Section Head -->
+            <div class="section-head">
+                <h1>Mes Projets</h1>
+            </div>
 
-            <!-- Project cards -->
-            <div class="project-cards" id="project-cards">
-                <div class="project-card">
+            <!-- Section Content -->
+            <div class="section-content">
 
-                    <div class="project-card-media">
-                        <img class="media" src="./assets/images/poster-passworld.jpg" alt="Passworld">
-                    </div>
+                <!-- Project cards -->
+                <div class="project-cards" id="project-cards">
+                    <div class="project-card">
 
-                    <div class="project-card-text">
-                        <h1>The Name I Wear</h1>
-                        <p>
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                            Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
-                        </p>
-                        
-                        <div class="project-card-badges">
-                            <span class="project-card-badge">
-                                <i class="fa-solid fa-user-group"></i>
-                                1
-                            </span>
-                            <span class="project-card-badge">
-                                <i class="fa-solid fa-clock"></i>
-                                2 semaines
-                            </span>
-                            <span class="project-card-badge">
-                                <i class="fa-solid fa-screwdriver-wrench"></i>
-                                C++
-                            </span>
+                        <div class="project-card-media">
+                            <img class="media" src="./assets/images/poster-passworld.jpg" alt="Passworld">
                         </div>
-                    </div>
 
+                        <div class="project-card-text">
+                            <h1>The Name I Wear</h1>
+                            <p>
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                                Ce projet, inspiré du jeu Geometry Wars, à été conçu seul sur Visual Studio en C#.
+                            </p>
+                            
+                            <div class="project-card-badges">
+                                <span class="project-card-badge">
+                                    <i class="fa-solid fa-user-group"></i>
+                                    1
+                                </span>
+                                <span class="project-card-badge">
+                                    <i class="fa-solid fa-clock"></i>
+                                    2 semaines
+                                </span>
+                                <span class="project-card-badge">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    C++
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 

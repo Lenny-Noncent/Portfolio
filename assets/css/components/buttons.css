@@ -27,7 +27,7 @@
 .btn:active {
 
     /* Layout */
-    transform: translateY(-2px);
+    transform: translateY(-0.15rem);
 }
 
 /* ############################################################################################# */
@@ -50,10 +50,10 @@
 .btn-icon:active {
 
     /* Layout */
-    transform: translateY(-2px);
+    transform: translateY(-0.15rem);
 
     /* Style */
-    text-shadow: 0 8px 12px rgb(from var(--color-accent-primary) r g b / 30%);
+    text-shadow: 0 0.6rem 0.9rem rgb(from var(--color-accent-primary) r g b / 30%);
 
     /* Font */
     color: var(--color-accent-primary);
@@ -68,7 +68,6 @@
     /* Style */
     border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from var(--color-bg-primary) r g b / 40%);
-    backdrop-filter: blur(6px);
 
     /* Font */
     color: var(--color-text);
@@ -93,7 +92,7 @@
     /* Style */
     border: none;
     background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
-    box-shadow: 0 10px 30px -8px rgb(from var(--color-accent-primary) r g b / 55%);
+    box-shadow: 0 0.8rem 2.2rem -0.6rem rgb(from var(--color-accent-primary) r g b / 55%);
 
     /* Font */
     color: var(--color-bg-primary);
@@ -104,5 +103,5 @@
 .btn-solid:active {
 
     /* Style */
-    box-shadow: 0 14px 34px -6px rgb(from var(--color-accent-primary) r g b / 70%);
+    box-shadow: 0 1rem 2.5rem -0.5rem rgb(from var(--color-accent-primary) r g b / 70%);
 }

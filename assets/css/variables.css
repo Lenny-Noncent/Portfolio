@@ -19,6 +19,12 @@
 
     /* ================ FONTS ================ */
 
+    /* Main */
+    --base-font-size: 0.9vw;
+    --min-font-size: 10px;
+    --max-font-size: calc(var(--font-scale-max-width) * var(--base-font-size) / 100vw);
+    --font-scale-max-width: 1440px;
+
     /* Color */
     --color-text: var(--color-3);
 
@@ -54,7 +60,7 @@
 
     /* ================ COMMON =============== */
 
-    --radius: 10px;
+    --radius: 0.8rem;
     --header-height: 8rem;
 
     /* ================ OTHER ================ */
