@@ -8,7 +8,7 @@
     display: grid;
 
     /* Content Layout */
-    gap: 1.2rem;
+    gap: 2.2rem;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
 }
 

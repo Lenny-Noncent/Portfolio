@@ -12,7 +12,7 @@
     z-index: 1000;
     width: 100%;
     height: var(--header-height);
-    padding: 0 5%;
+    padding-inline: min(5rem, 10%);
 
     /* Content Layout */
     justify-content: space-between;
@@ -82,7 +82,7 @@
     flex-wrap: nowrap;
 
     /* Content Layout */
-    gap: 2.2vw;
+    gap: 2.5rem;
 }
 
 .header .nav-links a {
@@ -151,7 +151,7 @@
 
     /* Content Layout */
     align-items: center;
-    gap: 1.5vw;
+    gap: 1.5rem;
 }
 
 .header .icons {
@@ -160,7 +160,7 @@
     display: flex;
 
     /* Content Layout */
-    gap: 0.5vw;
+    gap: 0.5rem;
 }
 
 .header .links .resume {

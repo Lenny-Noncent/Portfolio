@@ -1,83 +1,98 @@
+import { projects } from "../data/projects.js";
+
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
-function createProjectCards(projectIDs, )
-{
-    // Loop on each project data
-    projectIDs.forEach(projectID => {
+function createProjectCard(project) {
 
-        // Get Project Data
-        const projectData = projectsMap.get(projectID);
+    // Project Card Container
+    // ----------------------
+    const card = document.createElement("div");
+    card.className = "project-card";
+    card.dataset.projectId = project.id;
 
-        // Create card base UI Element
-        // ---------------------------
-        const card = document.createElement("div");
-        card.classList.add("project-card");
+    // Media Part
+    // ----------
+    const media = document.createElement("div");
+    media.className = "project-card-media";
+    media.innerHTML = `<img class="media" src="${project.image}" alt="${project.name}">`;
 
-        // Create media (video background, fading into the panel below)
-        // ----------------------------------------------------------------
-        const media = document.createElement("div");
-        media.classList.add("project-card-media");
+    // Text Part
+    // ---------
+    const text = document.createElement("div");
+    text.className = "project-card-text";
 
-        const video = document.createElement("video");
-        video.classList.add("background");
-        video.muted = true;
-        video.playsInline = true;
+    // Name + Description
+    text.innerHTML = `
+        <h1>${project.name}</h1>
+        <p>${project.description}</p>
+    `;
 
-        // Add video source
-        const source = document.createElement("source");
-        source.src = projectData.video;
-        source.type = "video/mp4";
-        video.appendChild(source);
+    // Badges
+    // ------
+    const badges = document.createElement("div");
+    badges.className = "project-card-badges";
 
-        media.append(video);
-
-        // Tools text
-        let toolsText = "";
-        if (projectData.engine && projectData.language) toolsText = `${projectData.engine} (${projectData.language})`;
-        else if (projectData.engine) toolsText = `${projectData.engine}`;
-        else if (projectData.language) toolsText = `${projectData.language}`;
-
-        // Create info panel: title, description, info pills, CTA button
-        // ------------------------------------------------------------------
-        const body = document.createElement("div");
-        body.classList.add("project-card-info");
-        body.innerHTML = `
-        <h1>${projectData.name} (${projectData.date})</h1>
-        <p>${projectData.description}</p>
-        <div class="project-card-badges">
-            <span class="project-card-badge">
-                <img class="tag-icon" src="./resources/icons/Icon-Members.svg">
-                ${projectData.teamSize}
-            </span>
-            <span class="project-card-badge">
-                <img class="tag-icon" src="./resources/icons/Icon-Clock.svg">
-                ${projectData.duration}
-            </span>
-            <span class="project-card-badge">
-                <img class="tag-icon" src="./resources/icons/Icon-Tools.svg">
-                ${toolsText}
-            </span>
-        </div>
-        <div class="project-card-cta">
-            <span class="project-card-cta-btn">Voir le projet</span>
-        </div>
+    // Team size
+    if (project.teamSize != null) {
+        badges.innerHTML += `
+        <span class="project-card-badge">
+            <i class="fa-solid fa-user-group"></i>
+            ${project.teamSize}
+        </span>
         `;
+    }
 
-        // Assembly Card
-        // -------------
-        card.append(media);
-        card.append(body);
+    // Duration
+    if (project.duration) {
+        badges.innerHTML += `
+        <span class="project-card-badge">
+            <i class="fa-solid fa-clock"></i>
+            ${project.duration}
+        </span>
+        `;
+    }
 
-        // Add Listeners
-        // -------------
-        card.addEventListener("click", () => onClick(projectID));
-        card.addEventListener("mouseenter", () => onMouseEnter(video));
-        video.addEventListener("ended", () => onVideoEnded(video));
+    // Language
+    if (project.language) {
+        badges.innerHTML += `
+        <span class="project-card-badge">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            ${project.language}
+        </span>
+        `;
+    }
 
-        // Add card to projects grid
-        // -------------------------
-        projectsGrid.appendChild(card);
+    // Engine
+    if (project.engine) {
+        badges.innerHTML += `
+        <span class="project-card-badge">
+            <i class="fa-solid fa-gamepad"></i>
+            ${project.engine}
+        </span>
+        `;
+    }
+
+    // Add Badges only if has children
+    if (badges.children.length > 0) {
+        text.appendChild(badges);
+    }
+
+    // Add Media & Text Part to Card
+    card.append(media, text);
+    return card;
+}
+
+export function renderProjects(projectsList) {
+
+    // Return if container is not valid
+    const container = document.getElementById("project-cards");
+    if (!container) return;
+
+    // Fill Container
+    container.innerHTML = "";
+    projectsList.forEach(project => {
+        container.appendChild(createProjectCard(project));
     });
 }
