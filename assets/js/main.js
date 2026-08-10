@@ -14,9 +14,9 @@ import { renderProjects } from "./components/project-card.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     await initHeader();
-    toggleViewportClass(".hidden", "show", {
-        rootMargin: "0px 0px -100px 0px"
-    });
     renderProjects(projects);
+    toggleViewportClass(".hidden", "show", {
+        rootMargin: "0px 0px -75px 0px"
+    });
 })
 

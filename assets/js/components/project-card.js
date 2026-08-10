@@ -81,6 +81,31 @@ function createProjectCard(project) {
 
     // Add Media & Text Part to Card
     card.append(media, text);
+
+    // Perspective Effect
+    // ------------------
+
+    // Add Perspectibe effect when mouse hover
+    card.addEventListener("mousemove", (event) => {
+
+        // Variables
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+
+        // Update Style
+        card.style.transform = `translateY(-0.5rem) perspective(40rem) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`;
+        card.style.zIndex = 100;
+    });
+
+    // Reset style when mouse leave
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+        card.style.zIndex = 1;
+    });
+
     return card;
 }
 
