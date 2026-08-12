@@ -1,5 +1,5 @@
 // Data
-import { projects } from "./Data/projects.js";
+import { projects } from "./data/projects.js";
 
 // Utils
 import { toggleViewportClass } from "./utils/observer.js";
