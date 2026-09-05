@@ -19,7 +19,7 @@
 
     /* Font */
     font-family: var(--font-family-mono);
-    font-size: var(--mono-font-size);
+    font-size: var(--font-size-normal);
     text-decoration: none;
 }
 
@@ -91,8 +91,10 @@
 
     /* Style */
     border: none;
-    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
     box-shadow: 0 0.8rem 2.2rem -0.6rem rgb(from var(--color-accent-primary) r g b / 55%);
+    background: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
+    animation: var(--gradient-animation);
 
     /* Font */
     color: var(--color-bg-primary);

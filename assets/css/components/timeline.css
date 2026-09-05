@@ -1,0 +1,122 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// TIMELINE ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+.timeline-container {
+
+    /* Variables */
+    --timeline-icon-size: 4.5rem;
+    --timeline-line-thickness: 0.3rem;
+
+    /* Layout */
+    position: relative; 
+}
+
+.timeline-line {
+
+    /* Layout */
+    content: ""; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((var(--timeline-icon-size) - var(--timeline-line-thickness)) * 0.5);
+    width: var(--timeline-line-thickness);
+
+    /* Color */
+    background: linear-gradient(
+        to bottom,
+        var(--color-accent-primary),
+        var(--color-accent-secondary),
+        var(--color-accent-primary)
+    );
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////// TIMELINE ITEM /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.timeline-item {
+
+    /* Layout */
+    display: flex;
+    margin-bottom: 3rem;
+
+    /* Content Layout */
+    align-items: flex-start;
+}
+
+.timeline-item-icon {
+
+    /* Layout */
+    display: flex;
+    width: var(--timeline-icon-size);
+    height: var(--timeline-icon-size);
+    margin-right: 3rem;
+    flex-shrink: 0;
+    z-index: 1;
+
+    /* Content Layout */
+    align-items: center;
+    justify-content: center;
+
+    /* Style */
+    border-radius: var(--radius);
+    background-image: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
+    animation: var(--gradient-animation);
+}
+
+.timeline-item-icon i {
+
+    /* Font */
+    color: var(--color-bg-secondary);
+    font-size: 2rem;
+}
+
+.timeline-item-box {
+
+    /* Layout */
+    display: block;
+    flex: 1;
+    width: 100%;
+    padding: 3rem;
+
+    /* Style */
+    border-radius: 1.6rem;
+    backdrop-filter: blur(0.2rem);
+    border: solid var(--line-thickness) var(--color-line);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////// TIMELINE BOX CONTENT /////////////////////////////////// */
+/* ############################################################################################# */
+
+.timeline-date {
+
+    /* Layout */
+    margin-bottom: 0.5rem;
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-size: var(--font-size-mono);
+    font-family: var(--font-family-mono);
+}
+
+.timeline-item-box h1 {
+
+    /* Font */
+    font-size: 1.3rem;
+}
+
+.timeline-item-box h2 {
+
+    /* Font */
+    color: whitesmoke;
+    font-size: 1.3rem;
+    font-weight: var(--font-weight-light);
+}
+
+.timeline-item-box p {
+
+}

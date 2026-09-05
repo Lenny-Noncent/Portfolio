@@ -8,8 +8,8 @@
     display: grid;
 
     /* Content Layout */
-    gap: 2.2rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
 }
 
 /* ############################################################################################# */
@@ -24,8 +24,8 @@
     /* Style */
     border-radius: 1.6rem;
     border: solid var(--line-thickness) var(--color-line);
-    background-color: rgb(from var(--color-bg-secondary) r g b / 25%);
-    backdrop-filter: blur(1.2rem);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
+    backdrop-filter: blur(0.2rem);
     box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
     transition: var(--project-card-transition);
 }
@@ -40,6 +40,30 @@
     box-shadow: 0 0 4rem -0.8rem rgb(from var(--color-accent-primary) r g b / 45%);
 }
 
+.project-card::before {
+
+    /* Layout */
+    content: "";
+    position: absolute;
+    padding: var(--line-thickness);
+    inset: 0;
+    z-index: -1;
+
+    /* Style */
+    opacity: 0;
+    border-radius: inherit;
+    background-image: var(--simple-gradient-bg);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    transition: var(--project-card-transition);
+}
+
+.project-card:hover::before {
+
+    /* Style */
+    opacity: 1;
+}
+
 /* ############################################################################################# */
 /* /////////////////////////////////////////// MEDIA /////////////////////////////////////////// */
 /* ############################################################################################# */
@@ -48,7 +72,7 @@
 
     /* Layout */
     position: relative;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4.5 / 3;
 }
 
 .project-card-media .media {
@@ -80,7 +104,7 @@
 
     /* Layout */
     display: flex;
-    gap: 0.7rem;
+    gap: 1rem;
     padding: 1.6rem;
     
     /* Content Layout */
@@ -106,8 +130,6 @@
 
     /* Font */
     color: var(--color-3);
-    font-size: var(--small-font-size);
-    font-weight: var(--light-font-weight);
     line-height: 1.5;
 }
 
@@ -136,11 +158,11 @@
     gap: 0.5rem;
 
     /* Style */
-    background-color: rgb(from var(--color-3) r g b / 12%);
+    background-color: rgb(from var(--color-accent-primary) r g b / 10%);
     border-radius: var(--btn-radius);
 
     /* Font */
-    color: var(--color-3);
+    color: var(--color-accent-secondary);
     font-size: 0.8rem;
     font-family: var(--font-family-mono);
     white-space: nowrap;

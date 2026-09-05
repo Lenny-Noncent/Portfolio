@@ -42,6 +42,23 @@
     /* Layout */
 }
 
+.section-head h1 {
+
+    /* Layout */
+    width: fit-content;
+
+    /* Font */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* Style */
+    background-image: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: var(--gradient-animation);
+}
+
 /* ############################################################################################# */
 /* ////////////////////////////////////////// CONTENT ////////////////////////////////////////// */
 /* ############################################################################################# */

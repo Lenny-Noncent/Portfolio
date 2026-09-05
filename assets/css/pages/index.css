@@ -29,7 +29,7 @@
     inset: 0;
 
     /* Style */
-    background-image: radial-gradient(ellipse 110% 75% at 0% 0%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
+    background-image: radial-gradient(ellipse 110% 75% at 0% 0%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
 }
 
 .hero .bg-fx-grid {
@@ -40,8 +40,8 @@
 
     /* Style */
     background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
     background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 75% 60% at 15% 48%, black 20%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 15% 48%, black 0%, transparent 85%);
@@ -58,6 +58,7 @@
     margin-block: 2.2rem 1rem;
 
     /* Font */
+    color: var(--color-accent-secondary);
     font-size: 4rem;
     line-height: 1.02;
 }
@@ -71,7 +72,7 @@
     color: var(--color-accent-primary);
     font-family: var(--font-family-mono);
     font-size: 1.1rem;
-    font-weight: var(--normal-font-weight);
+    font-weight: var(--font-weight-normal);
 }
 
 .hero-actions {
@@ -145,16 +146,18 @@
 
     /* Font */
     color: transparent;
+    -webkit-text-fill-color: transparent;
     font-size: 2.5rem;
     font-family: var(--font-family-display);
     font-weight: var(--font-weight-bold);
 
     
     /* Style */
-    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    background-image: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: var(--gradient-animation);
 }
 
 .stats-strip .stat-label {
@@ -254,7 +257,7 @@
     inset: 0;
 
     /* Style */
-    background-image: radial-gradient(ellipse 120% 50% at 100% 80%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
+    background-image: radial-gradient(ellipse 120% 50% at 100% 80%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
 }
 
 .my-projects .bg-fx-grid {
@@ -265,8 +268,8 @@
 
     /* Style */
     background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
     background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 20%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);

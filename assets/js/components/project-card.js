@@ -1,5 +1,3 @@
-import { projects } from "../data/projects.js";
-
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
@@ -92,11 +90,11 @@ function createProjectCard(project) {
         const rect = card.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-        const rotateY = ((x / rect.width) - 0.5) * 12;
-        const rotateX = ((y / rect.height) - 0.5) * -12;
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((y / rect.height) - 0.5) * -8;
 
         // Update Style
-        card.style.transform = `translateY(-0.5rem) perspective(40rem) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`;
+        card.style.transform = `perspective(80rem) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         card.style.zIndex = 100;
     });
 
