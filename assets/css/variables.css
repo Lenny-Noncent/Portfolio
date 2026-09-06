@@ -73,7 +73,7 @@
         var(--color-accent-primary)
     );
     --gradient-bg-size: 200% 100%;
-    --gradient-animation: gradient-animation 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    --gradient-animation: gradient-animation 3s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 
     /* ================ COMMON =============== */
 

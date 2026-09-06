@@ -257,7 +257,7 @@
     inset: 0;
 
     /* Style */
-    background-image: radial-gradient(ellipse 120% 50% at 100% 80%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
+    background-image: radial-gradient(ellipse 80% 120% at 120% 100%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
 }
 
 .my-projects .bg-fx-grid {
@@ -275,3 +275,16 @@
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
 }
 
+/* ############################################################################################# */
+/* ///////////////////////////////////////// MY JOURNEY //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.my-journey .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image: radial-gradient(ellipse 80% 120% at 120% 0%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
+}
