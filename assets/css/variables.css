@@ -35,6 +35,7 @@
 
     /* Weight */
     --font-weight-bold: 700;
+    --font-weight-semi-bold: 550;
     --font-weight-normal: 400;
     --font-weight-light: 300;
 
@@ -43,6 +44,9 @@
     --font-size-h2: 2rem;
     --font-size-normal: 1.2rem;
     --font-size-mono: 0.85rem;
+
+    /* Spacing */
+    --letter-spacing-header: -0.02rem;
 
     /* =============== BUTTONS =============== */
 

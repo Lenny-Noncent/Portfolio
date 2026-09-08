@@ -54,7 +54,7 @@ h1 {
     font-family: var(--font-family-display);
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
-    letter-spacing: -0.02em;
+    letter-spacing: var(--letter-spacing-header);
     color: var(--color-accent-secondary);
 }
 
@@ -68,7 +68,7 @@ h2 {
     font-family: var(--font-family-display);
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-bold);
-    letter-spacing: -0.02em;
+    letter-spacing: var(--letter-spacing-header);
     color: var(--color-accent-secondary);
 }
 

@@ -188,6 +188,7 @@
 
     /* Font */
     font-size: 0.8rem;
+    font-weight: var(--font-weight-semi-bold);
     color: var(--color-accent-primary);
 }
 
