@@ -2,6 +2,8 @@
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
+// ############################################# Main #############################################
+
 export function observeViewport(selector, callback, options = {}) {
 
     // Create Observer
@@ -35,12 +37,28 @@ export function onEnterViewportOnce(selector, callback, options = {}) {
     }, options);
 }
 
-export function toggleViewportClass(selector, className, options = {}) {
+// ######################################### Class Helpers ########################################
+
+export function toggleViewportClass(selector, className, doOnce, options = {}) {
 
     // Observe elements
     observeViewport(selector, (observer, entry) => {
 
         // Toggle css class
         entry.target.classList.toggle(className, entry.isIntersecting);
+        if (doOnce) observer.unobserve(entry.target);
+    }, options);
+}
+
+export function addViewportClass(selector, className, doOnce = false, options = {}) {
+
+    // Observe elements
+    observeViewport(selector, (observer, entry) => {
+
+        // Toggle css class
+        if (entry.isIntersecting) {
+            entry.target.classList.add(className);
+            if (doOnce) observer.unobserve(entry.target);
+        }
     }, options);
 }

@@ -24,8 +24,8 @@
     /* Style */
     border-radius: 1.6rem;
     border: solid var(--line-thickness) var(--color-line);
-    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
-    backdrop-filter: blur(0.2rem);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 15%);
+    backdrop-filter: blur(1rem);
     box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
     transition: var(--project-card-transition);
 }
@@ -37,6 +37,7 @@
 
     /* Style */
     border-color: rgb(from var(--color-accent-primary) r g b / 45%);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
     box-shadow: 0 0 4rem -0.8rem rgb(from var(--color-accent-primary) r g b / 45%);
 }
 

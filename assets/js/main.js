@@ -2,10 +2,9 @@
 import { projects } from "./data/projects.js";
 
 // Utils
-import { toggleViewportClass } from "./utils/observer.js";
+import { addViewportClass } from "./utils/observer.js";
 
 // Components
-import { initBackgroundParticles } from "./components/background-particles.js";
 import { initHeader } from "./components/header.js";
 import { renderProjects } from "./components/project-card.js";
 
@@ -15,10 +14,9 @@ import { renderProjects } from "./components/project-card.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     await initHeader();
-    initBackgroundParticles();
     renderProjects(projects);
-    toggleViewportClass(".hidden", "show", {
-        rootMargin: "0px 0px -75px 0px"
-    });
+    addViewportClass(".appear-from-bottom", "appear-active", true, {
+        rootMargin: "0px 0px 0px 0px"
+    })
 })
 

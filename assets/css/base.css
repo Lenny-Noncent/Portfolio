@@ -73,19 +73,35 @@ h2 {
 }
 
 /* ############################################################################################# */
-/* /////////////////////////////////////// HIDDEN & SHOW /////////////////////////////////////// */
+/* /////////////////////////////////////////// APPEAR ////////////////////////////////////////// */
 /* ############################################################################################# */
 
-.hidden {
+.appear-from-bottom {
+
+    /* Layout */
+    transform: translateY(1rem);
+
+    /* Style */
     opacity: 0;
-    scale: 0.97;
-    transform: translateY(2rem);
-    transition: all 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+    transition: all 5s ease-in-out;
 }
 
-.show {
+.appear-from-right {
+
+    /* Layout */
+    transform: translateX(1rem);
+
+    /* Style */
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.appear-active {
+
+    /* Layout */
+    transform: none;
+
+    /* Style */
     opacity: 1;
-    scale: 1;
-    transform: translateY(0);
 }
 
