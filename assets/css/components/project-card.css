@@ -32,9 +32,6 @@
 
 .project-card:hover {
 
-    /* Layout */
-    transform: translateY(-0.5rem);
-
     /* Style */
     border-color: rgb(from var(--color-accent-primary) r g b / 45%);
     background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
@@ -116,7 +113,7 @@
 
     /* Font */
     color: whitesmoke;
-    font-size: 1.3rem;
+    font-size: var(--font-size-h3);
     letter-spacing: -0.01em;
 }
 

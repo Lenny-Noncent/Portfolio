@@ -84,7 +84,7 @@
 
     /* Style */
     border-radius: 1.6rem;
-    backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(1rem);
     border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
 }
@@ -132,7 +132,7 @@
     /* Font */
     color: transparent;
     -webkit-text-fill-color: transparent;
-    font-size: 2rem;
+    font-size: var(--font-size-h2);
 
     /* Style */
     background-image: var(--gradient-bg);

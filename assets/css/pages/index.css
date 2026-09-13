@@ -43,7 +43,7 @@
         linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
         linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
     background-size: var(--grid-cell-size) var(--grid-cell-size);
-    mask-image: radial-gradient(ellipse 75% 60% at 15% 48%, black 20%, transparent 85%);
+    mask-image: radial-gradient(ellipse 55% 45% at 15% 48%, black 0%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 55% 45% at 15% 48%, black 0%, transparent 85%);
 }
 
@@ -257,7 +257,7 @@
     inset: 0;
 
     /* Style */
-    background-image: radial-gradient(ellipse 80% 120% at 120% 100%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
+    background-image: radial-gradient(ellipse 90% 120% at 120% 100%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
 }
 
 .my-projects .bg-fx-grid {
@@ -271,8 +271,8 @@
         linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
         linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
     background-size: var(--grid-cell-size) var(--grid-cell-size);
-    mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 20%, transparent 85%);
-    -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
+    mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 55% 55% at 50% 45%, black 0%, transparent 85%);
 }
 
 /* ############################################################################################# */
@@ -286,5 +286,173 @@
     inset: 0;
 
     /* Style */
-    background-image: radial-gradient(ellipse 80% 120% at 120% 0%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
+    background-image: radial-gradient(ellipse 90% 120% at 120% 0%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%);
+}
+
+.my-journey .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
+    mask-image: radial-gradient(ellipse 70% 40% at 80% 40%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 40% at 80% 40%, black 0%, transparent 85%);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////// MY TECHNICAL SKILLS //////////////////////////////////// */
+/* ############################################################################################# */
+
+.my-technical-skills {
+
+    /* Variables */
+    --skill-item-icon-size: 5rem;
+    --skill-item-padding: 0.5rem;
+    --skill-item-width: calc(var(--skill-item-icon-size) + var(--skill-item-padding) * 2)
+}
+
+.my-technical-skills .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image: radial-gradient(ellipse 90% 100% at 50% 145%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 90%);
+}
+
+.my-technical-skills .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
+    mask-image: radial-gradient(ellipse 55% 45% at 50% 48%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 100%, black 0%, transparent 85%);
+}
+
+.my-technical-skills .skills-panel-grid {
+
+    /* Layout */
+    display: grid;
+
+    /* Content Layout */
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+}
+
+.my-technical-skills .skills-panel {
+
+    /* Layout */
+    display: flex;
+    padding: 3rem;
+    flex-direction: column;
+
+    /* Content Layout */
+    gap: 3rem;
+
+    /* Style */
+    backdrop-filter: blur(1rem);
+    border-radius: var(--radius);
+    border: solid var(--line-thickness) var(--color-line);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
+}
+
+.my-technical-skills .skills-panel h1 {
+
+    /* Font */
+    color: whitesmoke;
+    font-size: var(--font-size-h3);
+    font-family: var(--font-family-display);
+    font-weight: var(--bold-font-weight);
+}
+
+.my-technical-skills .skills-panel-items {
+
+    /* Layout */
+    display: grid;
+
+    /* Content Layout */
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--skill-item-width), 1fr));
+}
+
+.my-technical-skills .skill-item {
+    
+    /* Layout */
+    display: flex;
+    padding: var(--skill-item-padding);
+
+    /* Content Layout */
+    gap: 0.6rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.my-technical-skills .skill-item-icon-box {
+    
+    /* Layout */
+    display: flex;
+    width: var(--skill-item-icon-size);
+    height: var(--skill-item-icon-size);
+
+    /* Content Layout */
+    align-items: center;
+    justify-content: center;
+
+    /* Style */
+    border: solid var(--line-thickness) var(--color-line);
+    border-radius: var(--radius);
+    background-color: var(--color-bg-secondary);
+}
+
+.my-technical-skills .skill-item-icon {
+    
+    /* Layout */
+    width: fit-content;
+    
+    /* Font */
+    color: transparent;
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h3);
+    -webkit-text-fill-color: transparent;
+
+    /* Style */
+    background-image: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: var(--gradient-animation);
+}
+
+.my-technical-skills .skill-item-icon i {
+
+    /* Font */
+    font-size: calc(var(--font-size-h3) * 1.3);
+}
+
+.my-technical-skills .skill-item-label {
+
+    /* Layout */
+    max-width: var(--skill-item-width);
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
+
+    /* Font */
+    color: var(--color-text);
+    font-size: var(--font-size-mono);
+    font-weight: var(--font-weight-normal);
+    font-family: var(--font-family-mono);
 }
