@@ -11,8 +11,8 @@ export async function initHeader() {
     if (!header) return;
 
     // Inject nav links in header
-    const template = document.getElementById("header-nav");
-    const nav = document.querySelector(".nav-links");
+    const template = document.getElementById("navigation-template");
+    const nav = header.querySelector(".nav-links");
     if (!template || !nav) return;
     nav.append(template.content.cloneNode(true));
 }

@@ -9,8 +9,8 @@
     position: fixed;
     left: 0;
     top: 0;
+    right: 0;
     z-index: 1000;
-    width: 100%;
     height: var(--header-height);
     padding-inline: min(5rem, 10%);
 
@@ -54,9 +54,10 @@
     display: block;
 
     /* Font */
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 0%);
 
     /* Style */
     background-image: var(--gradient-bg);
@@ -64,6 +65,13 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: var(--gradient-animation);
+    transition: text-shadow 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.header .logo:hover h1 {
+
+    /* Font */
+    text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 100%);
 }
 
 .header .logo span {
@@ -73,10 +81,10 @@
     margin-top: 0.5rem;
 
     /* Font */
-    font-family: var(--font-family-mono);
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-mono);
     letter-spacing: 0.02em;
+    font-family: var(--font-family-mono);
+    font-weight: var(--font-weight-normal);
     color: var(--color-text);
 }
 
@@ -88,7 +96,6 @@
 
     /* Layout */
     display: flex;
-    flex-wrap: nowrap;
 
     /* Content Layout */
     gap: 2.5rem;
@@ -105,7 +112,6 @@
     font-size: var(--font-size-mono);
     font-family: var(--font-family-mono);
     text-decoration: none;
-    white-space: nowrap;
 
     /* Style */
     transition: color 0.25s ease;

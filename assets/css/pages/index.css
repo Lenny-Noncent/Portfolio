@@ -371,10 +371,10 @@
 .my-technical-skills .skills-panel h1 {
 
     /* Font */
-    color: whitesmoke;
+    color: var(--color-accent-primary);
     font-size: var(--font-size-h3);
     font-family: var(--font-family-display);
-    font-weight: var(--bold-font-weight);
+    font-weight: var(--font-weight-bold);
 }
 
 .my-technical-skills .skills-panel-items {
