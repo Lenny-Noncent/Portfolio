@@ -312,7 +312,7 @@
 
     /* Variables */
     --skill-item-icon-size: 5rem;
-    --skill-item-padding: 0.5rem;
+    --skill-item-padding: 0.6rem;
     --skill-item-width: calc(var(--skill-item-icon-size) + var(--skill-item-padding) * 2)
 }
 

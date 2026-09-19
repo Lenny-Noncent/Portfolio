@@ -49,6 +49,10 @@
     /* Spacing */
     --letter-spacing-header: -0.02rem;
 
+    /* ============== SCROLLBAR ============== */
+
+    --scrollbar-thickness: 8px;
+
     /* =============== BUTTONS =============== */
 
     --btn-radius: 999px;

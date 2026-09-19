@@ -25,6 +25,7 @@
     padding-block: 1.5rem;
 
     /* Content Layout */
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
 
@@ -112,12 +113,3 @@
     font-family: var(--font-family-mono);
 }
 
-/* ############################################################################################# */
-/* ///////////////////////////////////// FOOTER BACK TO TOP //////////////////////////////////// */
-/* ############################################################################################# */
-
-.footer #btn-back-to-top {
-
-    /* Font */
-    font-size: var(--font-size-mono);
-}
