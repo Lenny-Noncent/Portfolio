@@ -27,6 +27,18 @@
 </head>
 
 <!-- ########################################################################################## -->
+<!-- //////////////////////////////////////// TEMPLATES /////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<!-- Navigation links -->
+<template id="navigation-template">
+    <a href="#home">Accueil</a>
+    <a href="#my-projects">Projets</a>
+    <a href="#my-journey">Parcours</a>
+    <a href="#my-technical-skills">Compétences</a>
+</template>
+
+<!-- ########################################################################################## -->
 <!-- ////////////////////////////////////////// BODY ////////////////////////////////////////// -->
 <!-- ########################################################################################## -->
 
@@ -41,13 +53,7 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Navigation links -->
-    <template id="navigation-template">
-        <a href="#home">Accueil</a>
-        <a href="#my-projects">Projets</a>
-        <a href="#my-journey">Parcours</a>
-        <a href="#my-technical-skills">Compétences</a>
-    </template>
+
 
     <!--===============-->
     <!-- SECTION: HERO -->
@@ -142,7 +148,17 @@
 
             <!-- Section Head -->
             <div class="section-head">
-                <h1>Mes Projets</h1>
+                <div class="section-head-left">
+                    <h1>Mes Projets</h1>
+                    <p>
+                        Voici une sélection de projets mettant en avant mon travail en programmation gameplay et systèmes, 
+                        développés avec différentes technologies, notamment C++, C#, Unreal Engine et Unity.
+                        D’autres projets sont également à découvrir dans mon portfolio.
+                    </p>
+                </div>
+                <div class="section-head-right">
+                    <a href="./pages/projects.html" class="btn btn-solid">Voir tous les projets</a>
+                </div>
             </div>
 
             <!-- Project cards -->

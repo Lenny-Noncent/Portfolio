@@ -250,6 +250,33 @@
 /* //////////////////////////////////////// MY PROJECTS //////////////////////////////////////// */
 /* ############################################################################################# */
 
+.my-projects .section-head {
+
+    /* Layout */
+    display: flex;
+    align-items: end;
+    
+    /* Content Layout */
+    gap: 10%;
+    justify-content: space-between;
+}
+
+.my-projects .section-head-right {
+
+    /* Layout */
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .my-projects .section-head {
+        display: block;
+    }
+
+    .my-projects .section-head-right {
+        margin-top: 1.5rem;
+    }
+}
+
 .my-projects .bg-fx-glow {
 
     /* Layout */
