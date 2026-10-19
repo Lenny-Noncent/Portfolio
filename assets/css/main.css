@@ -2,6 +2,7 @@
 @import './base.css';
 @import './variables.css';
 @import './components/buttons.css';
+@import './components/dropdown.css';
 @import './components/floating-icon.css';
 @import './components/footer.css';
 @import './components/header.css';

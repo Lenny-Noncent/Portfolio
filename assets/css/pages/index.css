@@ -338,6 +338,7 @@
 .my-technical-skills {
 
     /* Variables */
+    --skill-item-font-size: 1.5rem;
     --skill-item-icon-size: 5rem;
     --skill-item-padding: 0.6rem;
     --skill-item-width: calc(var(--skill-item-icon-size) + var(--skill-item-padding) * 2)
@@ -392,7 +393,7 @@
     backdrop-filter: blur(1rem);
     border-radius: var(--radius);
     border: solid var(--line-thickness) var(--color-line);
-    background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
+    background-color: rgb(from whitesmoke r g b / 1%);
 }
 
 .my-technical-skills .skills-panel h1 {
@@ -440,7 +441,7 @@
     /* Style */
     border: solid var(--line-thickness) var(--color-line);
     border-radius: var(--radius);
-    background-color: var(--color-bg-secondary);
+    background-color: rgb(from whitesmoke r g b / 1%);
 }
 
 .my-technical-skills .skill-item-icon {
@@ -452,7 +453,7 @@
     color: transparent;
     font-family: var(--font-family-display);
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-h3);
+    font-size: var(--skill-item-font-size);
     -webkit-text-fill-color: transparent;
 
     /* Style */
@@ -466,7 +467,7 @@
 .my-technical-skills .skill-item-icon i {
 
     /* Font */
-    font-size: calc(var(--font-size-h3) * 1.3);
+    font-size: calc(var(--skill-item-font-size) * 1.3);
 }
 
 .my-technical-skills .skill-item-label {

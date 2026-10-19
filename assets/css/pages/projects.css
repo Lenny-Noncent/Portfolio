@@ -1,0 +1,36 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////// ALL PROJECTS /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.section-container.all-projects {
+
+    /* Layout */
+    padding-top: calc(var(--header-height) + 4.5rem);
+}
+
+.all-projects .section-head {
+
+    /* Layout */
+    display: flex;
+    align-items: end;
+    
+    /* Content Layout */
+    gap: 10%;
+    justify-content: space-between;
+}
+
+.all-projects .section-head-right {
+
+    /* Layout */
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .all-projects .section-head {
+        display: block;
+    }
+
+    .all-projects .section-head-right {
+        margin-top: 1.5rem;
+    }
+}

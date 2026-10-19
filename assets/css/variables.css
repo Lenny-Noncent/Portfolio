@@ -88,8 +88,4 @@
 
     --radius: 0.8rem;
     --header-height: 8rem;
-
-    /* ================ OTHER ================ */
-
-    --project-card-transition: all 0.25s cubic-bezier(0.5, 1, 0.89, 1);
 }

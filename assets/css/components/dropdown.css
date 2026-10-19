@@ -1,0 +1,155 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// DROPDOWN ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+select,
+::picker(select) {
+
+    /* Default Style */
+    appearance: base-select;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// SELECT ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+select {
+
+    /* Layout */
+    display: inline-flex;
+    padding: 1.1rem 2rem;
+
+    /* Content Layout */
+    align-items: center;
+    justify-content: center;
+    
+    /* Style */
+    cursor: pointer;
+    border: none;
+    border-radius: var(--btn-radius);
+    box-shadow: 0 0.8rem 2.2rem -0.6rem rgb(from var(--color-accent-primary) r g b / 55%);
+    background: var(--gradient-bg);
+    background-size: var(--gradient-bg-size);
+    animation: var(--gradient-animation);
+    transition: var(--btn-transition);
+
+    /* Font */
+    color: var(--color-bg-primary);
+    font-weight: 500;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-normal);
+    text-decoration: none;
+}
+
+select:hover {
+
+    /* Style */
+    box-shadow: 0 1rem 2.5rem -0.5rem rgb(from var(--color-accent-primary) r g b / 70%);
+}
+
+select:open::picker-icon {
+
+    /* Style */
+    rotate: 180deg;
+}
+
+selectedcontent .icon {
+
+    /* Layout */
+    display: none;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// PICKER ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+::picker(select) {
+
+    /* Style */
+    opacity: 0;
+    border-radius: var(--radius);
+    border: solid var(--line-thickness) var(--color-line);
+    backdrop-filter: blur(1rem);
+    background-color: rgb(from var(--color-bg-secondary) r g b / 80%);
+    box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
+    transition: all 0.25s allow-discrete;
+}
+
+:open::picker(select) {
+
+    /* Style */
+    opacity: 1;
+}
+
+@starting-style {
+    :open::picker(select) {
+
+        /* Style */
+        opacity: 0;
+    }
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// OPTION ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+option {
+
+    /* Layout */
+    display: flex;
+    padding-block: 0.8rem;
+    padding-inline: 2rem;
+    
+    /* Content Layout */
+    gap: 1.8rem;
+    justify-content: flex-start;
+
+    /* Font */
+    color: var(--color-text);
+    font: var(--font-family-mono);
+    font-weight: var(--font-weight-light);
+
+    /* Style */
+    background: none;
+    transition: var(--btn-transition);
+}
+
+option:first-of-type {
+
+    /* Style */
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+option:last-of-type {
+
+    /* Style */
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+option:checked {
+
+    /* Font */
+    font-weight: 500;
+}
+
+option:focus {
+
+    /* Font */
+    color: var(--color-bg-primary);
+
+    /* Style */
+    background: var(--gradient-bg);
+    animation: var(--gradient-animation);
+}
+
+option:hover {
+
+    /* Style */
+    background-color: rgb(from var(--color-bg-secondary) r g b / 80%);
+}
+
+option::checkmark {
+
+    /* Layout */
+    content: none;
+}

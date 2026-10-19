@@ -18,13 +18,16 @@
 
 .project-card {
 
+    /* Variables */
+    --project-card-transition: all 0.25s cubic-bezier(0.5, 1, 0.89, 1);
+
     /* Content Layout */
     overflow: hidden;
 
     /* Style */
     border-radius: 1.6rem;
     border: solid var(--line-thickness) var(--color-line);
-    background-color: rgb(from var(--color-bg-secondary) r g b / 15%);
+    background-color: rgb(from whitesmoke r g b / 1%);
     backdrop-filter: blur(1rem);
     box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
     transition: var(--project-card-transition);

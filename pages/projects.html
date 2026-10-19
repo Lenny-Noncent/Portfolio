@@ -23,7 +23,7 @@
 
     <!-- Link to styles -->
     <link rel="stylesheet" href="../assets/css/main.css"/>
-    <link rel="stylesheet" href="../assets/css/pages/index.css"/>
+    <link rel="stylesheet" href="../assets/css/pages/projects.css"/>
 </head>
 
 <!-- ########################################################################################## -->
@@ -40,6 +40,45 @@
 
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
+
+    <!--=======================-->
+    <!-- SECTION: ALL PROJECTS -->
+    <!--=======================-->
+    <div class="section all-projects">
+        
+        <!-- Section Container -->
+        <div class="section-container all-projects">
+
+            <!-- Section Head -->
+            <div class="section-head">
+                <div class="section-head-left">
+                    <h1>Mes Projets</h1>
+                </div>
+                <div class="section-head-right">
+
+                    <!-- Drop down -->
+                    <div>
+                        <select id="projects-filter">
+                            <button>
+                                <selectedcontent></selectedcontent>
+                            </button>
+
+                            <option value="all-projects">All Projects</option>
+                            <option value="unreal-engine">Unreal Engine</option>
+                            <option value="unity">Unity</option>
+                            <option value="c++">C++</option>
+                            <option value="c#">C#</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Project cards -->
+            <div class="project-cards" id="project-cards"></div>
+
+        </div>
+    </div>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>

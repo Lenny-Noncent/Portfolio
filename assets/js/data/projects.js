@@ -9,7 +9,7 @@ export const projects = [
         id: "the-name-i-wear",
         name: "The Name I Wear",
         year: 2026,
-        image: "./assets/images/poster-passworld.jpg",
+        image: "assets/images/poster-passworld.jpg",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 
@@ -30,7 +30,7 @@ export const projects = [
         id: "inverse-kinematic-unity",
         name: "Inverse Kinematic",
         year: 2025,
-        image: "./assets/images/poster-inverse-kinematic.jpg",
+        image: "assets/images/poster-inverse-kinematic.jpg",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 
@@ -47,7 +47,7 @@ export const projects = [
         id: "echo-of-gods",
         name: "Echo of Gods",
         year: 2025,
-        image: "./assets/images/poster-echo-of-gods.jpg",
+        image: "assets/images/poster-echo-of-gods.jpg",
         description: `Incarnez la déesse Brigid et parcourez les terres pictes d'Écosse à la 
         recherche de notes de musique disséminées dans le monde. Combinez-les et jouez-les 
         grâce à votre instrument pour ouvrir des passages et résoudre de nombreux puzzles.`,
@@ -71,7 +71,7 @@ export const projects = [
     {
         id: "unreal-platformer",
         name: "Unreal Platformer",
-        image: "./assets/images/poster-unreal-platformer.jpg",
+        image: "assets/images/poster-unreal-platformer.jpg",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 
@@ -87,7 +87,7 @@ export const projects = [
     {
         id: "project-2023-02",
         name: "Geo Storm",
-        image: "./assets/images/poster-passworld.jpg",
+        image: "assets/images/poster-passworld.jpg",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 
@@ -100,7 +100,7 @@ export const projects = [
     {
         id: "project-2023-02",
         name: "Geo Storm",
-        image: "./assets/images/poster-passworld.jpg",
+        image: "assets/images/poster-passworld.jpg",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 
