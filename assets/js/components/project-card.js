@@ -125,3 +125,24 @@ export function renderProjects(projectsList) {
         container.appendChild(createProjectCard(project));
     });
 }
+
+export function filterProjects(projects, filters) {
+
+    // Early return if we don't have filter
+    if (!filters.length) return projects;
+
+    // Get normalized filters
+    const normalizedFilters = filters.map(filter => filter.toLowerCase());
+
+    // Create & return filtered list
+    return projects.filter(project => {
+
+        // Get values to compare from project data
+        const values = (project.filters ?? []).filter(Boolean);
+
+        // Check if we match the filter
+        return values.some(value =>
+            normalizedFilters.includes(value.toLowerCase())
+        );
+    });
+}

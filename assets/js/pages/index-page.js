@@ -1,4 +1,9 @@
+// Data
+import { projects } from "../data/projects-data.js";
+
+// Components
 import { animateCounter } from "../components/counter.js";
+import { renderProjects } from "../components/project-card.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
@@ -55,4 +60,5 @@ function initStats() {
 document.addEventListener("DOMContentLoaded", () => {
     initParallaxFx("#floating-icons", ".hero-portrait", 0.015, 0.0025);
     initStats();
+    renderProjects(projects);
 })

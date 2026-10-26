@@ -23,7 +23,7 @@
 
     <!-- Link to styles -->
     <link rel="stylesheet" href="../assets/css/main.css"/>
-    <link rel="stylesheet" href="../assets/css/pages/projects.css"/>
+    <link rel="stylesheet" href="../assets/css/pages/projects-page.css"/>
 </head>
 
 <!-- ########################################################################################## -->
@@ -56,20 +56,15 @@
                 </div>
                 <div class="section-head-right">
 
-                    <!-- Drop down -->
-                    <div>
-                        <select id="projects-filter">
-                            <button>
-                                <selectedcontent></selectedcontent>
-                            </button>
-
-                            <option value="all-projects">All Projects</option>
-                            <option value="unreal-engine">Unreal Engine</option>
-                            <option value="unity">Unity</option>
-                            <option value="c++">C++</option>
-                            <option value="c#">C#</option>
-                        </select>
-                    </div>
+                    <!-- Drop down: projects filter -->
+                    <select id="projects-filter">
+                        <button><selectedcontent></selectedcontent></button>
+                        <option value="all-projects">All Projects</option>
+                        <option value="unreal-engine">Unreal Engine</option>
+                        <option value="unity">Unity</option>
+                        <option value="c++">C++</option>
+                        <option value="c#">C#</option>
+                    </select>
 
                 </div>
             </div>
@@ -90,4 +85,5 @@
 <!-- ########################################################################################## -->
 
 <script type="module" src="../assets/js/main.js"></script>
+<script type="module" src="../assets/js/pages/projects-page.js"></script>
 </html>

@@ -18,7 +18,8 @@ export const projects = [
         duration: "9 mois",
         language: "C++",
         engine: "Unreal Engine 5",
-        tags: ["Rider"]
+        tags: ["Rider"],
+        filters: ["c++", "unreal-engine"]
     },
 
 // ################################################################################################
@@ -39,7 +40,8 @@ export const projects = [
         duration: "1 mois",
         language: "C#",
         engine: "Unity 6",
-        tags: ["Visual Studio"]
+        tags: ["Visual Studio"],
+        filters: ["c#", "unity"]
     },
 
     // Echo of Gods
@@ -55,7 +57,8 @@ export const projects = [
         duration: "3 mois",
         language: "C++",
         engine: "Unreal Engine 5",
-        tags: ["Rider"]
+        tags: ["Rider"],
+        filters: ["c++", "unreal-engine"]
     },
 
 // ################################################################################################
@@ -79,7 +82,8 @@ export const projects = [
         teamSize: 2,
         duration: "2 semaines",
         language: "Blueprint",
-        engine: "Unreal Engine 5"
+        engine: "Unreal Engine 5",
+        filters: ["unreal-engine"]
     },
 
 
@@ -95,7 +99,8 @@ export const projects = [
         teamSize: 1,
         duration: "1 semaine",
         language: "C#",
-        tags: ["Visual Studio"]
+        tags: ["Visual Studio"],
+        filters: ["c#"]
     },
     {
         id: "project-2023-02",
@@ -108,6 +113,7 @@ export const projects = [
         teamSize: 1,
         duration: "1 semaine",
         language: "C#",
-        tags: ["Visual Studio"]
+        tags: ["Visual Studio"],
+        filters: ["c#"]
     },
 ];
