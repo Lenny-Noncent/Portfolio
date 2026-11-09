@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// HEAD ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<head>
+    <!-- Meta & other data -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lenny Noncent | Portfolio</title>
+    
+    <!-- Link to fontawesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Link for google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../assets/css/pages/all-projects-page.css"/>
+</head>
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// BODY ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<body>
+    <!-- Top Marker -->
+    <div id="top"></div>
+
+    <!--========-->
+    <!-- Header -->
+    <!--========-->
+
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!--=======================-->
+    <!-- SECTION: ALL PROJECTS -->
+    <!--=======================-->
+    <div class="section all-projects">
+
+        <!-- Background -->
+        <div class="section-background">
+            <div class="bg-fx-glow"></div>
+            <div class="bg-fx-grid"></div>
+        </div>
+
+        <!-- Section Container -->
+        <div class="section-container all-projects">
+
+            <!-- Back Button (fallback href if there is no previous page) -->
+            <a href="../index.html" class="btn btn-ghost btn-back appear-from-left">
+                <i class="fa-solid fa-arrow-left"></i>
+                Retour
+            </a>
+
+            <!-- Section Head -->
+            <div class="section-head" data-appear-stagger="150">
+                <div class="section-head-left appear-from-bottom">
+                    <span class="section-eyebrow">// Portfolio</span>
+                    <h1>Mes Projets</h1>
+                </div>
+                <div class="section-head-right appear-from-bottom">
+
+                    <!-- Drop down: projects filter -->
+                    <select id="projects-filter">
+                        <button><selectedcontent></selectedcontent></button>
+                        <option value="all-projects">Tous les projets</option>
+                        <option value="unreal-engine">Unreal Engine</option>
+                        <option value="unity">Unity</option>
+                        <option value="c++">C++</option>
+                        <option value="c#">C#</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <!-- Project cards -->
+            <div class="project-cards" id="project-cards" data-appear-stagger="120"></div>
+
+        </div>
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+
+<!-- ########################################################################################## -->
+<!-- ///////////////////////////////////////// SCRIPTS //////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<script type="module" src="../assets/js/main.js"></script>
+<script type="module" src="../assets/js/pages/all-projects-page.js"></script>
+</html>

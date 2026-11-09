@@ -21,8 +21,15 @@
     /* Variables */
     --project-card-transition: all 0.25s cubic-bezier(0.5, 1, 0.89, 1);
 
+    /* Layout (card is a link) */
+    display: block;
+
     /* Content Layout */
     overflow: hidden;
+
+    /* Font */
+    color: inherit;
+    text-decoration: none;
 
     /* Style */
     border-radius: 1.6rem;
@@ -33,7 +40,8 @@
     transition: var(--project-card-transition);
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
 
     /* Style */
     border-color: rgb(from var(--color-accent-primary) r g b / 45%);
@@ -59,7 +67,8 @@
     transition: var(--project-card-transition);
 }
 
-.project-card:hover::before {
+.project-card:hover::before,
+.project-card:focus-visible::before {
 
     /* Style */
     opacity: 1;
@@ -91,7 +100,8 @@
     transition: var(--project-card-transition);
 }
 
-.project-card:hover .project-card-media .media {
+.project-card:hover .project-card-media .media,
+.project-card:focus-visible .project-card-media .media {
 
     /* Style */
     transform: scale(1.08);

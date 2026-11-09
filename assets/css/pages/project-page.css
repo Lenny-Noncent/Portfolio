@@ -1,0 +1,36 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////// PROJECT PAGE /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.section-container.project-page {
+
+    /* Layout */
+    padding-top: calc(var(--header-height) + 3rem);
+}
+
+.project-page .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        radial-gradient(ellipse 110% 50% at 0% 0%, rgb(from var(--color-accent-primary) r g b / 30%), transparent 80%),
+        radial-gradient(ellipse 90% 40% at 120% 100%, rgb(from var(--color-accent-primary) r g b / 20%), transparent 80%);
+}
+
+.project-page .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
+    mask-image: radial-gradient(ellipse 60% 35% at 20% 15%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 35% at 20% 15%, black 0%, transparent 85%);
+}

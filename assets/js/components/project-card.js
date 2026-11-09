@@ -5,6 +5,7 @@ import { initAppear } from "./appear.js";
 // ################################################################################################
 
 const ROOT_PATH = new URL("../../../", import.meta.url);
+const PROJECT_PAGES_PATH = "pages/projects/";
 
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
@@ -53,10 +54,11 @@ export function filterProjects(projects, filters) {
 
 function createProjectCard(project) {
 
-    // Project Card Container
+    // Project Card Container (link to project page: "pages/projects/<id>.html")
     // ----------------------
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.className = "project-card";
+    card.href = new URL(`${PROJECT_PAGES_PATH}${project.id}.html`, ROOT_PATH).href;
     card.dataset.appear = "fromBottom";
     card.dataset.projectId = project.id;
 

@@ -1,0 +1,36 @@
+<div class="project-overview" data-appear-stagger="150">
+
+    <!-- Head: Back button + Project name -->
+    <div class="section-head project-overview-head" data-appear="fromBottom">
+
+        <!-- Back Button (fallback href set by project-overview.js, used if there is no previous page) -->
+        <a class="btn btn-ghost btn-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Retour
+        </a>
+
+        <!-- Project Name -->
+        <span class="section-eyebrow">// Projet</span>
+        <h1 class="project-overview-name"></h1>
+    </div>
+
+    <!-- Media (image for now, demo video later) -->
+    <div class="project-overview-media" data-appear="fromBottomSmoothed"></div>
+
+    <!-- Boxes (stacked) -->
+    <div class="project-overview-boxes" data-appear="default" data-appear-stagger="150">
+
+        <!-- Box: Description -->
+        <div class="project-overview-box spotlight" data-appear="fromLeftSmoothed">
+            <h2 class="project-overview-box-title">Description</h2>
+            <p class="project-overview-description"></p>
+        </div>
+
+        <!-- Box: Infos (rows filled by project-overview.js) -->
+        <div class="project-overview-box spotlight" data-appear="fromLeftSmoothed">
+            <h2 class="project-overview-box-title">Informations</h2>
+            <ul class="project-overview-infos"></ul>
+        </div>
+    </div>
+
+</div>
