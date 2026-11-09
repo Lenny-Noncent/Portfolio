@@ -84,6 +84,11 @@
     --gradient-bg-size: 200% 100%;
     --gradient-animation: gradient-animation 3s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 
+    /* ================ HOVER ================ */
+
+    --hover-transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --color-line-hover: rgb(from var(--color-accent-primary) r g b / 25%);
+
     /* ================ COMMON =============== */
 
     --radius: 0.8rem;

@@ -45,21 +45,34 @@
     <!-- SECTION: ALL PROJECTS -->
     <!--=======================-->
     <div class="section all-projects">
-        
+
+        <!-- Background -->
+        <div class="section-background">
+            <div class="bg-fx-glow"></div>
+            <div class="bg-fx-grid"></div>
+        </div>
+
         <!-- Section Container -->
         <div class="section-container all-projects">
 
+            <!-- Back Button (fallback href if there is no previous page) -->
+            <a href="../index.html" class="btn btn-ghost btn-back appear-from-left">
+                <i class="fa-solid fa-arrow-left"></i>
+                Retour
+            </a>
+
             <!-- Section Head -->
-            <div class="section-head">
-                <div class="section-head-left">
+            <div class="section-head" data-appear-stagger="150">
+                <div class="section-head-left appear-from-bottom">
+                    <span class="section-eyebrow">// Portfolio</span>
                     <h1>Mes Projets</h1>
                 </div>
-                <div class="section-head-right">
+                <div class="section-head-right appear-from-bottom">
 
                     <!-- Drop down: projects filter -->
                     <select id="projects-filter">
                         <button><selectedcontent></selectedcontent></button>
-                        <option value="all-projects">All Projects</option>
+                        <option value="all-projects">Tous les projets</option>
                         <option value="unreal-engine">Unreal Engine</option>
                         <option value="unity">Unity</option>
                         <option value="c++">C++</option>
@@ -70,7 +83,7 @@
             </div>
 
             <!-- Project cards -->
-            <div class="project-cards" id="project-cards"></div>
+            <div class="project-cards" id="project-cards" data-appear-stagger="120"></div>
 
         </div>
     </div>

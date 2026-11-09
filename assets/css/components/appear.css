@@ -1,0 +1,165 @@
+/* ############################################################################################# */
+/* ///////////////////////////////////////// VARIABLES ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+:root {
+
+    /* Default */
+    --default-appear-duration: 900ms;
+    --default-appear-distance: 3rem;
+    --default-appear-easing: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Smoothed */
+    --appear-duration-smoothed: 900ms;
+    --appear-easing-smoothed: ease-out;
+}
+
+/* ############################################################################################# */
+/* ///////////////////////////////////////// KEY FRAMES //////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ########################################### APPEAR ########################################## */
+
+/* Note: Uses individual properties (translate / scale) instead of transform  */
+/* to avoid conflicts with existing transforms (tilt effect, parallax, etc.)  */
+
+@keyframes appear-default {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes appear-from-bottom {
+    from {
+        opacity: 0;
+        translate: 0 var(--default-appear-distance);
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes appear-from-left {
+    from {
+        opacity: 0;
+        translate: calc(var(--default-appear-distance) * -1) 0;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes appear-from-right {
+    from {
+        opacity: 0;
+        translate: var(--default-appear-distance) 0;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes appear-zoom {
+    from {
+        opacity: 0;
+        scale: 0.92;
+        translate: 0 var(--default-appear-distance);
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes appear-draw-down {
+    from {
+        opacity: 0;
+        scale: 1 0;
+    }
+    to {
+        opacity: 1;
+        scale: 1 1;
+    }
+}
+
+/* ############################################################################################# */
+/* ///////////////////////////////////// ANIMATION CLASSES ///////////////////////////////////// */
+/* ############################################################################################# */
+
+/* ########################################## GENERAL ########################################## */
+
+/* Hidden state (before entering viewport) */
+[data-appear] {
+
+    /* Style */
+    opacity: 0;
+}
+
+/* Visible state (when entering viewport) */
+[data-appear].appear-active {
+
+    /* Style */
+    animation:
+        var(--appear-animation) 
+        var(--appear-duration, var(--default-appear-duration)) 
+        var(--appear-easing, var(--default-appear-easing)) 
+        var(--appear-delay, 0ms) 
+        both;
+}
+
+/* ################################# ANIMATION PER APPEAR TYPE ################################# */
+
+/* General */
+[data-appear="default"] { --appear-animation: appear-default; }
+[data-appear="fromBottom"] { --appear-animation: appear-from-bottom; }
+[data-appear="fromLeft"]   { --appear-animation: appear-from-left; }
+[data-appear="fromRight"]  { --appear-animation: appear-from-right; }
+[data-appear="zoom"]       { --appear-animation: appear-zoom; }
+[data-appear="drawDown"] {
+
+    /* Layout */
+    transform-origin: top;
+
+    /* Style */
+    --appear-animation: appear-draw-down;
+    --appear-duration: calc(var(--default-appear-duration) * 2);
+}
+
+/* Smoothed */
+[data-appear="fromBottomSmoothed"] {
+
+    /* Style */
+    --appear-animation: appear-from-bottom;
+    --appear-easing: var(--appear-easing-smoothed);
+    --appear-duration: var(--appear-duration-smoothed);
+}
+[data-appear="fromLeftSmoothed"] {
+
+    /* Style */
+    --appear-animation: appear-from-left;
+    --appear-easing: var(--appear-easing-smoothed);
+    --appear-duration: var(--appear-duration-smoothed);
+}
+[data-appear="fromRightSmoothed"] {
+
+    /* Style */
+    --appear-animation: appear-from-right;
+    --appear-easing: var(--appear-easing-smoothed);
+    --appear-duration: var(--appear-duration-smoothed);
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIA /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Accessibility: Show everything directly */
+@media (prefers-reduced-motion: reduce) {
+    [data-appear] {
+        opacity: 1;
+        animation: none !important;
+    }
+}
+

@@ -66,6 +66,13 @@
     background-size: var(--gradient-bg-size);
     box-shadow: 0 0 1rem 0 rgb(from var(--color-accent-primary) r g b / 45%);
     animation: var(--gradient-animation);
+    transition: box-shadow var(--hover-transition);
+}
+
+.timeline-item:hover .timeline-item-icon {
+
+    /* Style */
+    box-shadow: 0 0 2.2rem 0.2rem rgb(from var(--color-accent-primary) r g b / 65%);
 }
 
 .timeline-item-icon i {
@@ -87,6 +94,14 @@
     backdrop-filter: blur(1rem);
     border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
+    transition: border-color var(--hover-transition), box-shadow var(--hover-transition);
+}
+
+.timeline-item:hover .timeline-item-box {
+
+    /* Style */
+    border-color: var(--color-line-hover);
+    box-shadow: 0 0 3rem -1.2rem rgb(from var(--color-accent-primary) r g b / 35%);
 }
 
 /* ############################################################################################# */
@@ -107,14 +122,32 @@
 .timeline-date {
 
     /* Layout */
+    height: fit-content;
     margin-bottom: 1rem;
+    padding: 0.5rem 1.1rem;
+    flex-shrink: 0;
 
     /* Font */
     text-align: right;
     color: var(--color-accent-primary);
-    font-size: var(--font-size-normal);
+    font-size: var(--font-size-mono);
     font-family: var(--font-family-mono);
     letter-spacing: var(--letter-spacing-header);
+    white-space: nowrap;
+
+    /* Style */
+    border-radius: var(--btn-radius);
+    background-color: rgb(from var(--color-accent-primary) r g b / 10%);
+    transition: color var(--hover-transition), background-color var(--hover-transition);
+}
+
+.timeline-item:hover .timeline-date {
+
+    /* Font */
+    color: var(--color-accent-secondary);
+
+    /* Style */
+    background-color: rgb(from var(--color-accent-primary) r g b / 16%);
 }
 
 .timeline-title {
@@ -169,9 +202,10 @@
         flex-direction: column; 
     } 
 
-    .timeline-date { 
+    .timeline-date {
+        width: fit-content;
         text-align: start;
-        margin-bottom: 1rem; 
-    } 
+        margin-bottom: 1rem;
+    }
 }
 

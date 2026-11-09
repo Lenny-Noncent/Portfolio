@@ -33,6 +33,18 @@
     pointer-events: none;
 }
 
+.section-background .bg-fx-glow {
+
+    /* Style */
+    animation: glow-breathe 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-background .bg-fx-glow {
+        animation: none;
+    }
+}
+
 /* ############################################################################################# */
 /* //////////////////////////////////////////// HEAD /////////////////////////////////////////// */
 /* ############################################################################################# */
@@ -64,6 +76,40 @@
 
     /* Layout */
     margin-top: 1.5rem;
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// EYEBROW ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+.section-eyebrow {
+
+    /* Layout */
+    display: flex;
+    margin-bottom: 1rem;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 0.8rem;
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+
+    /* Layout */
+    content: "";
+    width: 2.5rem;
+    height: var(--line-thickness);
+
+    /* Style */
+    background-image: var(--simple-gradient-bg);
 }
 
 /* ############################################################################################# */

@@ -1,36 +1,83 @@
 <div class="footer" id="footer">
 
-    <!-- Row 1 -->
-    <div class="footer-row" id="footer-row-1">
-
-        <!-- Footer Logo -->
-        <div class="logo">
-            <h1>Lenny Noncent</h1>
-            <span>Game Programmer</span>
-        </div>
-
-        <!-- Clickable links -->
-        <div class="links">
-
-            <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/lenny-noncent-049492335/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin btn-icon"></i>
-            </a>
-
-            <!-- Github -->
-            <a href="https://github.com/Lenny-Noncent" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github btn-icon"></i>
-            </a>
-        </div>
-
+    <!-- Background -->
+    <div class="section-background">
+        <div class="bg-fx-glow"></div>
+        <div class="bg-fx-grid"></div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="footer-row" id="footer-row-2">
+    <!-- Footer Container -->
+    <div class="footer-container">
 
-        <!-- Copyright -->
-        <span class="copyright">
-            © 2026 Lenny Noncent. Tous droits réservés.
-        </span>
+        <!--=======-->
+        <!-- Row 1 -->
+        <!--=======-->
+        <div class="footer-row" id="footer-row-1" data-appear-stagger="120">
+
+            <!-- Column: Brand -->
+            <div class="footer-column footer-brand" data-appear="fromBottom">
+
+                <!-- Footer Logo -->
+                <a href="#home" class="logo">
+                    <h1>Lenny Noncent</h1>
+                    <span>Game Programmer</span>
+                </a>
+
+                <!-- Description -->
+                <p>
+                    Programmation gameplay & systèmes avec C++, C#, Unreal Engine et Unity.
+                </p>
+            </div>
+
+            <!-- Column: Navigation (filled with navigation template) -->
+            <div class="footer-column footer-navigation" data-appear="fromBottom">
+                <span class="footer-title">// Navigation</span>
+                <nav class="footer-nav"></nav>
+            </div>
+
+            <!-- Column: Contact -->
+            <div class="footer-column footer-contact" data-appear="fromBottom">
+                <span class="footer-title">// Contact</span>
+
+                <!-- Mail -->
+                <a href="mailto:lenny.noncent.pro@gmail.com" class="footer-mail">
+                    <i class="fa-solid fa-envelope"></i>
+                    lenny.noncent.pro@gmail.com
+                </a>
+
+                <!-- Clickable links -->
+                <div class="links">
+
+                    <!-- Linkedin -->
+                    <a href="https://www.linkedin.com/in/lenny-noncent-049492335/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin btn-icon"></i>
+                    </a>
+
+                    <!-- Github -->
+                    <a href="https://github.com/Lenny-Noncent" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github btn-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!--=======-->
+        <!-- Row 2 -->
+        <!--=======-->
+        <div class="footer-row" id="footer-row-2">
+
+            <!-- Copyright -->
+            <span class="copyright">
+                © 2026 Lenny Noncent. Tous droits réservés.
+            </span>
+
+            <!-- Back to top -->
+            <a href="#home" class="btn btn-ghost footer-back-to-top">
+                <i class="fa-solid fa-arrow-up"></i>
+                Retour en haut
+            </a>
+        </div>
+
     </div>
 </div>

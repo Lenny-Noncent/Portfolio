@@ -27,7 +27,7 @@
 .btn:active {
 
     /* Layout */
-    transform: translateY(-0.15rem);
+    translate: 0 -0.15rem;
 }
 
 /* ############################################################################################# */
@@ -50,7 +50,7 @@
 .btn-icon:active {
 
     /* Layout */
-    transform: translateY(-0.15rem);
+    translate: 0 -0.15rem;
 
     /* Style */
     text-shadow: 0 0.6rem 0.9rem rgb(from var(--color-accent-primary) r g b / 30%);
@@ -81,6 +81,35 @@
 
     /* Font */
     color: var(--color-accent-primary);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// BUTTON BACK //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.btn-back {
+
+    /* Layout */
+    padding: 0.7rem 1.4rem;
+
+    /* Content Layout */
+    gap: 0.7rem;
+
+    /* Font */
+    font-size: var(--font-size-mono);
+}
+
+.btn-back i {
+
+    /* Style */
+    transition: translate var(--hover-transition);
+}
+
+.btn-back:hover i,
+.btn-back:active i {
+
+    /* Layout */
+    translate: -0.3rem 0;
 }
 
 /* ############################################################################################# */

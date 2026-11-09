@@ -5,13 +5,73 @@
 .footer {
 
     /* Layout */
-    padding-inline: min(5rem, 10%);
-    padding-top: 1.5rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
 
     /* Style */
     box-shadow: rgb(from black r g b / 25%) 0 -0.1rem 0.8rem;
-    border-top: solid var(--line-thickness) var(--color-line);
     background-color: var(--color-bg-secondary);
+}
+
+/* Gradient top line (fades on sides) */
+.footer::before {
+
+    /* Layout */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--line-thickness);
+
+    /* Style */
+    background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--color-accent-primary) 30%,
+        var(--color-accent-secondary) 50%,
+        var(--color-accent-primary) 70%,
+        transparent 100%
+    );
+    opacity: 0.6;
+}
+
+.footer-container {
+
+    /* Layout */
+    max-width: var(--font-scale-max-width);
+    margin-inline: auto;
+    padding-inline: 8rem;
+}
+
+/* ############################################################################################# */
+/* ///////////////////////////////////////// BACKGROUND //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.footer .bg-fx-glow {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image: radial-gradient(ellipse 60% 90% at 50% 0%, rgb(from var(--color-accent-primary) r g b / 14%), transparent 80%);
+}
+
+.footer .bg-fx-grid {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+
+    /* Style */
+    background-image:
+        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
+        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
+    mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
 }
 
 /* ############################################################################################# */
@@ -22,7 +82,7 @@
 
     /* Layout */
     display: flex;
-    padding-block: 1.5rem;
+    padding-block: 1.8rem;
 
     /* Content Layout */
     gap: 1rem;
@@ -36,15 +96,52 @@
 .footer #footer-row-1 {
 
     /* Layout */
-    padding-block: 2.5rem;
+    display: grid;
+    padding-block: 5rem 4rem;
+
+    /* Content Layout */
+    gap: 4rem;
+    grid-template-columns: 1.6fr 1fr 1.2fr;
+    align-items: start;
 
     /* Style */
     border: none;
 }
 
 /* ############################################################################################# */
-/* //////////////////////////////////////// FOOTER LOGO //////////////////////////////////////// */
+/* /////////////////////////////////////// FOOTER COLUMNS ////////////////////////////////////// */
 /* ############################################################################################# */
+
+.footer .footer-column {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.footer .footer-title {
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// FOOTER BRAND /////////////////////////////////////// */
+/* ############################################################################################# */
+
+.footer .logo {
+
+    /* Layout */
+    width: fit-content;
+    text-decoration: none;
+}
 
 .footer .logo h1 {
 
@@ -55,6 +152,7 @@
     font-size: 2.4rem;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 0%);
 
     /* Style */
     background-image: var(--gradient-bg);
@@ -62,6 +160,13 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: var(--gradient-animation);
+    transition: text-shadow 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.footer .logo:hover h1 {
+
+    /* Font */
+    text-shadow: 0 0.15rem 0.8rem rgb(from var(--color-accent-primary) r g b / 100%);
 }
 
 .footer .logo span {
@@ -78,9 +183,112 @@
     color: var(--color-text);
 }
 
+.footer .footer-brand p {
+
+    /* Layout */
+    max-width: 26rem;
+
+    /* Font */
+    line-height: 1.6;
+}
+
 /* ############################################################################################# */
-/* //////////////////////////////////////// FOOTER LINKS /////////////////////////////////////// */
+/* ////////////////////////////////////// FOOTER NAVIGATION //////////////////////////////////// */
 /* ############################################################################################# */
+
+.footer .footer-nav {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer .footer-nav a {
+
+    /* Layout */
+    display: inline-flex;
+    width: fit-content;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 0.5rem;
+
+    /* Font */
+    color: var(--color-text);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    text-decoration: none;
+
+    /* Style */
+    transition: color var(--hover-transition), translate var(--hover-transition);
+}
+
+.footer .footer-nav a::before {
+
+    /* Content */
+    content: ">";
+
+    /* Font */
+    color: var(--color-accent-secondary);
+
+    /* Style */
+    opacity: 0;
+    transition: opacity var(--hover-transition);
+}
+
+.footer .footer-nav a:hover {
+
+    /* Layout */
+    translate: 0.4rem 0;
+
+    /* Font */
+    color: var(--color-accent-primary);
+}
+
+.footer .footer-nav a:hover::before {
+
+    /* Style */
+    opacity: 1;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////// FOOTER CONTACT ////////////////////////////////////// */
+/* ############################################################################################# */
+
+.footer .footer-mail {
+
+    /* Layout */
+    display: inline-flex;
+    width: fit-content;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 0.7rem;
+
+    /* Font */
+    color: var(--color-text);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    text-decoration: none;
+
+    /* Style */
+    transition: color var(--hover-transition);
+}
+
+.footer .footer-mail i {
+
+    /* Font */
+    color: var(--color-accent-primary);
+}
+
+.footer .footer-mail:hover {
+
+    /* Font */
+    color: var(--color-accent-secondary);
+}
 
 .footer .links {
 
@@ -90,15 +298,12 @@
     /* Content Layout */
     align-items: center;
     gap: 0.8rem;
-
-    /* Font */
-    font-size: 2rem;
 }
 
 .footer .links .btn-icon {
 
     /* Font */
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 /* ############################################################################################# */
@@ -113,3 +318,49 @@
     font-family: var(--font-family-mono);
 }
 
+.footer .footer-back-to-top {
+
+    /* Layout */
+    padding: 0.7rem 1.3rem;
+
+    /* Content Layout */
+    gap: 0.6rem;
+
+    /* Font */
+    font-size: var(--font-size-mono);
+}
+
+.footer .footer-back-to-top i {
+
+    /* Style */
+    transition: translate var(--hover-transition);
+}
+
+.footer .footer-back-to-top:hover i {
+
+    /* Layout */
+    translate: 0 -0.2rem;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIAS ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        padding-inline: 4rem;
+    }
+
+    .footer #footer-row-1 {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-block: 4rem 3rem;
+    }
+
+    .footer #footer-row-2 {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}

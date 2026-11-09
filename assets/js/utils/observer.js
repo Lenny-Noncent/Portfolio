@@ -2,9 +2,11 @@
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
-// ############################################# Main #############################################
+// ###################################### Callable Functions ######################################
 
-export function observeViewport(selector, callback, options = {}) {
+// _____________________________________________ Main _____________________________________________
+
+export function observeViewport(selector, callback, options = {}, root = document) {
 
     // Create Observer
     const observer = new IntersectionObserver((entries) => {
@@ -18,8 +20,8 @@ export function observeViewport(selector, callback, options = {}) {
         ...options
     });
 
-    // Query all elements from selector & start the observer
-    document.querySelectorAll(selector).forEach(element => {
+    // Resolve target to elements & start the observer
+    resolveElements(selector, root).forEach(element => {
         observer.observe(element);
     });
 }
@@ -37,7 +39,7 @@ export function onEnterViewportOnce(selector, callback, options = {}) {
     }, options);
 }
 
-// ######################################### Class Helpers ########################################
+// _________________________________________ Class Helpers ________________________________________
 
 export function toggleViewportClass(selector, className, doOnce, options = {}) {
 
@@ -50,7 +52,7 @@ export function toggleViewportClass(selector, className, doOnce, options = {}) {
     }, options);
 }
 
-export function addViewportClass(selector, className, doOnce = false, options = {}) {
+export function addViewportClass(selector, className, doOnce = false, options = {}, root = document) {
 
     // Observe elements
     observeViewport(selector, (observer, entry) => {
@@ -60,5 +62,19 @@ export function addViewportClass(selector, className, doOnce = false, options = 
             entry.target.classList.add(className);
             if (doOnce) observer.unobserve(entry.target);
         }
-    }, options);
+    }, options, root);
+}
+
+// ###################################### Internal Functions ######################################
+
+function resolveElements(target, root) {
+
+    // Selector -> query inside root
+    if (typeof target === "string") return [...root.querySelectorAll(target)];
+
+    // Single element
+    if (target instanceof Element) return [target];
+
+    // Array / NodeList / any iterable
+    return [...target];
 }

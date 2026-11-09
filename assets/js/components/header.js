@@ -1,4 +1,4 @@
-import { loadComponent } from "../utils/components.js";
+import { loadComponent, appendTemplate } from "../utils/components.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// VARIABLES //////////////////////////////////////////
@@ -10,6 +10,8 @@ const COMPONENTS_PATH = new URL("../../../components/", import.meta.url);
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
+// ###################################### Callable Functions ######################################
+
 export async function initHeader() {
 
     // Load component 
@@ -17,8 +19,5 @@ export async function initHeader() {
     if (!header) return;
 
     // Inject nav links in header
-    const template = document.getElementById("navigation-template");
-    const nav = header.querySelector(".nav-links");
-    if (!template || !nav) return;
-    nav.append(template.content.cloneNode(true));
+    appendTemplate("navigation-template", header.querySelector(".nav-links"));
 }

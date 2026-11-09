@@ -1,20 +1,8 @@
-import { onEnterViewportOnce } from "../utils/observer.js";
-
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
-export function initCounters() {
-    onEnterViewportOnce(".counter-up", 
-        entry => animateCounter(entry.target), { 
-            rootMargin: "0px 0px -80px 0px"
-        }
-    );
-}
-
-function easeOutQuad(x) {
-    return 1 - (1 - x) * (1 - x);
-}
+// ###################################### Callable Functions ######################################
 
 export function animateCounter(counter) {
 
@@ -46,5 +34,11 @@ export function animateCounter(counter) {
 
     // Start to animate
     requestAnimationFrame(update);
+}
+
+// ###################################### Internal Functions ######################################
+
+function easeOutQuad(x) {
+    return 1 - (1 - x) * (1 - x);
 }
 

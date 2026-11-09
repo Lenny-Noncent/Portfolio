@@ -4,6 +4,7 @@ import { projects } from "../data/projects-data.js";
 // Components
 import { listenDropdownChangeEvent } from "../components/dropdown.js";
 import { renderProjects, filterProjects } from "../components/project-card.js";
+import { initBackButtons } from "../components/back-button.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// VARIABLES //////////////////////////////////////////
@@ -36,6 +37,7 @@ function onProjectsFilterChanged(event)
 // ################################################################################################
 
 document.addEventListener("DOMContentLoaded", () => {
+    initBackButtons();
     projectsFilter = document.getElementById("projects-filter");
     listenDropdownChangeEvent("projects-filter", onProjectsFilterChanged);
     renderProjects(getFilteredProjects());

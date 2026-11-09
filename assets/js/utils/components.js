@@ -2,6 +2,8 @@
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
+// ###################################### Callable Functions ######################################
+
 export async function loadComponent(placeholderId, filePath) {
     try {
 
@@ -26,4 +28,15 @@ export async function loadComponent(placeholderId, filePath) {
         console.error(error);
         return null;
     }
+}
+
+export function appendTemplate(templateId, target) {
+
+    // Return false if template or target is not valid
+    const template = document.getElementById(templateId);
+    if (!template || !target) return false;
+
+    // Append a copy of template content in target
+    target.append(template.content.cloneNode(true));
+    return true;
 }

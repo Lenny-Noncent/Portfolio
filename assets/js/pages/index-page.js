@@ -4,6 +4,7 @@ import { projects } from "../data/projects-data.js";
 // Components
 import { animateCounter } from "../components/counter.js";
 import { renderProjects } from "../components/project-card.js";
+import { initSpotlight } from "../components/spotlight.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
@@ -39,17 +40,33 @@ function initParallaxFx(targetSelector, referenceSelector, maxOffsetFactor, spee
 
 function initStats() {
 
-    // Get elements
+    // Get elements & settings
     const stats = document.querySelectorAll(".stat");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Loop on stats
     stats.forEach(stat => {
 
-        // Add event listener: Call AnimateCounter when animation start
-        stat.addEventListener("animationstart", () => {
-            const counter = stat.querySelector(".counter-up");
-            if (counter) animateCounter(counter);
-        }, { once: true });
+        // Return if counter is not valid
+        const counter = stat.querySelector(".counter-up");
+        if (!counter) return;
+
+        // Start directly if stat has no entrance animation (no appear, or animations disabled)
+        if (!stat.hasAttribute("data-appear") || reduceMotion) {
+            animateCounter(counter);
+            return;
+        }
+
+        // Define listener: Call AnimateCounter when stat's own appear animation start (after its delay)
+        // Note: Ignore events bubbling from children (e.g. gradient animation of .stat-value)
+        function onAnimationStart(event) {
+            if (event.target !== stat) return;
+            stat.removeEventListener("animationstart", onAnimationStart);
+            animateCounter(counter);
+        }
+
+        // Add event listener
+        stat.addEventListener("animationstart", onAnimationStart);
     });
 }
 
@@ -61,4 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initParallaxFx("#floating-icons", ".hero-portrait", 0.015, 0.0025);
     initStats();
     renderProjects(projects);
+    initSpotlight();
 })

@@ -1,0 +1,59 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// SPOTLIGHT //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.spotlight {
+
+    /* Variables */
+    --spotlight-x: 50%;
+    --spotlight-y: 50%;
+    --spotlight-size: 18rem;
+
+    /* Layout */
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight::before {
+
+    /* Layout */
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    /* Style */
+    opacity: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background-image: radial-gradient(
+        circle var(--spotlight-size) at var(--spotlight-x) var(--spotlight-y),
+        rgb(from var(--color-accent-primary) r g b / 10%),
+        transparent 100%
+    );
+    transition: opacity var(--hover-transition);
+}
+
+.spotlight:hover::before {
+
+    /* Style */
+    opacity: 1;
+}
+
+/* Keep content above the spotlight */
+.spotlight > * {
+
+    /* Layout */
+    position: relative;
+    z-index: 1;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIAS ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+@media (hover: none) {
+    .spotlight::before {
+        display: none;
+    }
+}

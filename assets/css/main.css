@@ -1,6 +1,7 @@
 @import './animations.css';
 @import './base.css';
 @import './variables.css';
+@import './components/appear.css';
 @import './components/buttons.css';
 @import './components/dropdown.css';
 @import './components/floating-icon.css';
@@ -8,4 +9,5 @@
 @import './components/header.css';
 @import './components/project-card.css';
 @import './components/section.css';
+@import './components/spotlight.css';
 @import './components/timeline.css';

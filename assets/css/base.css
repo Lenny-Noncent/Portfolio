@@ -89,37 +89,3 @@ h2 {
     letter-spacing: var(--letter-spacing-header);
     color: var(--color-accent-secondary);
 }
-
-/* ############################################################################################# */
-/* /////////////////////////////////////////// APPEAR ////////////////////////////////////////// */
-/* ############################################################################################# */
-
-.appear-from-bottom {
-
-    /* Layout */
-    transform: translateY(1rem);
-
-    /* Style */
-    opacity: 0;
-    transition: all 5s ease-in-out;
-}
-
-.appear-from-right {
-
-    /* Layout */
-    transform: translateX(1rem);
-
-    /* Style */
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-
-.appear-active {
-
-    /* Layout */
-    transform: none;
-
-    /* Style */
-    opacity: 1;
-}
-
