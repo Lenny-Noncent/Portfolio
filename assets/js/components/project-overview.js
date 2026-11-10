@@ -20,7 +20,6 @@ const INFO_ROWS = [
     { label: "Durée",   icon: "fa-solid fa-clock",               getValue: project => project.duration },
     { label: "Langage", icon: "fa-solid fa-screwdriver-wrench",  getValue: project => project.language },
     { label: "Moteur",  icon: "fa-solid fa-gamepad",             getValue: project => project.engine },
-    { label: "Outils",  icon: "fa-solid fa-toolbox",             getValue: project => project.tags?.join(", ") },
 ];
 
 // ################################################################################################
