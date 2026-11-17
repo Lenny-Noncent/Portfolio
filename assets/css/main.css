@@ -9,6 +9,7 @@
 @import './components/header.css';
 @import './components/project-card.css';
 @import './components/project-overview.css';
+@import './components/scrollbar.css';
 @import './components/section.css';
 @import './components/spotlight.css';
 @import './components/timeline.css';

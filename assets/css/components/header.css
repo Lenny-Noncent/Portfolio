@@ -27,6 +27,15 @@
     animation-range: 0 25vh;
 }
 
+/* Mobile menu open: opaque background (the scroll animation is removed, otherwise it overrides it) */
+.header.nav-open {
+
+    /* Style */
+    animation: none;
+    background-color: var(--color-bg-secondary);
+    box-shadow: rgb(from black r g b / 50%) 0 0.8rem 1rem;
+}
+
 @keyframes header-animation {
     from {
         box-shadow: rgb(from black r g b / 25%) 0 0.8rem 0.8rem;
@@ -149,8 +158,60 @@
     transform-origin: left;
 }
 
+/* Mobile: nav links become a dropdown panel under the header, opened by the toggle (.nav-open) */
 @media (max-width: 900px) {
     .header .nav-links {
+
+        /* Layout */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 0.5rem min(5rem, 10%) 1.5rem;
+
+        /* Content Layout */
+        flex-direction: column;
+        gap: 0;
+
+        /* Style */
+        background-color: rgb(from var(--color-bg-secondary) r g b / 97%);
+        border-bottom: solid var(--line-thickness) var(--color-line);
+        box-shadow: rgb(from black r g b / 50%) 0 0.8rem 1rem;
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 -0.6rem;
+        transition: opacity 0.25s ease, translate 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    }
+
+    .header.nav-open .nav-links {
+
+        /* Style */
+        opacity: 1;
+        visibility: visible;
+        translate: 0 0;
+    }
+
+    .header .nav-links a {
+
+        /* Layout */
+        padding-block: 1.2rem;
+
+        /* Font */
+        font-size: 1.3rem;
+
+        /* Style */
+        border-bottom: solid var(--line-thickness) var(--color-line);
+    }
+
+    .header .nav-links a:last-child {
+
+        /* Style */
+        border-bottom: none;
+    }
+
+    .header .nav-links a::after {
+
+        /* Layout */
         display: none;
     }
 }
@@ -178,48 +239,58 @@
     gap: 0.5rem;
 }
 
-.header .links .resume {
+/* ############################################################################################# */
+/* ///////////////////////////////////// HEADER NAV TOGGLE ///////////////////////////////////// */
+/* ############################################################################################# */
+
+.header .nav-toggle {
 
     /* Layout */
-    padding: 0.8rem 1.45rem;
-
-    /* Content Layout */
-    gap: 0.5rem;
-
-    /* Style */
-    border: solid var(--line-thickness) var(--color-accent-primary);
-    background-color: transparent;
-    background-size: var(--gradient-bg-size);
-    animation: var(--gradient-animation);
-
-    /* Font */
-    font-size: 0.8rem;
-    font-weight: var(--font-weight-semi-bold);
-    color: var(--color-accent-primary);
-}
-
-.header .links .resume::before {
+    display: none;
+    position: relative;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
 
     /* Style */
-    content: ">";
-    color: var(--color-accent-secondary);
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-.header .links .resume:hover,
-.header .links .resume:active {
+.header .nav-toggle span {
+
+    /* Layout */
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 0.2rem;
 
     /* Style */
-    border-color: transparent;
-    background-image: var(--gradient-bg);
-    box-shadow: 0 0.6rem 1.8rem -0.5rem rgb(from var(--color-accent-primary) r g b / 60%);
-
-    /* Font */
-    color: var(--color-bg-primary);
+    border-radius: 999px;
+    background-color: var(--color-text);
+    transition: translate 0.3s cubic-bezier(0.16, 1, 0.3, 1), rotate 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.2s ease, background-color 0.25s ease;
 }
 
-.header .links .resume:hover::before,
-.header .links .resume:active::before {
+.header .nav-toggle span:nth-child(1) { top: calc(50% - 0.1rem - 0.65rem); }
+.header .nav-toggle span:nth-child(2) { top: calc(50% - 0.1rem); }
+.header .nav-toggle span:nth-child(3) { top: calc(50% - 0.1rem + 0.65rem); }
 
-    /* Font */
-    color: var(--color-bg-primary);
+.header .nav-toggle:hover span,
+.header.nav-open .nav-toggle span {
+
+    /* Style */
+    background-color: var(--color-accent-primary);
+}
+
+/* Open state: bars morph into a cross */
+.header.nav-open .nav-toggle span:nth-child(1) { translate: 0 0.65rem; rotate: 45deg; }
+.header.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.header.nav-open .nav-toggle span:nth-child(3) { translate: 0 -0.65rem; rotate: -45deg; }
+
+@media (max-width: 900px) {
+    .header .nav-toggle {
+        display: block;
+    }
 }

@@ -1,0 +1,119 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// VARIABLES //////////////////////////////////////// */
+/* ############################################################################################# */
+
+:root {
+
+    /* Size */
+    --scrollbar-thickness: 10px;
+    --scrollbar-thumb-inset: 2px;
+    --scrollbar-thumb-min-length: 3rem;
+
+    /* Colors */
+    --scrollbar-track-color: var(--color-bg-primary);
+    --scrollbar-track-line: var(--color-line);
+    --scrollbar-thumb-color: rgb(from var(--color-accent-primary) r g b / 55%);
+    --scrollbar-thumb-gradient: linear-gradient(
+        180deg,
+        rgb(from var(--color-accent-primary) r g b / 55%),
+        rgb(from var(--color-accent-secondary) r g b / 55%)
+    );
+    --scrollbar-thumb-gradient-hover: linear-gradient(
+        180deg,
+        var(--color-accent-primary),
+        var(--color-accent-secondary)
+    );
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// WEBKIT /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+
+    /* Layout */
+    width: var(--scrollbar-thickness);
+    height: var(--scrollbar-thickness);
+}
+
+::-webkit-scrollbar-track {
+
+    /* Style */
+    background-color: var(--scrollbar-track-color);
+    box-shadow: inset var(--line-thickness) 0 0 var(--scrollbar-track-line);
+}
+
+::-webkit-scrollbar-track:horizontal {
+
+    /* Style */
+    box-shadow: inset 0 var(--line-thickness) 0 var(--scrollbar-track-line);
+}
+
+::-webkit-scrollbar-thumb {
+
+    /* Layout */
+    min-height: var(--scrollbar-thumb-min-length);
+
+    /* Style */
+    /* The transparent border + padding-box clip makes the thumb float inside the track */
+    border: var(--scrollbar-thumb-inset) solid transparent;
+    border-radius: var(--btn-radius);
+    background-image: var(--scrollbar-thumb-gradient);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+
+    /* Layout */
+    min-height: 0;
+    min-width: var(--scrollbar-thumb-min-length);
+
+    /* Style */
+    background-image: linear-gradient(
+        90deg,
+        rgb(from var(--color-accent-primary) r g b / 55%),
+        rgb(from var(--color-accent-secondary) r g b / 55%)
+    );
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover,
+::-webkit-scrollbar-thumb:horizontal:active {
+
+    /* Style */
+    background-image: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+
+    /* Style */
+    background-image: var(--scrollbar-thumb-gradient-hover);
+    box-shadow: 0 0 0.6rem rgb(from var(--color-accent-primary) r g b / 45%);
+}
+
+::-webkit-scrollbar-corner {
+
+    /* Style */
+    background-color: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-button {
+
+    /* Layout */
+    display: none;
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// STANDARD ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Firefox (and any browser without ::-webkit-scrollbar).
+   Kept out of Chromium on purpose: since Chrome 121, setting scrollbar-color / scrollbar-width
+   disables the ::-webkit-scrollbar styles above (and with them the gradient). */
+@supports not selector(::-webkit-scrollbar) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+    }
+}
