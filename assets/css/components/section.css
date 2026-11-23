@@ -36,7 +36,7 @@
 .section-background .bg-fx-glow {
 
     /* Style */
-    animation: glow-breathe 8s ease-in-out infinite;
+    animation: glow-breathe 8s var(--ease-in-out-sine) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -65,8 +65,8 @@
     -webkit-text-fill-color: transparent;
 
     /* Style */
-    background-image: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    background-image: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     background-clip: text;
     -webkit-background-clip: text;
     animation: var(--gradient-animation);
@@ -109,7 +109,7 @@
     height: var(--line-thickness);
 
     /* Style */
-    background-image: var(--simple-gradient-bg);
+    background-image: var(--gradient);
 }
 
 /* ############################################################################################# */

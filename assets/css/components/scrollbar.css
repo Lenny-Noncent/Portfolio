@@ -58,7 +58,7 @@
     /* Style */
     /* The transparent border + padding-box clip makes the thumb float inside the track */
     border: var(--scrollbar-thumb-inset) solid transparent;
-    border-radius: var(--btn-radius);
+    border-radius: var(--radius-pill);
     background-image: var(--scrollbar-thumb-gradient);
     background-clip: padding-box;
 }

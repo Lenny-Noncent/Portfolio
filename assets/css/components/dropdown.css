@@ -26,16 +26,16 @@ select {
     /* Style */
     cursor: pointer;
     border: none;
-    border-radius: var(--btn-radius);
-    box-shadow: 0 0.8rem 2.2rem -0.6rem rgb(from var(--color-accent-primary) r g b / 55%);
-    background: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-accent);
+    background: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     animation: var(--gradient-animation);
-    transition: var(--btn-transition);
+    transition: box-shadow var(--transition-fast);
 
     /* Font */
     color: var(--color-bg-primary);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     font-family: var(--font-family-mono);
     font-size: var(--font-size-normal);
     text-decoration: none;
@@ -44,7 +44,13 @@ select {
 select:hover {
 
     /* Style */
-    box-shadow: 0 1rem 2.5rem -0.5rem rgb(from var(--color-accent-primary) r g b / 70%);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+select::picker-icon {
+
+    /* Style */
+    transition: rotate var(--transition-fast);
 }
 
 select:open::picker-icon {
@@ -71,8 +77,11 @@ selectedcontent .icon {
     border: solid var(--line-thickness) var(--color-line);
     backdrop-filter: blur(1rem);
     background-color: rgb(from var(--color-bg-secondary) r g b / 80%);
-    box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
-    transition: all 0.25s allow-discrete;
+    box-shadow: var(--shadow-dark);
+    transition:
+        opacity var(--transition-fast),
+        display var(--duration-fast) allow-discrete,
+        overlay var(--duration-fast) allow-discrete;
 }
 
 :open::picker(select) {
@@ -111,7 +120,7 @@ option {
 
     /* Style */
     background: none;
-    transition: var(--btn-transition);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 option:first-of-type {
@@ -129,7 +138,7 @@ option:last-of-type {
 option:checked {
 
     /* Font */
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 option:focus {
@@ -138,7 +147,7 @@ option:focus {
     color: var(--color-bg-primary);
 
     /* Style */
-    background: var(--gradient-bg);
+    background: var(--gradient-animated);
     animation: var(--gradient-animation);
 }
 

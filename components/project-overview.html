@@ -1,20 +1,25 @@
 <div class="project-overview" data-appear-stagger="150">
 
-    <!-- Head: Back button + Project name -->
-    <div class="section-head project-overview-head" data-appear="fromBottom">
+    <!-- Head: Back button (from left) then Project name (from bottom), same as all-projects-page -->
+    <div class="section-head project-overview-head" data-appear="default" data-appear-stagger="150">
 
         <!-- Back Button (fallback href set by project-overview.js, used if there is no previous page) -->
-        <a class="btn btn-ghost btn-back">
-            <i class="fa-solid fa-arrow-left"></i>
-            Retour
-        </a>
+        <!-- Note: Appear is on a wrapper, otherwise its kept translate would block the button hover lift -->
+        <div data-appear="fromLeft">
+            <a class="btn btn-ghost btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Retour
+            </a>
+        </div>
 
         <!-- Project Name -->
-        <span class="section-eyebrow">// Projet</span>
-        <h1 class="project-overview-name"></h1>
+        <div data-appear="fromBottom">
+            <span class="section-eyebrow">// Projet</span>
+            <h1 class="project-overview-name"></h1>
+        </div>
     </div>
 
-    <!-- Media (image for now, demo video later) -->
+    <!-- Media (YouTube video if project has one, else image; filled by project-overview.js) -->
     <div class="project-overview-media" data-appear="fromBottomSmoothed"></div>
 
     <!-- Boxes (stacked) -->

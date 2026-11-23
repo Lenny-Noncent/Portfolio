@@ -66,9 +66,8 @@
     inset: 0;
 
     /* Style */
-    background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 10%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    opacity: 0.67; /* Lighter grid than in sections */
+    background-image: var(--grid-bg);
     background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
@@ -155,12 +154,12 @@
     text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 0%);
 
     /* Style */
-    background-image: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    background-image: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     background-clip: text;
     -webkit-background-clip: text;
     animation: var(--gradient-animation);
-    transition: text-shadow 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: text-shadow var(--transition-hover);
 }
 
 .footer .logo:hover h1 {
@@ -223,7 +222,7 @@
     text-decoration: none;
 
     /* Style */
-    transition: color var(--hover-transition), translate var(--hover-transition);
+    transition: color var(--transition-hover), translate var(--transition-hover);
 }
 
 .footer .footer-nav a::before {
@@ -236,7 +235,7 @@
 
     /* Style */
     opacity: 0;
-    transition: opacity var(--hover-transition);
+    transition: opacity var(--transition-hover);
 }
 
 .footer .footer-nav a:hover {
@@ -275,7 +274,7 @@
     text-decoration: none;
 
     /* Style */
-    transition: color var(--hover-transition);
+    transition: color var(--transition-hover);
 }
 
 .footer .footer-mail i {
@@ -333,7 +332,7 @@
 .footer .footer-back-to-top i {
 
     /* Style */
-    transition: translate var(--hover-transition);
+    transition: translate var(--transition-hover);
 }
 
 .footer .footer-back-to-top:hover i {

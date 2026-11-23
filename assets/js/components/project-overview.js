@@ -92,6 +92,15 @@ function fillMedia(root, project) {
     const media = root.querySelector(".project-overview-media");
     if (!media) return;
 
+    // Video first (falls back to the image if the link is not a valid YouTube link)
+    const videoId = getYouTubeId(project.video);
+    if (project.video && !videoId) console.warn(`Project overview: invalid YouTube link for "${project.id}"`);
+
+    if (videoId) {
+        media.appendChild(createVideoFacade(project, videoId));
+        return;
+    }
+
     // Remove media part if project has no image
     if (!project.image) {
         media.remove();
@@ -99,11 +108,74 @@ function fillMedia(root, project) {
     }
 
     // Add image
+    media.appendChild(createImage(project.image, project.name));
+}
+
+function createImage(path, alt) {
     const image = document.createElement("img");
     image.className = "media";
-    image.src = new URL(project.image, ROOT_PATH).href;
-    image.alt = project.name;
-    media.appendChild(image);
+    image.src = new URL(path, ROOT_PATH).href;
+    image.alt = alt;
+    return image;
+}
+
+// Thumbnail + play button, replaced by the YouTube player on click
+// Note: YouTube embeds can't use a custom thumbnail, so the player is only loaded on click (also lighter for the page)
+function createVideoFacade(project, videoId) {
+
+    // Button container
+    const facade = document.createElement("button");
+    facade.type = "button";
+    facade.className = "media project-overview-video";
+    facade.setAttribute("aria-label", `Lire la vidéo de ${project.name}`);
+
+    // Thumbnail: project image, else YouTube's thumbnail
+    const thumbnail = project.image
+        ? createImage(project.image, "")
+        : Object.assign(document.createElement("img"), { className: "media", alt: "", src: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` });
+    facade.appendChild(thumbnail);
+
+    // Play icon
+    const play = document.createElement("span");
+    play.className = "project-overview-video-play";
+    play.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    facade.appendChild(play);
+
+    // Replace with player on click
+    facade.addEventListener("click", () => facade.replaceWith(createYouTubePlayer(project.name, videoId)), { once: true });
+
+    return facade;
+}
+
+function createYouTubePlayer(title, videoId) {
+    const player = document.createElement("iframe");
+    player.className = "media";
+    player.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+    player.title = title;
+    player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    player.allowFullscreen = true;
+    player.referrerPolicy = "strict-origin-when-cross-origin";
+    return player;
+}
+
+// Supports youtu.be/<id>, youtube.com/watch?v=<id>, /embed/<id>, /shorts/<id>, /live/<id>
+function getYouTubeId(link) {
+
+    // Return nothing if link is not set or not a URL
+    if (!link) return null;
+    let url;
+    try { url = new URL(link); } catch { return null; }
+
+    // Get id from link
+    const host = url.hostname.replace(/^(www\.|m\.)/, "");
+    let id = null;
+    if (host === "youtu.be") id = url.pathname.split("/")[1];
+    else if (host === "youtube.com" || host === "youtube-nocookie.com") {
+        id = url.searchParams.get("v") ?? url.pathname.match(/^\/(?:embed|shorts|live)\/([^/]+)/)?.[1];
+    }
+
+    // Return id only if it has a valid format
+    return /^[\w-]{11}$/.test(id ?? "") ? id : null;
 }
 
 function createInfoRow(icon, label, value) {

@@ -1,4 +1,15 @@
 /* ############################################################################################# */
+/* ////////////////////////////////////////// VARIABLES //////////////////////////////////////// */
+/* ############################################################################################# */
+
+.btn,
+.btn-icon {
+
+    /* Variables */
+    --btn-transition: var(--transition-fast);
+}
+
+/* ############################################################################################# */
 /* /////////////////////////////////////////// BUTTON ////////////////////////////////////////// */
 /* ############################################################################################# */
 
@@ -13,8 +24,12 @@
     justify-content: center;
     
     /* Style */
-    border-radius: var(--btn-radius);
-    transition: var(--btn-transition);
+    border-radius: var(--radius-pill);
+    transition:
+        translate var(--btn-transition),
+        color var(--btn-transition),
+        border-color var(--btn-transition),
+        box-shadow var(--btn-transition);
     cursor: pointer;
 
     /* Font */
@@ -38,7 +53,10 @@
 
     /* Style */
     cursor: pointer;
-    transition: var(--btn-transition);
+    transition:
+        translate var(--btn-transition),
+        color var(--btn-transition),
+        text-shadow var(--btn-transition);
 
     /* Font */
     text-decoration: none;
@@ -102,7 +120,7 @@
 .btn-back i {
 
     /* Style */
-    transition: translate var(--hover-transition);
+    transition: translate var(--transition-hover);
 }
 
 .btn-back:hover i,
@@ -120,19 +138,19 @@
 
     /* Style */
     border: none;
-    box-shadow: 0 0.8rem 2.2rem -0.6rem rgb(from var(--color-accent-primary) r g b / 55%);
-    background: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    box-shadow: var(--shadow-accent);
+    background: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     animation: var(--gradient-animation);
 
     /* Font */
     color: var(--color-bg-primary);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 .btn-solid:hover,
 .btn-solid:active {
 
     /* Style */
-    box-shadow: 0 1rem 2.5rem -0.5rem rgb(from var(--color-accent-primary) r g b / 70%);
+    box-shadow: var(--shadow-accent-hover);
 }

@@ -1,4 +1,5 @@
 import { initAppear } from "./appear.js";
+import { prefersReducedMotion } from "../utils/motion.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// VARIABLES //////////////////////////////////////////
@@ -141,9 +142,6 @@ function createProjectCard(project) {
 
 function initPerspectiveEffect(card) {
 
-    // Return if device can't hover (touch screens)
-    if (!window.matchMedia("(hover: hover)").matches) return;
-
     // Variables
     let mouseX = 0;
     let mouseY = 0;
@@ -166,13 +164,20 @@ function initPerspectiveEffect(card) {
         frameId = null;
     }
 
+    // Only real mouse pointers tilt the card (no tilt on touch / pen, mobile included)
+    // Note: Checked per event (not once at init) so it stays right on hybrid devices or when switching device mode
+    // Also no tilt when reduced motion is on
+    const isMouse = (event) => event.pointerType === "mouse" && !prefersReducedMotion();
+
     // Bring card to front when mouse enter (only once, not every frame)
-    card.addEventListener("mouseenter", () => {
+    card.addEventListener("pointerenter", (event) => {
+        if (!isMouse(event)) return;
         card.style.zIndex = 100;
     });
 
     // Save mouse position & request an update (if not already requested)
-    card.addEventListener("mousemove", (event) => {
+    card.addEventListener("pointermove", (event) => {
+        if (!isMouse(event)) return;
         mouseX = event.clientX;
         mouseY = event.clientY;
         if (frameId === null) frameId = requestAnimationFrame(update);
@@ -180,7 +185,8 @@ function initPerspectiveEffect(card) {
 
     // Cancel pending update & reset style when mouse leave
     // Note: Cancel first, otherwise a pending update could re-apply the tilt after reset
-    card.addEventListener("mouseleave", () => {
+    // Note: Not filtered by pointer type, so the reset always runs
+    card.addEventListener("pointerleave", () => {
         if (frameId !== null) {
             cancelAnimationFrame(frameId);
             frameId = null;

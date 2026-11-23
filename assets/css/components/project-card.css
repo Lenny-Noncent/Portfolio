@@ -19,7 +19,7 @@
 .project-card {
 
     /* Variables */
-    --project-card-transition: all 0.25s cubic-bezier(0.5, 1, 0.89, 1);
+    --project-card-transition: var(--duration-fast) var(--ease-out-quad);
 
     /* Layout (card is a link) */
     display: block;
@@ -32,12 +32,17 @@
     text-decoration: none;
 
     /* Style */
-    border-radius: 1.6rem;
+    border-radius: var(--radius-lg);
     border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from whitesmoke r g b / 1%);
     backdrop-filter: blur(1rem);
-    box-shadow: 0 0 3rem -0.8rem rgba(0, 0, 0, 0.7);
-    transition: var(--project-card-transition);
+    box-shadow: var(--shadow-dark);
+    /* Note: transform is set by the JS tilt effect */
+    transition:
+        transform var(--project-card-transition),
+        border-color var(--project-card-transition),
+        background-color var(--project-card-transition),
+        box-shadow var(--project-card-transition);
 }
 
 .project-card:hover,
@@ -61,10 +66,10 @@
     /* Style */
     opacity: 0;
     border-radius: inherit;
-    background-image: var(--simple-gradient-bg);
+    background-image: var(--gradient);
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     mask-composite: exclude;
-    transition: var(--project-card-transition);
+    transition: opacity var(--project-card-transition);
 }
 
 .project-card:hover::before,
@@ -97,14 +102,14 @@
     /* Style */
     -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 96%);
     mask-image: linear-gradient(to bottom, black 75%, transparent 96%);
-    transition: var(--project-card-transition);
+    transition: scale var(--project-card-transition);
 }
 
 .project-card:hover .project-card-media .media,
 .project-card:focus-visible .project-card-media .media {
 
     /* Style */
-    transform: scale(1.08);
+    scale: 1.08;
 }
 
 /* ############################################################################################# */
@@ -140,7 +145,7 @@
     overflow: hidden;
 
     /* Font */
-    color: var(--color-3);
+    color: var(--color-text);
     line-height: 1.5;
 }
 
@@ -170,7 +175,7 @@
 
     /* Style */
     background-color: rgb(from var(--color-accent-primary) r g b / 10%);
-    border-radius: var(--btn-radius);
+    border-radius: var(--radius-pill);
 
     /* Font */
     color: var(--color-accent-secondary);

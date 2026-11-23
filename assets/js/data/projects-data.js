@@ -10,6 +10,7 @@ export const projects = [
         name: "The Name I Wear",
         year: 2026,
         image: "assets/images/poster-passworld.jpg",
+        video: "https://youtu.be/bF5x32yIQSA?si=I9-NzxNSe7HVdgWe",
         description: `Incarnez un espion dans un jeu d’énigmes narratif à la première personne. 
         Écrire un nom permet d’en prendre l’identité. Explorez un riad, rassemblez des indices 
         et découvrez la vérité. Sans stylo, détournez l’environnement de manière créative et 

@@ -6,6 +6,9 @@ import { animateCounter } from "../components/counter.js";
 import { renderProjects } from "../components/project-card.js";
 import { initSpotlight } from "../components/spotlight.js";
 
+// Utils
+import { prefersReducedMotion, onReducedMotionChange } from "../utils/motion.js";
+
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
@@ -23,7 +26,12 @@ function initParallaxFx(targetSelector, referenceSelector, maxOffsetFactor, spee
     }
 
     // Define Update Function
+    // Note: No parallax when reduced motion is on (scroll-linked motion is a common motion sickness trigger)
     function update() {
+        if (prefersReducedMotion()) {
+            target.style.transform = "";
+            return;
+        }
         const scroll = window.scrollY;
         const maxOffset = reference.clientHeight * maxOffsetFactor;
         const offset = maxOffset * (1 - Math.exp(-scroll * speed));
@@ -33,6 +41,7 @@ function initParallaxFx(targetSelector, referenceSelector, maxOffsetFactor, spee
     // Add event listeners
     window.addEventListener("scroll", update);
     window.addEventListener("resize", update);
+    onReducedMotionChange(update);
 
     // First Update for initialization
     update();
@@ -42,7 +51,6 @@ function initStats() {
 
     // Get elements & settings
     const stats = document.querySelectorAll(".stat");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Loop on stats
     stats.forEach(stat => {
@@ -52,7 +60,7 @@ function initStats() {
         if (!counter) return;
 
         // Start directly if stat has no entrance animation (no appear, or animations disabled)
-        if (!stat.hasAttribute("data-appear") || reduceMotion) {
+        if (!stat.hasAttribute("data-appear") || prefersReducedMotion()) {
             animateCounter(counter);
             return;
         }

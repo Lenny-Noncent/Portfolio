@@ -31,7 +31,7 @@
         rgb(from var(--color-accent-primary) r g b / 10%),
         transparent 100%
     );
-    transition: opacity var(--hover-transition);
+    transition: opacity var(--transition-hover);
 }
 
 .spotlight:hover::before {

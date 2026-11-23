@@ -7,7 +7,7 @@
     /* Default */
     --default-appear-duration: 900ms;
     --default-appear-distance: 3rem;
-    --default-appear-easing: cubic-bezier(0.16, 1, 0.3, 1);
+    --default-appear-easing: var(--ease-out-expo);
 
     /* Smoothed */
     --appear-duration-smoothed: 900ms;

@@ -33,9 +33,7 @@
     inset: 0;
 
     /* Style */
-    background-image:
-        linear-gradient(rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness)),
-        linear-gradient(90deg, rgb(from var(--color-3) r g b / 15%) var(--grid-lines-thickness), transparent var(--grid-lines-thickness));
+    background-image: var(--grid-bg);
     background-size: var(--grid-cell-size) var(--grid-cell-size);
     mask-image: radial-gradient(ellipse 60% 35% at 20% 15%, black 0%, transparent 85%);
     -webkit-mask-image: radial-gradient(ellipse 60% 35% at 20% 15%, black 0%, transparent 85%);

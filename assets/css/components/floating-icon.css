@@ -4,6 +4,10 @@
 
 .floating-icon {
 
+    /* Variables (overridable per icon) */
+    --float-duration: 6s;
+    --float-delay: 0s;
+
     /* Layout */
     position: absolute;
     z-index: 0;
@@ -22,7 +26,7 @@
     backdrop-filter: blur(0.4rem);
     box-shadow: 0 0 1.45rem -0.3rem rgb(from var(--color-accent-primary) r g b / 35%);
     pointer-events: none;
-    animation: icon-float 6s ease-in-out infinite;
+    animation: icon-float var(--float-duration) var(--ease-in-out-sine) var(--float-delay) infinite;
 
     /* Font */
     font-size: 0.95rem;

@@ -56,18 +56,21 @@
         <div class="section-container all-projects">
 
             <!-- Back Button (fallback href if there is no previous page) -->
-            <a href="../index.html" class="btn btn-ghost btn-back appear-from-left">
-                <i class="fa-solid fa-arrow-left"></i>
-                Retour
-            </a>
+            <!-- Note: Appear is on a wrapper, otherwise its kept translate would block the button hover lift -->
+            <div data-appear="fromLeft">
+                <a href="../index.html" class="btn btn-ghost btn-back">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Retour
+                </a>
+            </div>
 
-            <!-- Section Head -->
-            <div class="section-head" data-appear-stagger="150">
-                <div class="section-head-left appear-from-bottom">
+            <!-- Section Head (offset: starts after the back button) -->
+            <div class="section-head" data-appear-stagger="150" data-appear-offset="150">
+                <div class="section-head-left" data-appear="fromBottom">
                     <span class="section-eyebrow">// Portfolio</span>
                     <h1>Mes Projets</h1>
                 </div>
-                <div class="section-head-right appear-from-bottom">
+                <div class="section-head-right" data-appear="fromBottom">
 
                     <!-- Drop down: projects filter -->
                     <select id="projects-filter">

@@ -62,11 +62,11 @@
 
     /* Style */
     border-radius: var(--radius);
-    background-image: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    background-image: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     box-shadow: 0 0 1rem 0 rgb(from var(--color-accent-primary) r g b / 45%);
     animation: var(--gradient-animation);
-    transition: box-shadow var(--hover-transition);
+    transition: box-shadow var(--transition-hover);
 }
 
 .timeline-item:hover .timeline-item-icon {
@@ -90,18 +90,18 @@
     padding: 3rem;
 
     /* Style */
-    border-radius: 1.6rem;
+    border-radius: var(--radius-lg);
     backdrop-filter: blur(1rem);
     border: solid var(--line-thickness) var(--color-line);
     background-color: rgb(from var(--color-bg-secondary) r g b / 40%);
-    transition: border-color var(--hover-transition), box-shadow var(--hover-transition);
+    transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
 }
 
 .timeline-item:hover .timeline-item-box {
 
     /* Style */
     border-color: var(--color-line-hover);
-    box-shadow: 0 0 3rem -1.2rem rgb(from var(--color-accent-primary) r g b / 35%);
+    box-shadow: var(--shadow-glow-hover);
 }
 
 /* ############################################################################################# */
@@ -136,9 +136,9 @@
     white-space: nowrap;
 
     /* Style */
-    border-radius: var(--btn-radius);
+    border-radius: var(--radius-pill);
     background-color: rgb(from var(--color-accent-primary) r g b / 10%);
-    transition: color var(--hover-transition), background-color var(--hover-transition);
+    transition: color var(--transition-hover), background-color var(--transition-hover);
 }
 
 .timeline-item:hover .timeline-date {
@@ -168,8 +168,8 @@
     font-size: var(--font-size-h2);
 
     /* Style */
-    background-image: var(--gradient-bg);
-    background-size: var(--gradient-bg-size);
+    background-image: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
     background-clip: text;
     -webkit-background-clip: text;
     animation: var(--gradient-animation);

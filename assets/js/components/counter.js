@@ -1,3 +1,5 @@
+import { prefersReducedMotion } from "../utils/motion.js";
+
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
@@ -10,7 +12,13 @@ export function animateCounter(counter) {
     const target = Number(counter.dataset.counterTarget) || 0;
     const duration = Number(counter.dataset.counterDuration) || 1500;
     const suffix = counter.dataset.counterSuffix || "";
-    
+
+    // Show final value directly if reduced motion is on
+    if (prefersReducedMotion()) {
+        counter.textContent = target.toLocaleString("fr-FR") + suffix;
+        return;
+    }
+
     // Save start
     const start = performance.now();
 
