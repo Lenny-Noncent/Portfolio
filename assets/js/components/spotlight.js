@@ -1,4 +1,10 @@
 // ################################################################################################
+// /////////////////////////////////////////// VARIABLES //////////////////////////////////////////
+// ################################################################################################
+
+const initializedElements = new WeakSet(); // elements already handled by a previous initSpotlight call
+
+// ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////
 // ################################################################################################
 
@@ -12,8 +18,10 @@ export function initSpotlight(selector = ".spotlight") {
     // Get elements
     const elements = document.querySelectorAll(selector);
 
-    // Loop on elements
+    // Loop on elements, skip those already initialized (initSpotlight can be called several times)
     elements.forEach(element => {
+        if (initializedElements.has(element)) return;
+        initializedElements.add(element);
 
         // Add spotlight class (in case it was not set in html)
         element.classList.add("spotlight");

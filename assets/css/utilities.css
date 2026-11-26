@@ -1,0 +1,26 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// UTILITIES //////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Note: Small single purpose classes, usable on any element */
+
+/* ######################################## TEXT GRADIENT ###################################### */
+
+/* Animated gradient text (titles, logo, stats...) */
+/* Note: Don't use it on a [data-appear] element: both set "animation" (put it on a child instead) */
+.text-gradient {
+
+    /* Layout */
+    width: fit-content;
+
+    /* Font */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* Style */
+    background-image: var(--gradient-animated);
+    background-size: var(--gradient-animated-size);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: var(--gradient-animation);
+}

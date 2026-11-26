@@ -1,0 +1,10 @@
+/* Components only used by project pages (imported here so they only load on these pages) */
+/* Note: @import must stay at the top of the file */
+@import '../../components/projects/project-overview.css';
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// PROJECT PAGE /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Note: The overview section is .section.is-top (layouts/section.css), its background comes from */
+/* components/projects/project-overview.html (layouts/section-background.css) */

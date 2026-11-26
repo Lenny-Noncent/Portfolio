@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// HEAD ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<head>
+    <!-- Meta & other data -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inverse Kinematic | Lenny Noncent</title>
+
+    <!-- Link to fontawesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Link for google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="../../assets/css/main.css"/>
+    <link rel="stylesheet" href="../../assets/css/pages/projects/project-page.css"/>
+    <link rel="stylesheet" href="../../assets/css/pages/projects/inverse-kinematics-unity.css"/>
+</head>
+
+<!-- ########################################################################################## -->
+<!-- //////////////////////////////////////// TEMPLATES /////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<!-- Navigation links (sections of this page) -->
+<template id="navigation-template">
+    <a href="#top-marker">Projet</a>
+    <a href="#spider-marker">Araignée</a>
+    <a href="#framework-marker">Architecture</a>
+    <a href="#solvers-marker">Solveurs</a>
+    <a href="#constraints-marker">Contraintes</a>
+    <a href="#skills-marker">Compétences</a>
+</template>
+
+<!-- ########################################################################################## -->
+<!-- ////////////////////////////////////////// BODY ////////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<!-- Note: Media files are in assets/projects/inverse-kinematics-unity/, specific styles in assets/css/pages/projects/inverse-kinematics-unity.css -->
+
+<body>
+    <!-- Top Marker -->
+    <div id="top-marker"></div>
+
+    <!--========-->
+    <!-- Header -->
+    <!--========-->
+
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Page content (clips the background effects at the page edges) -->
+    <main class="page-content">
+
+        <!--===================-->
+        <!-- SECTION: OVERVIEW -->
+        <!--===================-->
+        <!-- Project overview placeholder: background + content come from components/projects/project-overview.html -->
+        <!-- Note: Filled from projects-data.js, id = this file name -->
+        <div class="section is-top" id="project-overview-placeholder"></div>
+
+        <!--============================-->
+        <!-- SECTION: PROCEDURAL SPIDER -->
+        <!--============================-->
+        <div id="spider-marker"></div>
+        <div class="section project-section">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: -10%; --fx-y: 80%; --fx-rx: 90%; --fx-ry: 50%; --fx-intensity: 20%"></div>
+            </div>
+
+            <!-- Section Container -->
+            <div class="section-container">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 01. Araignée</span>
+                    <h2 class="text-gradient">L'araignée procédurale</h2>
+                    <p class="prose">
+                        L'araignée est la <strong>démo du projet</strong>. Elle sert à mettre le framework IK (Inverse Kinematics) à l'épreuve 
+                        dans un vrai cas d'usage. Sa démarche est <strong>entièrement procédurale</strong> et aucune animation n'est jouée. 
+                        Le corps suit la surface, chaque patte décide quand faire un pas, et l'IK la place au sol comme sur un mur.
+                    </p>
+                </div>
+
+                <!-- Frame Pipeline -->
+                <div class="box spotlight" data-appear="fromBottomSmoothed">
+                    <h3 class="eyebrow">Pipeline d'une frame</h3>
+                    <ol class="ik-pipeline">
+                        <li class="ik-pipeline-step tile">
+                            <span class="icon-badge">01</span>
+                            <span class="ik-pipeline-step-name">SpiderIKController</span>
+                            <span class="ik-pipeline-step-description">
+                                Lit les entrées du joueur et fait avancer et tourner l'araignée en détectant les obstacles devant elle.
+                            </span>
+                        </li>
+                        <li class="ik-pipeline-step tile">
+                            <span class="icon-badge">02</span>
+                            <span class="ik-pipeline-step-name">SpiderIK</span>
+                            <span class="ik-pipeline-step-description">
+                                Orchestre le cycle de pas de toutes les pattes et aligne le corps sur la surface.
+                            </span>
+                        </li>
+                        <li class="ik-pipeline-step tile">
+                            <span class="icon-badge">03</span>
+                            <span class="ik-pipeline-step-name">SpiderIKLeg</span>
+                            <span class="ik-pipeline-step-description">
+                                Cherche où poser sa patte, décide quand faire un pas et la déplace en arc jusqu'à sa nouvelle position.
+                            </span>
+                        </li>
+                        <li class="ik-pipeline-step tile">
+                            <span class="icon-badge">04</span>
+                            <span class="ik-pipeline-step-name">IKSolver & Contraintes</span>
+                            <span class="ik-pipeline-step-description">
+                                Calculent la rotation de chaque articulation pour que la patte atteigne sa cible, 
+                                sans dépasser les limites de rotation fixées pour chacune.
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Block 1.1: Arc Cast -->
+                <div class="block" id="arc-cast">
+                    <div data-appear="fromBottomSmoothed">
+                        <h3 class="block-title"><span class="block-index">1.1</span>Trouver un point d'appui</h3>
+                        <p class="prose">
+                            Un raycast unique part dans une seule direction, il ne peut donc pas détecter à la fois le sol sous la patte et 
+                            un mur devant elle. Chaque patte lance plutôt un <strong>Arc Cast</strong>, une suite de raycasts qui balaie un demi-cercle du haut 
+                            vers le bas. Le premier impact devient le point d'appui, que la surface soit au sol ou sur un mur.
+                        </p>
+                    </div>
+
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <h4 class="eyebrow">Schéma : même arc, deux situations</h4>
+                        <div class="grid" style="--grid-min: 24rem; --grid-gap: 3rem">
+                            <figure class="diagram">
+                                <img src="../../assets/projects/inverse-kinematics-unity/diagrams/arc-cast-ground.svg" width="560" height="403"
+                                     alt="Arc cast sur un sol plat : le pied se pose au sol devant l'araignée">
+                                <figcaption>Sol plat : le pied se pose devant</figcaption>
+                            </figure>
+                            <figure class="diagram">
+                                <img src="../../assets/projects/inverse-kinematics-unity/diagrams/arc-cast-wall.svg" width="560" height="403"
+                                     alt="Arc cast face à un mur : le haut de l'arc touche le mur en premier">
+                                <figcaption>Mur devant : le pied se pose sur le mur</figcaption>
+                            </figure>
+                        </div>
+                        <ul class="legend">
+                            <li style="--swatch: var(--color-accent-secondary)">Segments de l'arc (un raycast chacun)</li>
+                            <li style="--swatch: var(--color-accent-primary)">Premier impact = point d'appui</li>
+                            <li style="--swatch: var(--color-text)">Patte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Block 1.2: Gait -->
+                <div class="block split" id="gait" data-appear-stagger="150">
+                    <div data-appear="fromLeftSmoothed">
+                        <h3 class="block-title"><span class="block-index">1.2</span>Démarche procédurale</h3>
+                        <ul class="list">
+                            <li>Le <strong>cycle de pas</strong> avance avec la distance parcourue et la rotation, pas avec le temps : la cadence suit naturellement la vitesse.</li>
+                            <li>Les pattes sont réparties en <strong>groupes déphasés</strong> qui lèvent le pied à tour de rôle, ce qui donne une démarche alternée. Le système fonctionne pour n'importe quel nombre de pattes.</li>
+                            <li>Un <strong>pas d'urgence</strong> se déclenche si un pied est trop loin, et les pattes reviennent au repos quand l'araignée s'arrête.</li>
+                        </ul>
+                    </div>
+
+                    <figure class="media-figure" data-appear="fromRightSmoothed">
+                        <div class="media-frame">
+                            <img src="../../assets/projects/inverse-kinematics-unity/images/spider-procedural-walk.gif" width="801" height="451" loading="lazy"
+                                 alt="Vue de dessus : l'araignée marche et tourne, ses pattes alternent par groupes">
+                        </div>
+                        <figcaption>Vue de dessus : les deux groupes de pattes lèvent le pied à tour de rôle.</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Block 1.3: Surface alignment -->
+                <div class="block" id="surface-alignment">
+                    <div data-appear="fromBottomSmoothed">
+                        <h3 class="block-title"><span class="block-index">1.3</span>Aligner le corps sur la surface</h3>
+                        <p class="prose">
+                            Le corps s'oriente selon une <strong>normale moyenne</strong>, calculée à partir de plusieurs points échantillonnés autour de l'araignée. 
+                            Les points les plus éloignés et ceux situés devant elle pèsent plus, ce qui permet à l'araignée d'<strong>anticiper</strong> un mur ou 
+                            une pente et de commencer à se redresser avant de l'atteindre.
+                        </p>
+                    </div>
+
+                    <div class="split" data-appear-stagger="150">
+                        <div class="box spotlight" data-appear="fromLeftSmoothed">
+                            <h4 class="eyebrow">Schéma : poids des points (vue de dessus)</h4>
+                            <figure class="diagram ik-surface-sampling-diagram">
+                                <img src="../../assets/projects/inverse-kinematics-unity/diagrams/surface-sampling.svg" width="400" height="403"
+                                     alt="Points d'échantillonnage en anneaux autour de l'araignée, plus gros vers l'extérieur et vers l'avant">
+                            </figure>
+                            <ul class="legend">
+                                <li style="--swatch: var(--color-accent-secondary)">Taille = poids du point</li>
+                                <li style="--swatch: rgb(from var(--color-accent-primary) r g b / 45%)">Zone avant, favorisée</li>
+                            </ul>
+                        </div>
+
+                        <figure class="media-figure" data-appear="fromRightSmoothed">
+                            <div class="media-frame">
+                                <img src="../../assets/projects/inverse-kinematics-unity/images/spider-surface-normals.gif" width="800" height="450" loading="lazy"
+                                     alt="Gizmos des normales mesurées autour de l'araignée pendant qu'elle aborde une pente">
+                            </div>
+                            <figcaption>Normales mesurées (flèches bleues) : le corps s'incline avant d'atteindre la pente.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--====================================-->
+        <!-- SECTION: IK FRAMEWORK ARCHITECTURE -->
+        <!--====================================-->
+        <div id="framework-marker"></div>
+        <div class="section project-section">
+
+            <!-- Section Container -->
+            <div class="section-container">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 02. Architecture</span>
+                    <h2 class="text-gradient">Architecture du framework IK</h2>
+                    <p class="prose">
+                        Le framework sépare <strong>résolution</strong>, <strong>données</strong> et <strong>contraintes</strong>. Grâce à ce découpage, 
+                        les solveurs sont interchangeables, et il est possible d'ajouter un nouveau solveur ou un nouveau type de contrainte sans modifier le reste du code.
+                    </p>
+                </div>
+
+                <!-- Architecture: one box per layer -->
+                <div class="grid" data-appear-stagger="150">
+
+                    <!-- Layer: Solving -->
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <h3 class="eyebrow">Résolution</h3>
+                        <ul class="ik-architecture-classes">
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKSolver</span>
+                                <span class="ik-architecture-class-description">Oriente les articulations pour que l'effecteur atteigne la cible</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">CCDIK</span>
+                                <span class="ik-architecture-class-description">Solveur CCD</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">JacobianIK</span>
+                                <span class="ik-architecture-class-description">Solveur Jacobien</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">FabrikIK</span>
+                                <span class="ik-architecture-class-description">Solveur FABRIK</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Layer: Data -->
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <h3 class="eyebrow">Données</h3>
+                        <ul class="ik-architecture-classes">
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKData</span>
+                                <span class="ik-architecture-class-description">Décrit la chaîne d'articulations à résoudre</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKJointData</span>
+                                <span class="ik-architecture-class-description">Décrit une articulation et sa contrainte éventuelle</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Layer: Constraints -->
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <h3 class="eyebrow">Contraintes</h3>
+                        <ul class="ik-architecture-classes">
+                            <li class="ik-architecture-class tile is-abstract">
+                                <span class="ik-architecture-class-name">IKJointConstraint</span>
+                                <span class="ik-architecture-class-description">Base commune à toutes les contraintes</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKHingeConstraint</span>
+                                <span class="ik-architecture-class-description">Charnière</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKSwingTwistConstraint</span>
+                                <span class="ik-architecture-class-description">Rotule</span>
+                            </li>
+                            <li class="ik-architecture-class tile">
+                                <span class="ik-architecture-class-name">IKFixedConstraint</span>
+                                <span class="ik-architecture-class-description">Bloquée</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--==================-->
+        <!-- SECTION: SOLVERS -->
+        <!--==================-->
+        <div id="solvers-marker"></div>
+        <div class="section project-section">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 110%; --fx-y: 50%; --fx-rx: 55%; --fx-ry: 100%"></div>
+            </div>
+
+            <!-- Section Container -->
+            <div class="section-container">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 03. Solveurs</span>
+                    <h2 class="text-gradient">Les trois solveurs</h2>
+                    <p class="prose">
+                        Le solveur peut s'appuyer sur trois méthodes de calcul différentes, toutes implémentées from scratch.
+                        La méthode se change directement depuis l'inspecteur, sans modifier la scène ni la chaîne d'articulations.
+                    </p>
+                </div>
+
+                <!-- Solver Boxes + Comparison -->
+                <div class="split">
+
+                    <!-- Solver Boxes (one per row): name + how the algorithm works -->
+                    <div class="grid cols-1" style="--grid-gap: 1.5rem" data-appear-stagger="150">
+                        <div class="box spotlight" data-appear="fromLeftSmoothed">
+                            <div class="box-head"><h3 class="box-title">CCD</h3></div>
+                            <p class="box-text">
+                                Ajuste chaque articulation une par une, de la fin vers la base, pour orienter l'extrémité vers la cible.
+                            </p>
+                        </div>
+                        <div class="box spotlight" data-appear="fromLeftSmoothed">
+                            <div class="box-head"><h3 class="box-title">Jacobien</h3></div>
+                            <p class="box-text">
+                                Utilise une matrice de dérivées pour déplacer toutes les articulations en même temps, par petits pas, jusqu'à la cible.
+                            </p>
+                        </div>
+                        <div class="box spotlight" data-appear="fromLeftSmoothed">
+                            <div class="box-head"><h3 class="box-title">FABRIK</h3></div>
+                            <p class="box-text">
+                                Déplace directement les articulations vers la cible puis vers la base, en gardant la longueur des segments, sans calculer d'angles.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Solvers Comparison -->
+                    <figure class="media-figure" data-appear="fromRightSmoothed">
+                        <div class="media-frame">
+                            <img src="../../assets/projects/inverse-kinematics-unity/images/solvers-comparison.gif" width="800" height="450" loading="lazy"
+                                 alt="Les trois bras CCD, Jacobienne et FABRIK suivent la même cible">
+                        </div>
+                        <figcaption>Trois bras identiques, un solveur chacun, qui suivent la même cible.</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+
+        <!--======================-->
+        <!-- SECTION: CONSTRAINTS -->
+        <!--======================-->
+        <div id="constraints-marker"></div>
+        <div class="section project-section">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: -10%; --fx-y: 100%; --fx-rx: 55%; --fx-ry: 70%"></div>
+            </div>
+
+            <!-- Section Container -->
+            <div class="section-container">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 04. Contraintes</span>
+                    <h2 class="text-gradient">Contraintes articulaires</h2>
+                    <p class="prose">
+                        Sans contraintes, une articulation peut tourner librement et se plier de manière irréaliste. 
+                        Chaque articulation peut donc recevoir une contrainte qui limite ses rotations. 
+                        Elle se règle directement dans l'inspecteur et peut être visualisée dans la scène.
+                    </p>
+                </div>
+
+                <!-- Constraint Boxes -->
+                <div class="grid cols-3" data-appear-stagger="150">
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <div class="box-head">
+                            <h3 class="box-title">Charnière</h3>
+                            <p class="box-subtitle">IKHingeConstraint</p>
+                        </div>
+                        <p class="box-text">Limite la rotation à un seul axe, entre deux angles.</p>
+                    </div>
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <div class="box-head">
+                            <h3 class="box-title">Rotule</h3>
+                            <p class="box-subtitle">IKSwingTwistConstraint</p>
+                        </div>
+                        <p class="box-text">Permet à l'articulation de s'orienter dans un cône et de pivoter légèrement sur elle-même.</p>
+                    </div>
+                    <div class="box spotlight" data-appear="fromBottomSmoothed">
+                        <div class="box-head">
+                            <h3 class="box-title">Fixe</h3>
+                            <p class="box-subtitle">IKFixedConstraint</p>
+                        </div>
+                        <p class="box-text">Bloque l'articulation dans sa position de repos.</p>
+                    </div>
+                </div>
+
+                <!-- Swing Twist Constraint Screenshots -->
+                <div class="block is-close">
+                    <figure class="media-figure" data-appear="fromBottomSmoothed">
+                        <!-- Note: Columns follow the image widths so both frames get the same height -->
+                        <div class="grid cols-custom" style="--grid-columns: minmax(0, 706fr) minmax(0, 1192fr); --grid-gap: 1.5rem">
+                            <div class="media-frame">
+                                <img src="../../assets/projects/inverse-kinematics-unity/images/swing-twist-constraint-gizmo.png" width="706" height="686" loading="lazy"
+                                     alt="Gizmo de la contrainte rotule dans la scène : cône d'inclinaison et plage de rotation">
+                            </div>
+                            <div class="media-frame">
+                                <img src="../../assets/projects/inverse-kinematics-unity/images/swing-twist-constraint-inspector.png" width="1192" height="686" loading="lazy"
+                                     alt="Inspecteur de la contrainte rotule : limites de twist et de swing, rotations d'axe et de référence">
+                            </div>
+                        </div>
+                        <figcaption>Visualisation des contraintes dans la scène et paramétrage dans l'inspecteur.</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+
+        <!--=================-->
+        <!-- SECTION: SKILLS -->
+        <!--=================-->
+        <div id="skills-marker"></div>
+        <div class="section project-section">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 110%; --fx-y: 80%; --fx-rx: 85%; --fx-ry: 70%; --fx-intensity: 20%"></div>
+            </div>
+
+            <!-- Section Container -->
+            <div class="section-container">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 05. Compétences</span>
+                    <h2 class="text-gradient">Compétences mises en œuvre</h2>
+                    <p class="prose">
+                        Ce projet m'a permis de mettre en œuvre un large éventail de compétences, des mathématiques 3D derrière 
+                        les solveurs jusqu'aux outils de visualisation dans l'éditeur. Il m'a surtout appris à transformer des 
+                        algorithmes théoriques en un système complet, réutilisable et utilisable en conditions réelles.
+                    </p>
+                </div>
+
+                <!-- Skill Boxes -->
+                <div class="grid cols-3" data-appear-stagger="120">
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-solid fa-cube"></i></span>
+                        <div class="box-head"><h3 class="box-title">Mathématiques 3D</h3></div>
+                        <p class="box-text">
+                            Quaternions, décomposition swing-twist, changements de repère, produit vectoriel, projections, matrice jacobienne.
+                        </p>
+                    </div>
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-solid fa-code-branch"></i></span>
+                        <div class="box-head"><h3 class="box-title">Algorithmique</h3></div>
+                        <p class="box-text">
+                            Méthodes itératives, critères de convergence, gestion des cas limites comme une cible hors de portée ou un vecteur nul.
+                        </p>
+                    </div>
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-solid fa-spider"></i></span>
+                        <div class="box-head"><h3 class="box-title">Animation procédurale</h3></div>
+                        <p class="box-text">
+                            Cycle de pas par phases, trajectoires pilotées par courbes, lissage indépendant du framerate.
+                        </p>
+                    </div>
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-solid fa-crosshairs"></i></span>
+                        <div class="box-head"><h3 class="box-title">Physique &amp; requêtes</h3></div>
+                        <p class="box-text">
+                            Raycasts, arc casts, layer masks, échantillonnage pondéré des surfaces.
+                        </p>
+                    </div>
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-solid fa-sitemap"></i></span>
+                        <div class="box-head"><h3 class="box-title">Architecture</h3></div>
+                        <p class="box-text">
+                            Séparation données / logique, classes abstraites, solveurs sans état, composants réutilisables.
+                        </p>
+                    </div>
+                    <div class="box spotlight" data-appear="zoom">
+                        <span class="icon-badge"><i class="fa-brands fa-unity"></i></span>
+                        <div class="box-head"><h3 class="box-title">Outils Unity</h3></div>
+                        <p class="box-text">
+                            Gizmos et handles personnalisés, attributs d'inspecteur, New Input System, séparation du code éditeur.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+
+<!-- ########################################################################################## -->
+<!-- ///////////////////////////////////////// SCRIPTS //////////////////////////////////////// -->
+<!-- ########################################################################################## -->
+
+<script type="module" src="../../assets/js/main.js"></script>
+<script type="module" src="../../assets/js/pages/projects/project-page.js"></script>
+</html>

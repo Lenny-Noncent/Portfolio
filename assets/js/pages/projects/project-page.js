@@ -1,8 +1,8 @@
 // Data
-import { projects } from "../data/projects-data.js";
+import { projects } from "../../data/projects-data.js";
 
 // Components
-import { initProjectOverview } from "../components/project-overview.js";
+import { initProjectOverview } from "../../components/projects/project-overview.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////

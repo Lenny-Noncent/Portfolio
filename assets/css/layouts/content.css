@@ -1,0 +1,112 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////////// BLOCK ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Sub part of a section (title + content) */
+.block {
+
+    /* Layout */
+    margin-top: var(--block-gap, 6rem);
+}
+
+/* Closer to what is above (e.g. right after a grid of cards) */
+.block.is-close {
+
+    /* Variables */
+    --block-gap: 4rem;
+}
+
+/* Space between the stacked parts of a block (not in a split: grid items stay aligned) */
+.block:not(.split) > * + * {
+
+    /* Layout */
+    margin-top: 2.5rem;
+}
+
+/* Title with an optional index ("1.1") */
+.block-title {
+
+    /* Layout */
+    margin-bottom: 1.8rem;
+
+    /* Font */
+    font-size: var(--font-size-h2);
+}
+
+.block-index {
+
+    /* Layout */
+    margin-right: 1rem;
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.04em;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// PROSE ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Readable paragraph (limited line length) */
+.prose {
+
+    /* Layout */
+    max-width: var(--prose-width, 75ch);
+
+    /* Font */
+    line-height: 1.7;
+}
+
+.prose + .prose {
+
+    /* Layout */
+    margin-top: 1.2rem;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// LIST /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Bullet list with gradient diamond markers */
+.list {
+
+    /* Layout */
+    display: flex;
+    max-width: var(--prose-width, 75ch);
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: 1.2rem;
+
+    /* Style */
+    list-style: none;
+}
+
+.list li {
+
+    /* Layout */
+    position: relative;
+    padding-left: 2.2rem;
+
+    /* Font */
+    line-height: 1.7;
+}
+
+.list li::before {
+
+    /* Layout */
+    content: "";
+    position: absolute;
+    top: 0.62em;
+    left: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    rotate: 45deg;
+
+    /* Style */
+    border-radius: 0.1rem;
+    background-image: var(--gradient);
+}

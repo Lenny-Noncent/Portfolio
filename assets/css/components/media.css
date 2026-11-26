@@ -1,0 +1,120 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////// MEDIA FRAME //////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Bordered frame around an image / gif / video */
+.media-frame {
+
+    /* Layout */
+    overflow: hidden;
+
+    /* Style */
+    border-radius: var(--radius);
+    border: solid var(--line-thickness) var(--color-line);
+    box-shadow: var(--shadow-dark);
+    transition: border-color var(--transition-hover);
+}
+
+.media-frame > img {
+
+    /* Layout */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// MEDIA FIGURE /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Figure: one or several frames + caption */
+.media-figure:hover .media-frame {
+
+    /* Style */
+    border-color: var(--color-line-hover);
+}
+
+.media-figure figcaption {
+
+    /* Layout */
+    margin-top: 1.2rem;
+    padding-left: 1.2rem;
+
+    /* Font */
+    font-size: 1rem;
+    line-height: 1.6;
+
+    /* Style */
+    border-left: solid var(--line-thickness) var(--color-accent-primary);
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// DIAGRAM ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Schema (svg) with a centered mono caption */
+.diagram img {
+
+    /* Layout */
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.diagram figcaption {
+
+    /* Layout */
+    margin-top: 1rem;
+
+    /* Font */
+    text-align: center;
+    font-size: var(--font-size-mono);
+    font-family: var(--font-family-mono);
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// LEGEND ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Color legend: each item sets its swatch color with --swatch */
+.legend {
+
+    /* Layout */
+    display: flex;
+    padding-top: 1.6rem;
+
+    /* Content Layout */
+    flex-wrap: wrap;
+    gap: 1rem 2.2rem;
+
+    /* Style */
+    list-style: none;
+    border-top: solid var(--line-thickness) var(--color-line);
+
+    /* Font */
+    font-size: var(--font-size-mono);
+}
+
+.legend li {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.legend li::before {
+
+    /* Layout */
+    content: "";
+    flex-shrink: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+
+    /* Style */
+    border-radius: 0.2rem;
+    background-color: var(--swatch, var(--color-text));
+}

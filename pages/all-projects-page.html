@@ -41,55 +41,61 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
-    <!--=======================-->
-    <!-- SECTION: ALL PROJECTS -->
-    <!--=======================-->
-    <div class="section all-projects">
+    <!-- Page content (clips the background effects at the page edges) -->
+    <main class="page-content">
 
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
+        <!--=======================-->
+        <!-- SECTION: ALL PROJECTS -->
+        <!--=======================-->
+        <div class="section is-top all-projects">
 
-        <!-- Section Container -->
-        <div class="section-container all-projects">
-
-            <!-- Back Button (fallback href if there is no previous page) -->
-            <!-- Note: Appear is on a wrapper, otherwise its kept translate would block the button hover lift -->
-            <div data-appear="fromLeft">
-                <a href="../index.html" class="btn btn-ghost btn-back">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    Retour
-                </a>
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 0%; --fx-y: 0%; --fx-rx: 110%; --fx-ry: 50%"></div>
+                <div class="bg-fx-glow" style="--fx-x: 120%; --fx-y: 100%; --fx-rx: 90%; --fx-ry: 40%; --fx-intensity: 20%"></div>
+                <div class="bg-fx-grid" style="--fx-x: 20%; --fx-y: 15%; --fx-rx: 60%; --fx-ry: 35%"></div>
             </div>
 
-            <!-- Section Head (offset: starts after the back button) -->
-            <div class="section-head" data-appear-stagger="150" data-appear-offset="150">
-                <div class="section-head-left" data-appear="fromBottom">
-                    <span class="section-eyebrow">// Portfolio</span>
-                    <h1>Mes Projets</h1>
-                </div>
-                <div class="section-head-right" data-appear="fromBottom">
+            <!-- Section Container -->
+            <div class="section-container all-projects">
 
-                    <!-- Drop down: projects filter -->
-                    <select id="projects-filter">
-                        <button><selectedcontent></selectedcontent></button>
-                        <option value="all-projects">Tous les projets</option>
-                        <option value="unreal-engine">Unreal Engine</option>
-                        <option value="unity">Unity</option>
-                        <option value="c++">C++</option>
-                        <option value="c#">C#</option>
-                    </select>
-
+                <!-- Back Button (fallback href if there is no previous page) -->
+                <!-- Note: Appear is on a wrapper, otherwise its kept translate would block the button hover lift -->
+                <div data-appear="fromLeft">
+                    <a href="../index.html" class="btn btn-ghost btn-back">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Retour
+                    </a>
                 </div>
+
+                <!-- Section Head (offset: starts after the back button) -->
+                <div class="section-head is-split" data-appear-stagger="150" data-appear-offset="150">
+                    <div class="section-head-left" data-appear="fromBottom">
+                        <span class="eyebrow">// Portfolio</span>
+                        <h1 class="text-gradient">Mes Projets</h1>
+                    </div>
+                    <div class="section-head-right" data-appear="fromBottom">
+
+                        <!-- Drop down: projects filter -->
+                        <select id="projects-filter">
+                            <button><selectedcontent></selectedcontent></button>
+                            <option value="all-projects">Tous les projets</option>
+                            <option value="unreal-engine">Unreal Engine</option>
+                            <option value="unity">Unity</option>
+                            <option value="c++">C++</option>
+                            <option value="c#">C#</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <!-- Project cards -->
+                <div class="grid project-cards" id="project-cards" data-appear-stagger="120"></div>
+
             </div>
-
-            <!-- Project cards -->
-            <div class="project-cards" id="project-cards" data-appear-stagger="120"></div>
-
         </div>
-    </div>
+
+    </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>

@@ -24,6 +24,10 @@
     --color-line: rgb(from var(--color-3) r g b / 15%);
     --color-line-hover: rgb(from var(--color-accent-primary) r g b / 25%);
 
+    /* Surfaces (box / tile: panels, pill: badge / round icon) */
+    --color-box-bg: rgb(from whitesmoke r g b / 2%);
+    --color-pill-bg: rgb(from var(--color-accent-primary) r g b / 10%);
+
     /* ============== TYPOGRAPHY ============= */
 
     /* Fluid Scale (root font size follows the viewport width, clamped) */

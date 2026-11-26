@@ -16,7 +16,7 @@
         "boxes";
 }
 
-/* Note: Higher specificity to override .section-head padding (section.css is imported after this file) */
+/* Note: Higher specificity to override .section-head padding (layouts/section.css) */
 .project-overview .project-overview-head {
 
     /* Layout */
@@ -34,76 +34,11 @@
 /* //////////////////////////////////////////// BOXES ////////////////////////////////////////// */
 /* ############################################################################################# */
 
-/* Side by side (same height), stacked on small screens (see MEDIAS) */
+/* Note: Uses .grid.cols-2 (grid.css), boxes use .box (box.css) */
 .project-overview-boxes {
 
     /* Layout */
-    display: grid;
     grid-area: boxes;
-
-    /* Content Layout */
-    gap: 2rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.project-overview-box {
-
-    /* Layout */
-    display: flex;
-    padding: 2.5rem;
-
-    /* Content Layout */
-    flex-direction: column;
-    gap: 1.8rem;
-
-    /* Style */
-    backdrop-filter: blur(1rem);
-    border-radius: var(--radius);
-    border: solid var(--line-thickness) var(--color-line);
-    background-color: rgb(from whitesmoke r g b / 1%);
-    transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
-}
-
-.project-overview-box:hover {
-
-    /* Style */
-    border-color: var(--color-line-hover);
-    box-shadow: var(--shadow-glow-hover);
-}
-
-.project-overview-box-title {
-
-    /* Font */
-    color: var(--color-accent-primary);
-    font-size: var(--font-size-h3);
-}
-
-.project-overview-box-title::after {
-
-    /* Layout */
-    content: "";
-    display: block;
-    width: 5rem;
-    height: var(--line-thickness);
-    margin-top: 0.9rem;
-    scale: 0.6 1;
-    transform-origin: left;
-
-    /* Style */
-    background-image: var(--gradient);
-    transition: scale var(--transition-hover);
-}
-
-.project-overview-box:hover .project-overview-box-title::after {
-
-    /* Layout */
-    scale: 1;
-}
-
-.project-overview-description {
-
-    /* Font */
-    line-height: 1.6;
 }
 
 /* ############################################################################################# */
@@ -133,26 +68,7 @@
     gap: 1rem;
 }
 
-.project-overview-info-icon {
-
-    /* Layout */
-    display: inline-flex;
-    flex-shrink: 0;
-    width: 2.6rem;
-    height: 2.6rem;
-
-    /* Content Layout */
-    align-items: center;
-    justify-content: center;
-
-    /* Style */
-    border-radius: var(--radius-pill);
-    background-color: rgb(from var(--color-accent-primary) r g b / 10%);
-
-    /* Font */
-    color: var(--color-accent-secondary);
-    font-size: 1rem;
-}
+/* Note: Info icons use .icon-badge (badge.css) */
 
 .project-overview-info-label {
 
@@ -177,18 +93,13 @@
 /* //////////////////////////////////////////// MEDIA ////////////////////////////////////////// */
 /* ############################################################################################# */
 
+/* Note: Uses .media-frame (media.css) */
 .project-overview-media {
 
     /* Layout */
     position: relative;
     grid-area: media;
     aspect-ratio: 16 / 9;
-    overflow: hidden;
-
-    /* Style */
-    border-radius: var(--radius);
-    border: solid var(--line-thickness) var(--color-line);
-    box-shadow: var(--shadow-dark);
 }
 
 .project-overview-media .media {
@@ -268,15 +179,4 @@
     /* Style */
     scale: 1.1;
     background-color: rgb(from var(--color-accent-primary) r g b / 35%);
-}
-
-/* ############################################################################################# */
-/* /////////////////////////////////////////// MEDIAS ////////////////////////////////////////// */
-/* ############################################################################################# */
-
-/* Small screens: boxes stacked vertically */
-@media (max-width: 900px) {
-    .project-overview-boxes {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }

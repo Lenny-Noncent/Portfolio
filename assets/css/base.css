@@ -78,3 +78,36 @@ h2 {
     letter-spacing: var(--letter-spacing-header);
     color: var(--color-accent-secondary);
 }
+
+/* ############################################################################################# */
+/* ///////////////////////////////////////////// H3 //////////////////////////////////////////// */
+/* ############################################################################################# */
+
+h3 {
+
+    /* Font */
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-header);
+    color: var(--color-accent-secondary);
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// EMPHASIS ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+strong {
+
+    /* Font */
+    color: var(--color-accent-secondary);
+    font-weight: var(--font-weight-normal);
+}
+
+code {
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: 0.9em;
+}

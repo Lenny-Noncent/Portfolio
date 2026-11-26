@@ -1,0 +1,133 @@
+/* ############################################################################################# */
+/* ////////////////////////////////////////// SURFACE ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Shared look of boxes and tiles */
+/* Note: A tile inside a box looks a bit lighter than the box (both backgrounds add up) */
+.box,
+.tile {
+
+    /* Style */
+    border-radius: var(--radius);
+    border: solid var(--line-thickness) var(--color-line);
+    background-color: var(--color-box-bg);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// BOX //////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Glass panel: children stacked with --box-gap, inner space set with --box-padding */
+.box {
+
+    /* Layout */
+    display: flex;
+    padding: var(--box-padding, 2.5rem);
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: var(--box-gap, 1.8rem);
+
+    /* Style */
+    backdrop-filter: blur(1rem);
+    transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
+}
+
+.box:hover {
+
+    /* Style */
+    border-color: var(--color-line-hover);
+    box-shadow: var(--shadow-glow-hover);
+}
+
+/* Eyebrow as box label: shorter line, spacing given by the box gap */
+.box .eyebrow {
+
+    /* Variables */
+    --eyebrow-line: 1.5rem;
+
+    /* Layout */
+    margin-bottom: 0;
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// BOX HEAD ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Title (+ optional subtitle) with a gradient line that grows when the box is hovered */
+.box-head {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.box-head::after {
+
+    /* Layout */
+    content: "";
+    display: block;
+    width: 5rem;
+    height: var(--line-thickness);
+    margin-top: 0.3rem;
+    scale: 0.6 1;
+    transform-origin: left;
+
+    /* Style */
+    background-image: var(--gradient);
+    transition: scale var(--transition-hover);
+}
+
+.box:hover .box-head::after {
+
+    /* Layout */
+    scale: 1;
+}
+
+.box-title {
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+}
+
+.box-subtitle {
+
+    /* Font */
+    color: var(--color-accent-secondary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    overflow-wrap: anywhere;
+}
+
+.box-text {
+
+    /* Font */
+    line-height: 1.6;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// TILE /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Small inner element (inside a box, or as list item): no blur, no glow, no own layout */
+.tile {
+
+    /* Layout */
+    padding: var(--tile-padding, 1.2rem);
+
+    /* Style */
+    transition: border-color var(--transition-hover), background-color var(--transition-hover);
+}
+
+.tile:hover {
+
+    /* Style */
+    border-color: var(--color-line-hover);
+    background-color: rgb(from var(--color-accent-primary) r g b / 4%);
+}

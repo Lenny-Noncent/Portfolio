@@ -17,32 +17,12 @@
     padding: 5rem 8rem;
 }
 
-/* ############################################################################################# */
-/* ///////////////////////////////////////// BACKGROUND //////////////////////////////////////// */
-/* ############################################################################################# */
-
-.section-background {
+/* First section of a sub page (under the fixed header): header padding */
+/* Note: Its background is set in the HTML like any section (see layouts/section-background.css) */
+.section.is-top > .section-container {
 
     /* Layout */
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-
-    /* Style */
-    pointer-events: none;
-}
-
-.section-background .bg-fx-glow {
-
-    /* Style */
-    animation: glow-breathe 8s var(--ease-in-out-sine) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .section-background .bg-fx-glow {
-        animation: none;
-    }
+    padding-top: calc(var(--header-height) + 3rem);
 }
 
 /* ############################################################################################# */
@@ -55,21 +35,11 @@
     padding-bottom: 2.2rem;
 }
 
-.section-head h1 {
-
-    /* Layout */
-    width: fit-content;
+/* Section title (h1 on the first section of a page, h2 after) */
+.section-head :is(h1, h2) {
 
     /* Font */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-
-    /* Style */
-    background-image: var(--gradient-animated);
-    background-size: var(--gradient-animated-size);
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: var(--gradient-animation);
+    font-size: var(--font-size-h1);
 }
 
 .section-head p {
@@ -78,11 +48,30 @@
     margin-top: 1.5rem;
 }
 
+/* Text on the left, action on the right (stacked on small screens, see MEDIAS) */
+.section-head.is-split {
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    gap: 10%;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.section-head.is-split .section-head-right {
+
+    /* Layout */
+    flex-shrink: 0;
+}
+
 /* ############################################################################################# */
 /* ////////////////////////////////////////// EYEBROW ////////////////////////////////////////// */
 /* ############################################################################################# */
 
-.section-eyebrow {
+/* Small mono label above a title, with a gradient line (line length set with --eyebrow-line) */
+.eyebrow {
 
     /* Layout */
     display: flex;
@@ -101,15 +90,22 @@
     text-transform: uppercase;
 }
 
-.section-eyebrow::before {
+.eyebrow::before {
 
     /* Layout */
     content: "";
-    width: 2.5rem;
+    width: var(--eyebrow-line, 2.5rem);
     height: var(--line-thickness);
 
     /* Style */
     background-image: var(--gradient);
+}
+
+/* Without the line */
+.eyebrow.is-plain::before {
+
+    /* Layout */
+    display: none;
 }
 
 /* ############################################################################################# */
@@ -117,7 +113,16 @@
 /* ############################################################################################# */
 
 @media (max-width: 900px) {
+
     .section-container {
         padding: 5rem 4rem;
+    }
+
+    .section-head.is-split {
+        display: block;
+    }
+
+    .section-head.is-split .section-head-right {
+        margin-top: 1.5rem;
     }
 }

@@ -53,416 +53,421 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
-    <!--===============-->
-    <!-- SECTION: HERO -->
-    <!--===============-->
-    <div class="section hero">
+    <!-- Page content (clips the background effects at the page edges) -->
+    <main class="page-content">
 
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
+        <!--===============-->
+        <!-- SECTION: HERO -->
+        <!--===============-->
+        <div class="section hero">
 
-        <!-- Section Container -->
-        <div class="section-container hero">
-
-            <!-- Hero Content -->
-            <div class="hero-content" data-appear-stagger="300">
-
-                <!-- Hero Text -->
-                <div class="hero-text" data-appear="fromBottomSmoothed">
-                    <h1 class="hero-title" >Game<br>Programmer</h1>
-                    <h2 class="hero-subtitle">Lenny Noncent</h2>
-                    <p>
-                        Bonjour ! Je m'appelle Lenny et je suis actuellement en 5ème année de Game Programming
-                        à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
-                        vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
-                        connaissances et améliorer mes compétences.
-                    </p>
-                </div>
-
-                <!-- Hero Actions -->
-                <div class="hero-actions" data-appear="fromBottomSmoothed">
-                    <a href="mailto:lenny.noncent.pro@gmail.com" class="btn btn-solid">Me contacter</a>
-                    <a href="./resources/cv/CV-Lenny-Noncent.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">&gt; Voir mon CV</a>
-                </div>
-
-                <!-- Stats Strip -->
-                <div class="stats-strip" data-appear="default" data-appear-stagger="300">
-
-                    <!-- Stat: years of study -->
-                    <div class="stat" id="stat-years-of-study" data-appear="fromBottomSmoothed">
-                        <span class="stat-value counter-up" data-counter-target="4" data-counter-suffix="+">0</span>
-                        <span class="stat-label">années de formation</span>
-                    </div>
-
-                    <!-- Stat: Completed projects -->
-                    <div class="stat" id="stat-completed-projects" data-appear="fromBottomSmoothed">
-                        <span class="stat-value counter-up" data-counter-target="35" data-counter-suffix="+">0</span>
-                        <span class="stat-label">projets réalisés</span>
-                    </div>
-
-                    <!-- Stat: Technologies used -->
-                    <div class="stat" id="stat-technologies-used" data-appear="fromBottomSmoothed">
-                        <span class="stat-value counter-up" data-counter-target="10" data-counter-suffix="+">0</span>
-                        <span class="stat-label">Technologies utilisées</span>
-                    </div>
-                </div>
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 0%; --fx-y: 0%; --fx-rx: 110%; --fx-ry: 75%"></div>
+                <div class="bg-fx-grid" style="--fx-x: 15%; --fx-y: 48%; --fx-rx: 55%; --fx-ry: 45%"></div>
             </div>
 
-            <!-- Hero Portrait -->
-            <div class="hero-portrait" data-appear="fromRightSmoothed">
+            <!-- Section Container -->
+            <div class="section-container hero">
 
-                <!-- Floating Icons -->
-                <div class="floating-icons" id="floating-icons">
-                    <div class="floating-icon" id="floating-icon-cpp">C++</div>
-                    <div class="floating-icon" id="floating-icon-code">&lt;/&gt;</div>
-                    <div class="floating-icon" id="floating-icon-gamepad">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 25 H49 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 a8 8 0 0 1 -6.2 -2.9 l-4.4 -5.1 H24.6 l-4.4 5.1 A8 8 0 0 1 14 51 A10 10 0 0 1 4 41 v-6 A10 10 0 0 1 15 25 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-                            <path d="M18.5 33 v6 M15.5 36 h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                            <circle cx="45.5" cy="32.5" r="1.9" fill="currentColor"/>
-                            <circle cx="49.5" cy="36.5" r="1.9" fill="currentColor"/>
-                        </svg>
-                    </div>
-                </div>
+                <!-- Hero Content -->
+                <div class="hero-content" data-appear-stagger="300">
 
-                <!-- Photo -->
-                <img class="hero-portrait-photo" src="./assets/images/lenny-photo.png" alt="Photo de Lenny Noncent">
-            </div>
-
-        </div>
-    </div>
-
-    <!--======================-->
-    <!-- SECTION: MY PROJECTS -->
-    <!--======================-->
-    <div id="my-projects-marker"></div>
-    <div class="section my-projects">
-
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
-
-        <!-- Section Container -->
-        <div class="section-container my-projects">
-
-            <!-- Section Head -->
-            <div class="section-head" data-appear-method="onViewport" data-appear-stagger="150">
-                <div class="section-head-left" data-appear="fromBottom">
-                    <span class="section-eyebrow">// 01. Projets</span>
-                    <h1>Mes Projets</h1>
-                    <p>
-                        Voici une sélection de projets mettant en avant mon travail en programmation gameplay et systèmes, 
-                        développés avec différentes technologies, notamment C++, C#, Unreal Engine et Unity.
-                        D’autres projets sont également à découvrir dans mon portfolio.
-                    </p>
-                </div>
-                <div class="section-head-right" data-appear="fromBottom">
-                    <a href="./pages/all-projects-page.html" class="btn btn-solid">Voir tous les projets</a>
-                </div>
-            </div>
-
-            <!-- Project cards -->
-            <div class="project-cards" id="project-cards" data-appear-method="onViewport" data-appear-stagger="120"></div>
-        </div>
-        
-    </div>
-
-    <!--=====================-->
-    <!-- SECTION: MY JOURNEY -->
-    <!--=====================-->
-    <div id="my-journey-marker"></div>
-    <div class="section my-journey">
-
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
-
-        <!-- Section Container -->
-        <div class="section-container my-journey">
-
-            <!-- Section Head -->
-            <div class="section-head" data-appear-method="onViewport" data-appear="fromBottom">
-                <span class="section-eyebrow">// 02. Parcours</span>
-                <h1>Mon Parcours</h1>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="timeline-container">
-
-                <!-- Timeline Items -->
-                <div class="timeline-line" data-appear-method="onViewport" data-appear="drawDown"></div>
-                <div class="timeline-items" data-appear-method="onViewport" data-appear-stagger="180">
-
-                    <!-- Item 1 -->
-                    <div class="timeline-item" data-appear="fromLeft">
-                        <div class="timeline-item-icon">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-item-box spotlight">
-                            <div class="timeline-head">
-                                <div class="timeline-date">oct. 2025 - aujourd'hui</div>
-                                <div class="timeline-title">
-                                    <h1>Concepteur Gameplay Unreal Engine 5</h1>
-                                    <h2>Gendarmerie Nationale - CFOSN</h2>
-                                </div>
-                            </div>
-                            <p>
-                                Contribution, dans le cadre d'un contrat d'apprentissage de 2 ans, 
-                                au développement et à l'évolution de Simugend, simulateur tactique 3D utilisé 
-                                pour l'entraînement opérationnel des unités d'intervention
-                            </p>
-                        </div>
+                    <!-- Hero Text -->
+                    <div class="hero-text" data-appear="fromBottomSmoothed">
+                        <h1 class="hero-title">Game<br>Programmer</h1>
+                        <p class="hero-subtitle">Lenny Noncent</p>
+                        <p>
+                            Bonjour ! Je m'appelle Lenny et je suis actuellement en 5ème année de Game Programming
+                            à Isart Digital, Paris. Depuis mon enfance, je suis passionné par la création de jeux
+                            vidéo et je suis toujours en quête de nouveaux défis pour mettre en pratique mes
+                            connaissances et améliorer mes compétences.
+                        </p>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="timeline-item" data-appear="fromLeft">
-                        <div class="timeline-item-icon">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-item-box spotlight">
-                            <div class="timeline-head">
-                                <div class="timeline-date">févr. 2025 - avr. 2025</div>
-                                <div class="timeline-title">
-                                    <h1>Développeur Mobile Unity</h1>
-                                    <h2>iRiS Intuition</h2>
-                                </div>
-                            </div>
-                            <p>
-                                Stage de 3 mois sur Unity, dédié à l'amélioration de jeux mobiles 
-                                ludiques destinés à entraîner l'intuition
-                            </p>
-                        </div>
+                    <!-- Hero Actions -->
+                    <div class="hero-actions" data-appear="fromBottomSmoothed">
+                        <a href="mailto:lenny.noncent.pro@gmail.com" class="btn btn-solid">Me contacter</a>
+                        <a href="./resources/cv/CV-Lenny-Noncent.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">&gt; Voir mon CV</a>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="timeline-item" data-appear="fromLeft">
-                        <div class="timeline-item-icon">
-                            <i class="fa-solid fa-graduation-cap"></i>
+                    <!-- Stats Strip -->
+                    <div class="stats-strip" data-appear="default" data-appear-stagger="300">
+
+                        <!-- Stat: years of study -->
+                        <div class="stat" id="stat-years-of-study" data-appear="fromBottomSmoothed">
+                            <span class="stat-value text-gradient counter-up" data-counter-target="4" data-counter-suffix="+">0</span>
+                            <span class="stat-label">années de formation</span>
                         </div>
-                        <div class="timeline-item-box spotlight">
-                            <div class="timeline-head">
-                                <div class="timeline-date">2022 - Aujourd'hui</div>
-                                <div class="timeline-title">
-                                    <h1>Isart Digital Paris</h1>
-                                </div>
-                            </div>
-                            <p>
-                                Master en Game Programming
-                            </p>
+
+                        <!-- Stat: Completed projects -->
+                        <div class="stat" id="stat-completed-projects" data-appear="fromBottomSmoothed">
+                            <span class="stat-value text-gradient counter-up" data-counter-target="35" data-counter-suffix="+">0</span>
+                            <span class="stat-label">projets réalisés</span>
+                        </div>
+
+                        <!-- Stat: Technologies used -->
+                        <div class="stat" id="stat-technologies-used" data-appear="fromBottomSmoothed">
+                            <span class="stat-value text-gradient counter-up" data-counter-target="10" data-counter-suffix="+">0</span>
+                            <span class="stat-label">Technologies utilisées</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Hero Portrait -->
+                <div class="hero-portrait" data-appear="fromRightSmoothed">
+
+                    <!-- Floating Icons -->
+                    <div class="floating-icons" id="floating-icons">
+                        <div class="floating-icon" id="floating-icon-cpp">C++</div>
+                        <div class="floating-icon" id="floating-icon-code">&lt;/&gt;</div>
+                        <div class="floating-icon" id="floating-icon-gamepad">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 25 H49 a10 10 0 0 1 10 10 v6 a10 10 0 0 1 -10 10 a8 8 0 0 1 -6.2 -2.9 l-4.4 -5.1 H24.6 l-4.4 5.1 A8 8 0 0 1 14 51 A10 10 0 0 1 4 41 v-6 A10 10 0 0 1 15 25 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+                                <path d="M18.5 33 v6 M15.5 36 h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                                <circle cx="45.5" cy="32.5" r="1.9" fill="currentColor"/>
+                                <circle cx="49.5" cy="36.5" r="1.9" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Photo -->
+                    <img class="hero-portrait-photo" src="./assets/images/lenny-photo.png" alt="Photo de Lenny Noncent">
+                </div>
+
+            </div>
+        </div>
+
+        <!--======================-->
+        <!-- SECTION: MY PROJECTS -->
+        <!--======================-->
+        <div id="my-projects-marker"></div>
+        <div class="section my-projects">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 120%; --fx-y: 100%; --fx-rx: 90%; --fx-ry: 120%"></div>
+                <div class="bg-fx-grid" style="--fx-x: 50%; --fx-y: 45%; --fx-rx: 55%; --fx-ry: 55%"></div>
+            </div>
+
+            <!-- Section Container -->
+            <div class="section-container my-projects">
+
+                <!-- Section Head -->
+                <div class="section-head is-split" data-appear-method="onViewport" data-appear-stagger="150">
+                    <div class="section-head-left" data-appear="fromBottom">
+                        <span class="eyebrow">// 01. Projets</span>
+                        <h2 class="text-gradient">Mes Projets</h2>
+                        <p>
+                            Voici une sélection de projets mettant en avant mon travail en programmation gameplay et systèmes, 
+                            développés avec différentes technologies, notamment C++, C#, Unreal Engine et Unity.
+                            D’autres projets sont également à découvrir dans mon portfolio.
+                        </p>
+                    </div>
+                    <div class="section-head-right" data-appear="fromBottom">
+                        <a href="./pages/all-projects-page.html" class="btn btn-solid">Voir tous les projets</a>
+                    </div>
+                </div>
+
+                <!-- Project cards -->
+                <div class="grid project-cards" id="project-cards" data-appear-method="onViewport" data-appear-stagger="120"></div>
             </div>
 
         </div>
 
-    </div>
+        <!--=====================-->
+        <!-- SECTION: MY JOURNEY -->
+        <!--=====================-->
+        <div id="my-journey-marker"></div>
+        <div class="section my-journey">
 
-    <!--==============================-->
-    <!-- SECTION: MY TECHNICAL SKILLS -->
-    <!--==============================-->
-    <div id="my-technical-skills-marker"></div>
-    <div class="section my-technical-skills">
-
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
-
-         <!-- Section Container -->
-        <div class="section-container my-technical-skills">
-
-            <!-- Section Head -->
-            <div class="section-head" data-appear="fromBottom">
-                <span class="section-eyebrow">// 03. Compétences</span>
-                <h1>Mes Compétences Techniques</h1>
+            <!-- Background -->
+            <div class="section-background">
+                <!-- Note: No glow, the my-projects glow continues here -->
+                <div class="bg-fx-grid" style="--fx-x: 80%; --fx-y: 40%; --fx-rx: 70%; --fx-ry: 40%"></div>
             </div>
 
-            <!-- Skills Panel Grid -->
-            <div class="skills-panel-grid" data-appear-method="onViewport" data-appear-stagger="150">
+            <!-- Section Container -->
+            <div class="section-container my-journey">
 
-                <!-- Panel 1 -->
-                <div class="skills-panel spotlight" data-appear="zoom">
-                    <h1>Langages & Moteurs</h1>
-                    <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
+                <!-- Section Head -->
+                <div class="section-head" data-appear-method="onViewport" data-appear="fromBottom">
+                    <span class="eyebrow">// 02. Parcours</span>
+                    <h2 class="text-gradient">Mon Parcours</h2>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="timeline-container">
+
+                    <!-- Timeline Items -->
+                    <div class="timeline-line" data-appear-method="onViewport" data-appear="drawDown"></div>
+                    <div class="timeline-items" data-appear-method="onViewport" data-appear-stagger="180">
 
                         <!-- Item 1 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">C</div>
+                        <div class="timeline-item" data-appear="fromLeftSmoothed">
+                            <div class="timeline-item-icon">
+                                <i class="fa-solid fa-briefcase"></i>
                             </div>
-                            <span class="skill-item-label">C</span>
+                            <div class="box timeline-item-box spotlight">
+                                <div class="timeline-head">
+                                    <div class="pill timeline-date">oct. 2025 - aujourd'hui</div>
+                                    <div class="timeline-title">
+                                        <h3 class="timeline-name text-gradient">Concepteur Gameplay Unreal Engine 5</h3>
+                                        <p class="timeline-company">Gendarmerie Nationale - CFOSN</p>
+                                    </div>
+                                </div>
+                                <p>
+                                    Contribution, dans le cadre d'un contrat d'apprentissage de 2 ans, 
+                                    au développement et à l'évolution de Simugend, simulateur tactique 3D utilisé 
+                                    pour l'entraînement opérationnel des unités d'intervention
+                                </p>
+                            </div>
                         </div>
 
                         <!-- Item 2 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">C++</div>
+                        <div class="timeline-item" data-appear="fromLeftSmoothed">
+                            <div class="timeline-item-icon">
+                                <i class="fa-solid fa-briefcase"></i>
                             </div>
-                            <span class="skill-item-label">C++</span>
+                            <div class="box timeline-item-box spotlight">
+                                <div class="timeline-head">
+                                    <div class="pill timeline-date">févr. 2025 - avr. 2025</div>
+                                    <div class="timeline-title">
+                                        <h3 class="timeline-name text-gradient">Développeur Mobile Unity</h3>
+                                        <p class="timeline-company">iRiS Intuition</p>
+                                    </div>
+                                </div>
+                                <p>
+                                    Stage de 3 mois sur Unity, dédié à l'amélioration de jeux mobiles 
+                                    ludiques destinés à entraîner l'intuition
+                                </p>
+                            </div>
                         </div>
 
                         <!-- Item 3 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">C#</div>
+                        <div class="timeline-item" data-appear="fromLeftSmoothed">
+                            <div class="timeline-item-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
                             </div>
-                            <span class="skill-item-label">C#</span>
-                        </div>
-                        
-                        <!-- Item 4 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-brands fa-python"></i></div>
+                            <div class="box timeline-item-box spotlight">
+                                <div class="timeline-head">
+                                    <div class="pill timeline-date">2022 - Aujourd'hui</div>
+                                    <div class="timeline-title">
+                                        <h3 class="timeline-name text-gradient">Isart Digital Paris</h3>
+                                    </div>
+                                </div>
+                                <p>
+                                    Master en Game Programming
+                                </p>
                             </div>
-                            <span class="skill-item-label">Python</span>
                         </div>
-
-                        <!-- Item 5 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">UE</div>
-                            </div>
-                            <span class="skill-item-label">Unreal Engine</span>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-brands fa-unity"></i></div>
-                            </div>
-                            <span class="skill-item-label">Unity</span>
-                        </div>
-
                     </div>
-                </div>
 
-                <!-- Panel 2 -->
-                <div class="skills-panel spotlight" data-appear="zoom">
-                    <h1>Outils & Bibliothèques</h1>
-                    <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
-
-                        <!-- Item 1 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">VS</div>
-                            </div>
-                            <span class="skill-item-label">Visual Studio</span>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">R</div>
-                            </div>
-                            <span class="skill-item-label">Rider</span>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-brands fa-git-alt"></i></div>
-                            </div>
-                            <span class="skill-item-label">Git</span>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">P4</div>
-                            </div>
-                            <span class="skill-item-label">Perforce</span>
-                        </div>
-
-                        <!-- Item 5 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-display"></i></div>
-                            </div>
-                            <span class="skill-item-label">ImGui</span>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-display"></i></div>
-                            </div>
-                            <span class="skill-item-label">GLFW</span>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">GL</div>
-                            </div>
-                            <span class="skill-item-label">OpenGL</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Panel 3 -->
-                <div class="skills-panel spotlight" data-appear="zoom">
-                    <h1>Systèmes de Jeu</h1>
-                    <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
-
-                        <!-- Item 1 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-atom"></i></div>
-                            </div>
-                            <span class="skill-item-label">Programmation physique</span>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-robot"></i></div>
-                            </div>
-                            <span class="skill-item-label">Intelligence artificielle</span>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon">VR</div>
-                            </div>
-                            <span class="skill-item-label">Réalité virtuelle</span>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-globe"></i></div>
-                            </div>
-                            <span class="skill-item-label">Programmation réseau</span>
-                        </div>
-
-                        <!-- Item 5 -->
-                        <div class="skill-item" data-appear="fromBottom">
-                            <div class="skill-item-icon-box">
-                                <div class="skill-item-icon"><i class="fa-solid fa-chart-simple"></i></div>
-                            </div>
-                            <span class="skill-item-label">Optimisation</span>
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+        <!--==============================-->
+        <!-- SECTION: MY TECHNICAL SKILLS -->
+        <!--==============================-->
+        <div id="my-technical-skills-marker"></div>
+        <div class="section my-technical-skills">
+
+            <!-- Background -->
+            <div class="section-background">
+                <div class="bg-fx-glow" style="--fx-x: 50%; --fx-y: 145%; --fx-rx: 90%; --fx-ry: 100%; --fx-fade: 90%"></div>
+                <div class="bg-fx-grid" style="--fx-x: 50%; --fx-y: 100%; --fx-rx: 80%; --fx-ry: 80%"></div>
+            </div>
+
+             <!-- Section Container -->
+            <div class="section-container my-technical-skills">
+
+                <!-- Section Head -->
+                <div class="section-head" data-appear="fromBottom">
+                    <span class="eyebrow">// 03. Compétences</span>
+                    <h2 class="text-gradient">Mes Compétences Techniques</h2>
+                </div>
+
+                <!-- Skills Panel Grid -->
+                <div class="grid skills-panel-grid" data-appear-method="onViewport" data-appear-stagger="150">
+
+                    <!-- Panel 1 -->
+                    <div class="box skills-panel spotlight" data-appear="zoom">
+                        <div class="box-head"><h3 class="box-title">Langages & Moteurs</h3></div>
+                        <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
+
+                            <!-- Item 1 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">C</div>
+                                </div>
+                                <span class="skill-item-label">C</span>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">C++</div>
+                                </div>
+                                <span class="skill-item-label">C++</span>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">C#</div>
+                                </div>
+                                <span class="skill-item-label">C#</span>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-brands fa-python"></i></div>
+                                </div>
+                                <span class="skill-item-label">Python</span>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">UE</div>
+                                </div>
+                                <span class="skill-item-label">Unreal Engine</span>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-brands fa-unity"></i></div>
+                                </div>
+                                <span class="skill-item-label">Unity</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Panel 2 -->
+                    <div class="box skills-panel spotlight" data-appear="zoom">
+                        <div class="box-head"><h3 class="box-title">Outils & Bibliothèques</h3></div>
+                        <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
+
+                            <!-- Item 1 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">VS</div>
+                                </div>
+                                <span class="skill-item-label">Visual Studio</span>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">R</div>
+                                </div>
+                                <span class="skill-item-label">Rider</span>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-brands fa-git-alt"></i></div>
+                                </div>
+                                <span class="skill-item-label">Git</span>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">P4</div>
+                                </div>
+                                <span class="skill-item-label">Perforce</span>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-display"></i></div>
+                                </div>
+                                <span class="skill-item-label">ImGui</span>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-display"></i></div>
+                                </div>
+                                <span class="skill-item-label">GLFW</span>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">GL</div>
+                                </div>
+                                <span class="skill-item-label">OpenGL</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Panel 3 -->
+                    <div class="box skills-panel spotlight" data-appear="zoom">
+                        <div class="box-head"><h3 class="box-title">Systèmes de Jeu</h3></div>
+                        <div class="skills-panel-items" data-appear-stagger="60" data-appear-offset="250">
+
+                            <!-- Item 1 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-atom"></i></div>
+                                </div>
+                                <span class="skill-item-label">Programmation physique</span>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-robot"></i></div>
+                                </div>
+                                <span class="skill-item-label">Intelligence artificielle</span>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient">VR</div>
+                                </div>
+                                <span class="skill-item-label">Réalité virtuelle</span>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-globe"></i></div>
+                                </div>
+                                <span class="skill-item-label">Programmation réseau</span>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="skill-item" data-appear="fromBottomSmoothed">
+                                <div class="tile skill-item-icon-box">
+                                    <div class="skill-item-icon text-gradient"><i class="fa-solid fa-chart-simple"></i></div>
+                                </div>
+                                <span class="skill-item-label">Optimisation</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>

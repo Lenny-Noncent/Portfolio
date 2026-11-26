@@ -23,7 +23,7 @@
 
     <!-- Link to styles -->
     <link rel="stylesheet" href="../../assets/css/main.css"/>
-    <link rel="stylesheet" href="../../assets/css/pages/project-page.css"/>
+    <link rel="stylesheet" href="../../assets/css/pages/projects/project-page.css"/>
 </head>
 
 <!-- ########################################################################################## -->
@@ -41,25 +41,17 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
-    <!--===================-->
-    <!-- SECTION: OVERVIEW -->
-    <!--===================-->
-    <div class="section project-page">
+    <!-- Page content (clips the background effects at the page edges) -->
+    <main class="page-content">
 
-        <!-- Background -->
-        <div class="section-background">
-            <div class="bg-fx-glow"></div>
-            <div class="bg-fx-grid"></div>
-        </div>
+        <!--===================-->
+        <!-- SECTION: OVERVIEW -->
+        <!--===================-->
+        <!-- Project overview placeholder: background + content come from components/projects/project-overview.html -->
+        <!-- Note: Filled from projects-data.js, id = this file name -->
+        <div class="section is-top" id="project-overview-placeholder"></div>
 
-        <!-- Section Container -->
-        <div class="section-container project-page">
-
-            <!-- Project overview placeholder (filled from projects-data.js, id = this file name) -->
-            <div id="project-overview-placeholder"></div>
-
-        </div>
-    </div>
+    </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
@@ -71,5 +63,5 @@
 <!-- ########################################################################################## -->
 
 <script type="module" src="../../assets/js/main.js"></script>
-<script type="module" src="../../assets/js/pages/project-page.js"></script>
+<script type="module" src="../../assets/js/pages/projects/project-page.js"></script>
 </html>

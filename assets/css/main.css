@@ -1,15 +1,26 @@
+/* Base */
 @import './animations.css';
 @import './base.css';
 @import './variables.css';
+@import './utilities.css';
+
+/* Layouts (page structure, used by every page) */
+@import './layouts/section.css';
+@import './layouts/section-background.css';
+@import './layouts/grid.css';
+@import './layouts/content.css';
+
+/* Components */
 @import './components/appear.css';
+@import './components/badge.css';
+@import './components/box.css';
 @import './components/buttons.css';
 @import './components/dropdown.css';
 @import './components/floating-icon.css';
 @import './components/footer.css';
 @import './components/header.css';
+@import './components/media.css';
 @import './components/project-card.css';
-@import './components/project-overview.css';
 @import './components/scrollbar.css';
-@import './components/section.css';
 @import './components/spotlight.css';
 @import './components/timeline.css';

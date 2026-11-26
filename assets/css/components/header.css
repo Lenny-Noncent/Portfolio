@@ -60,33 +60,31 @@
     text-decoration: none;
 }
 
-.header .logo h1 {
+.header .logo-name {
+
+    /* Note: Uses .text-gradient (utilities.css) */
 
     /* Layout */
     display: block;
 
     /* Font */
+    font-family: var(--font-family-display);
     font-size: 1.6rem;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-header);
     text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 0%);
 
     /* Style */
-    background-image: var(--gradient-animated);
-    background-size: var(--gradient-animated-size);
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: var(--gradient-animation);
     transition: text-shadow var(--transition-hover);
 }
 
-.header .logo:hover h1 {
+.header .logo:hover .logo-name {
 
     /* Font */
     text-shadow: 0 0.15rem 0.8rem rgb(from var(--color-accent-primary) r g b / 100%);
 }
 
-.header .logo span {
+.header .logo-role {
 
     /* Layout */
     display: block;

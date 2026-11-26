@@ -1,0 +1,55 @@
+<!-- Injected into the overview section (.section.is-top#project-overview-placeholder) of every project page -->
+
+<!-- Background (same on every project page) -->
+<div class="section-background">
+    <div class="bg-fx-glow" style="--fx-x: 0%; --fx-y: 0%; --fx-rx: 110%; --fx-ry: 50%"></div>
+    <div class="bg-fx-glow" style="--fx-x: 120%; --fx-y: 100%; --fx-rx: 90%; --fx-ry: 60%; --fx-intensity: 20%"></div>
+    <div class="bg-fx-grid" style="--fx-x: 20%; --fx-y: 15%; --fx-rx: 60%; --fx-ry: 35%"></div>
+</div>
+
+<!-- Section Container -->
+<div class="section-container">
+
+    <div class="project-overview" data-appear-stagger="150">
+
+        <!-- Head: Back button (from left) then Project name (from bottom), same as all-projects-page -->
+        <div class="section-head project-overview-head" data-appear="default" data-appear-stagger="150">
+
+            <!-- Back Button (fallback href set by project-overview.js, used if there is no previous page) -->
+            <!-- Note: Appear is on a wrapper, otherwise its kept translate would block the button hover lift -->
+            <div data-appear="fromLeft">
+                <a class="btn btn-ghost btn-back">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Retour
+                </a>
+            </div>
+
+            <!-- Project Name -->
+            <div data-appear="fromBottom">
+                <span class="eyebrow">// Projet</span>
+                <h1 class="project-overview-name text-gradient"></h1>
+            </div>
+        </div>
+
+        <!-- Media (YouTube video if project has one, else image; filled by project-overview.js) -->
+        <div class="project-overview-media media-frame" data-appear="fromBottomSmoothed"></div>
+
+        <!-- Boxes (stacked) -->
+        <div class="project-overview-boxes grid cols-2" data-appear="default" data-appear-stagger="150">
+
+            <!-- Box: Description -->
+            <div class="box spotlight" data-appear="fromLeftSmoothed">
+                <div class="box-head"><h2 class="box-title">Description</h2></div>
+                <p class="box-text project-overview-description"></p>
+            </div>
+
+            <!-- Box: Infos (rows filled by project-overview.js) -->
+            <div class="box spotlight" data-appear="fromLeftSmoothed">
+                <div class="box-head"><h2 class="box-title">Informations</h2></div>
+                <ul class="project-overview-infos"></ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>

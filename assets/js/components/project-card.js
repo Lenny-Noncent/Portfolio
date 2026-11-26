@@ -53,6 +53,13 @@ export function filterProjects(projects, filters) {
 
 // ###################################### Internal Functions ######################################
 
+// Text of an HTML string, without its tags (e.g. "<strong>")
+function getPlainText(html) {
+    const template = document.createElement("template");
+    template.innerHTML = html ?? "";
+    return template.content.textContent;
+}
+
 function createProjectCard(project) {
 
     // Project Card Container (link to project page: "pages/projects/<id>.html")
@@ -60,7 +67,7 @@ function createProjectCard(project) {
     const card = document.createElement("a");
     card.className = "project-card";
     card.href = new URL(`${PROJECT_PAGES_PATH}${project.id}.html`, ROOT_PATH).href;
-    card.dataset.appear = "fromBottom";
+    card.dataset.appear = "fromBottomSmoothed";
     card.dataset.projectId = project.id;
 
     // Media Part
@@ -74,11 +81,13 @@ function createProjectCard(project) {
     const text = document.createElement("div");
     text.className = "project-card-text";
 
-    // Name + Description
+    // Name + Description (plain text: keyword highlights are only shown on the project page)
     text.innerHTML = `
-        <h1>${project.name}</h1>
-        <p>${project.description}</p>
+        <h3 class="project-card-name"></h3>
+        <p class="project-card-description"></p>
     `;
+    text.querySelector(".project-card-name").textContent = project.name;
+    text.querySelector(".project-card-description").textContent = getPlainText(project.description);
 
     // Badges
     // ------
@@ -88,7 +97,7 @@ function createProjectCard(project) {
     // Team size
     if (project.teamSize != null) {
         badges.innerHTML += `
-        <span class="project-card-badge">
+        <span class="pill">
             <i class="fa-solid fa-user-group"></i>
             ${project.teamSize}
         </span>
@@ -98,7 +107,7 @@ function createProjectCard(project) {
     // Duration
     if (project.duration) {
         badges.innerHTML += `
-        <span class="project-card-badge">
+        <span class="pill">
             <i class="fa-solid fa-clock"></i>
             ${project.duration}
         </span>
@@ -108,7 +117,7 @@ function createProjectCard(project) {
     // Language
     if (project.language) {
         badges.innerHTML += `
-        <span class="project-card-badge">
+        <span class="pill">
             <i class="fa-solid fa-screwdriver-wrench"></i>
             ${project.language}
         </span>
@@ -118,7 +127,7 @@ function createProjectCard(project) {
     // Engine
     if (project.engine) {
         badges.innerHTML += `
-        <span class="project-card-badge">
+        <span class="pill">
             <i class="fa-solid fa-gamepad"></i>
             ${project.engine}
         </span>

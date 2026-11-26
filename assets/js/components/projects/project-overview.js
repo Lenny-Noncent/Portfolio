@@ -1,15 +1,18 @@
-import { loadComponent } from "../utils/components.js";
-import { initAppear } from "./appear.js";
-import { initSpotlight } from "./spotlight.js";
-import { initBackButtons } from "./back-button.js";
+// Components
+import { initAppear } from "../appear.js";
+import { initSpotlight } from "../spotlight.js";
+import { initBackButtons } from "../back-button.js";
+
+// Utils
+import { loadComponent } from "../../utils/components.js";
 
 // ################################################################################################
 // /////////////////////////////////////////// VARIABLES //////////////////////////////////////////
 // ################################################################################################
 
-const ROOT_PATH = new URL("../../../", import.meta.url);
-const COMPONENTS_PATH = new URL("components/", ROOT_PATH);
-const PLACEHOLDER_ID = "project-overview-placeholder";
+const ROOT_PATH = new URL("../../../../", import.meta.url);
+const COMPONENTS_PATH = new URL("components/projects/", ROOT_PATH);
+const PLACEHOLDER_ID = "project-overview-placeholder"; // The overview section itself (gets background + container)
 const BACK_BUTTON_FALLBACK_PAGE = "pages/all-projects-page.html";
 
 // Rows of the infos box (a row is skipped when its value is empty)
@@ -83,7 +86,7 @@ function fillInfos(root, project) {
     });
 
     // Remove infos box if project has no info
-    if (list.children.length === 0) list.closest(".project-overview-box")?.remove();
+    if (list.children.length === 0) list.closest(".box")?.remove();
 }
 
 function fillMedia(root, project) {
@@ -186,7 +189,7 @@ function createInfoRow(icon, label, value) {
 
     // Icon + Label + Value
     row.innerHTML = `
-        <span class="project-overview-info-icon"><i class="${icon}"></i></span>
+        <span class="icon-badge"><i class="${icon}"></i></span>
         <span class="project-overview-info-label">${label}</span>
         <span class="project-overview-info-value"></span>
     `;

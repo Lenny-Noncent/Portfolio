@@ -1,0 +1,75 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////////// GRID /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Responsive grid. Settings (set on the element, by a class or inline):              */
+/*   --grid-min: minimum column width (default 22rem, columns are added while they fit) */
+/*   --grid-repeat: auto-fit (default, stretches the items) or auto-fill (keeps empty columns) */
+/*   --grid-gap: gap between items (default 2rem)                                     */
+/*   --grid-columns: fixed columns, overrides the above (use with .cols-custom)        */
+.grid {
+
+    /* Layout */
+    display: grid;
+
+    /* Content Layout */
+    gap: var(--grid-gap, 2rem);
+    grid-template-columns: var(
+        --grid-columns,
+        repeat(var(--grid-repeat, auto-fit), minmax(min(100%, var(--grid-min, 22rem)), 1fr))
+    );
+}
+
+/* Fixed columns (stacked on small screens, see MEDIAS) */
+.grid.cols-2 {
+
+    /* Variables */
+    --grid-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.cols-3 {
+
+    /* Variables */
+    --grid-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* One item per row */
+.grid.cols-1 {
+
+    /* Variables */
+    --grid-columns: minmax(0, 1fr);
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////////// SPLIT ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Two columns (e.g. text + media), vertically centered, stacked on small screens */
+.split {
+
+    /* Layout */
+    display: grid;
+
+    /* Content Layout */
+    gap: 4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIAS ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+@media (max-width: 900px) {
+
+    .grid.cols-2,
+    .grid.cols-3,
+    .grid.cols-custom {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3rem;
+    }
+}

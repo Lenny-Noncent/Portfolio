@@ -8,6 +8,7 @@ import { onEnterViewportOnce } from "../utils/observer.js";
 const APPEAR_SELECTOR = "[data-appear]";
 const STAGGER_SELECTOR = "[data-appear-stagger]";
 const APPEAR_ACTIVE_CLASS = "appear-active";
+const APPEAR_DONE_CLASS = "appear-done";
 const DEFAULT_APPEAR_METHOD = "onViewport";
 
 // Settings
@@ -130,6 +131,15 @@ function reveal(element, delay) {
     // Override delay if rebased, then start animation
     if (delay !== undefined) element.style.setProperty("--appear-delay", `${delay}ms`);
     element.classList.add(APPEAR_ACTIVE_CLASS);
+
+    // Release the animation once it ended (see APPEAR DONE in appear.css)
+    // Note: Ignore events bubbling from children (e.g. their own appear animation)
+    function onAnimationEnd(event) {
+        if (event.target !== element) return;
+        element.removeEventListener("animationend", onAnimationEnd);
+        element.classList.add(APPEAR_DONE_CLASS);
+    }
+    element.addEventListener("animationend", onAnimationEnd);
 }
 
 function getTimelineGroup(element) {

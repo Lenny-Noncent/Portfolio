@@ -49,28 +49,12 @@
 /* ///////////////////////////////////////// BACKGROUND //////////////////////////////////////// */
 /* ############################################################################################# */
 
-.footer .bg-fx-glow {
-
-    /* Layout */
-    position: absolute;
-    inset: 0;
-
-    /* Style */
-    background-image: radial-gradient(ellipse 60% 90% at 50% 0%, rgb(from var(--color-accent-primary) r g b / 14%), transparent 80%);
-}
-
+/* Note: Uses the section background (layouts/section-background.css, settings in footer.html), */
+/* clipped by the footer's overflow */
 .footer .bg-fx-grid {
-
-    /* Layout */
-    position: absolute;
-    inset: 0;
 
     /* Style */
     opacity: 0.67; /* Lighter grid than in sections */
-    background-image: var(--grid-bg);
-    background-size: var(--grid-cell-size) var(--grid-cell-size);
-    mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
-    -webkit-mask-image: radial-gradient(ellipse 50% 80% at 50% 0%, black 0%, transparent 85%);
 }
 
 /* ############################################################################################# */
@@ -121,14 +105,11 @@
     gap: 1.3rem;
 }
 
-.footer .footer-title {
+/* Note: Column titles use .eyebrow.is-plain (layouts/section.css) */
+.footer .eyebrow {
 
-    /* Font */
-    color: var(--color-accent-primary);
-    font-family: var(--font-family-mono);
-    font-size: var(--font-size-mono);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    /* Layout: spacing given by the column gap */
+    margin-bottom: 0;
 }
 
 /* ############################################################################################# */
@@ -142,33 +123,31 @@
     text-decoration: none;
 }
 
-.footer .logo h1 {
+.footer .logo-name {
+
+    /* Note: Uses .text-gradient (utilities.css) */
 
     /* Layout */
     display: block;
 
     /* Font */
+    font-family: var(--font-family-display);
     font-size: 2.4rem;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-header);
     text-shadow: 0 0 0.8rem rgb(from var(--color-accent-primary) r g b / 0%);
 
     /* Style */
-    background-image: var(--gradient-animated);
-    background-size: var(--gradient-animated-size);
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: var(--gradient-animation);
     transition: text-shadow var(--transition-hover);
 }
 
-.footer .logo:hover h1 {
+.footer .logo:hover .logo-name {
 
     /* Font */
     text-shadow: 0 0.15rem 0.8rem rgb(from var(--color-accent-primary) r g b / 100%);
 }
 
-.footer .logo span {
+.footer .logo-role {
 
     /* Layout */
     display: block;

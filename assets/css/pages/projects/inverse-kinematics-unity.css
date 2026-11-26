@@ -1,0 +1,149 @@
+/* ############################################################################################# */
+/* ///////////////////////////////// INVERSE KINEMATICS (UNITY) //////////////////////////////// */
+/* ############################################################################################# */
+
+/* Note: Blocks only used by pages/projects/inverse-kinematics-unity.html (prefix: ik-) */
+/* Generic blocks (box, tile, grid, block, media...) are in layouts/ and components/ */
+
+/* ############################################################################################# */
+/* ////////////////////////////////////////// PIPELINE ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Ordered steps linked by a dashed connector (frame pipeline of the spider) */
+/* Note: Steps use .tile (box.css), numbers use .icon-badge (badge.css) */
+.ik-pipeline {
+
+    /* Variables */
+    --ik-pipeline-gap: 1.4rem;
+    --icon-badge-size: 2.6rem;
+    --tile-padding: 1.2rem;
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: var(--ik-pipeline-gap);
+
+    /* Style */
+    list-style: none;
+}
+
+.ik-pipeline-step {
+
+    /* Layout */
+    position: relative;
+    display: grid;
+
+    /* Content Layout */
+    grid-template-columns: var(--icon-badge-size) minmax(0, 17rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 0 1.8rem;
+}
+
+/* Connector to the next step (centered under the number) */
+.ik-pipeline-step:not(:last-child)::after {
+
+    /* Layout */
+    content: "";
+    position: absolute;
+    top: calc(100% + var(--line-thickness));
+    left: calc(var(--tile-padding) + var(--icon-badge-size) / 2 - var(--line-thickness));
+    height: var(--ik-pipeline-gap);
+    border-left: dashed calc(var(--line-thickness) * 2) rgb(from var(--color-accent-primary) r g b / 45%);
+}
+
+.ik-pipeline-step-name {
+
+    /* Font */
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    overflow-wrap: anywhere;
+}
+
+.ik-pipeline-step-description {
+
+    /* Font */
+    line-height: 1.5;
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////// SURFACE SAMPLING ///////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Square diagram: keep it smaller than the box width */
+.ik-surface-sampling-diagram img {
+
+    /* Layout */
+    max-width: 28rem;
+}
+
+/* ############################################################################################# */
+/* //////////////////////////////////////// ARCHITECTURE /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* One box per layer (.grid of .box, same height per row), each holding a list of classes (.tile) */
+.ik-architecture-classes {
+
+    /* Variables */
+    --tile-padding: 1.1rem 1.3rem;
+
+    /* Layout */
+    display: flex;
+
+    /* Content Layout */
+    flex-direction: column;
+    gap: 1rem;
+
+    /* Style */
+    list-style: none;
+}
+
+/* Abstract class */
+.ik-architecture-class.is-abstract {
+
+    /* Style */
+    border-style: dashed;
+    border-color: rgb(from var(--color-accent-primary) r g b / 35%);
+}
+
+.ik-architecture-class-name {
+
+    /* Layout */
+    display: block;
+
+    /* Font */
+    color: var(--color-accent-secondary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    overflow-wrap: anywhere;
+}
+
+.ik-architecture-class-description {
+
+    /* Layout */
+    display: block;
+    margin-top: 0.3rem;
+
+    /* Font */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// MEDIAS ////////////////////////////////////////// */
+/* ############################################################################################# */
+
+@media (max-width: 900px) {
+
+    .ik-pipeline-step {
+        grid-template-columns: var(--icon-badge-size) minmax(0, 1fr);
+        gap: 0.3rem 1.4rem;
+    }
+
+    .ik-pipeline-step .icon-badge {
+        grid-row: span 2;
+    }
+}

@@ -1,0 +1,89 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////// PAGE CONTENT /////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* <main> wrapper of the page sections (between the header and footer placeholders) */
+/* Note: Background effects can overflow their section, clip cuts them at the page edges only */
+/* (no horizontal scroll, no empty space under the last section). Don't put it on body: overflow */
+/* on body is applied to the viewport and would block the page scroll */
+.page-content {
+
+    /* Layout */
+    overflow: clip;
+}
+
+/* ############################################################################################# */
+/* ////////////////////////////////////// SECTION BACKGROUND /////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Same size as its section (positions of the effects are relative to it), effects are not cut */
+.section-background {
+
+    /* Layout */
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    /* Style */
+    pointer-events: none;
+}
+
+/* ############################################################################################# */
+/* /////////////////////////////////////////// EFFECTS ///////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Each effect is an ellipse placed in its section, set inline in the HTML with these variables (no presets): */
+/*   --fx-x / --fx-y: center (% of the section width / height, or any length) */
+/*   --fx-rx / --fx-ry: radii (% of the section width / height, or any length like vw / rem) */
+/*   --fx-fade: where the effect is fully faded (% of the radii) */
+/* Example: <div class="bg-fx-glow" style="--fx-x: 0%; --fx-y: 0%; --fx-rx: 80%; --fx-ry: 40%"></div> */
+.bg-fx-glow,
+.bg-fx-grid {
+
+    /* Variables */
+    --fx-x: 50%;
+    --fx-y: 50%;
+    --fx-rx: 60%;
+    --fx-ry: 45%;
+    --fx-fade: 80%;
+
+    /* Layout */
+    position: absolute;
+    left: calc(var(--fx-x) - var(--fx-rx));
+    top: calc(var(--fx-y) - var(--fx-ry));
+    width: calc(var(--fx-rx) * 2);
+    height: calc(var(--fx-ry) * 2);
+}
+
+/* Glow: accent color fading out (settings --fx-color / --fx-intensity) */
+.bg-fx-glow {
+
+    /* Variables */
+    --fx-color: var(--color-accent-primary);
+    --fx-intensity: 30%;
+
+    /* Style */
+    background-image: radial-gradient(ellipse closest-side, rgb(from var(--fx-color) r g b / var(--fx-intensity)), transparent var(--fx-fade));
+    animation: glow-breathe 8s var(--ease-in-out-sine) infinite;
+}
+
+/* Grid: background grid shown through a fading ellipse */
+/* Note: Grid lines start at the effect's corner, so two overlapping grids don't line up */
+.bg-fx-grid {
+
+    /* Variables */
+    --fx-fade: 85%;
+
+    /* Style */
+    background-image: var(--grid-bg);
+    background-size: var(--grid-cell-size) var(--grid-cell-size);
+    mask-image: radial-gradient(ellipse closest-side, black, transparent var(--fx-fade));
+    -webkit-mask-image: radial-gradient(ellipse closest-side, black, transparent var(--fx-fade));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-fx-glow {
+        animation: none;
+    }
+}
+

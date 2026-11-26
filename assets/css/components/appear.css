@@ -10,7 +10,7 @@
     --default-appear-easing: var(--ease-out-expo);
 
     /* Smoothed */
-    --appear-duration-smoothed: 900ms;
+    --appear-duration-smoothed: 700ms;
     --appear-easing-smoothed: ease-out;
 }
 
@@ -108,6 +108,17 @@
         var(--appear-easing, var(--default-appear-easing)) 
         var(--appear-delay, 0ms) 
         both;
+}
+
+/* Ended state: animation removed, element shown as a normal element */
+/* Note: A held (fill-mode) opacity animation makes the element a "backdrop root": the backdrop-filter */
+/* of its descendants (e.g. blurred boxes) would only see the element's own content, not the page behind */
+/* It also gives translate / scale back to the element (hover effects) */
+[data-appear].appear-done {
+
+    /* Style */
+    opacity: 1;
+    animation: none;
 }
 
 /* ################################# ANIMATION PER APPEAR TYPE ################################# */

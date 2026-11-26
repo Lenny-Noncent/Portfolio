@@ -1,0 +1,52 @@
+/* ############################################################################################# */
+/* //////////////////////////////////////////// PILL /////////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Small rounded label (tag, date...), with an optional leading icon */
+.pill {
+
+    /* Layout */
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+
+    /* Content Layout */
+    align-items: center;
+    gap: 0.5rem;
+
+    /* Style */
+    border-radius: var(--radius-pill);
+    background-color: var(--color-pill-bg);
+
+    /* Font */
+    color: var(--color-accent-secondary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+    white-space: nowrap;
+}
+
+/* ############################################################################################# */
+/* ///////////////////////////////////////// ICON BADGE //////////////////////////////////////// */
+/* ############################################################################################# */
+
+/* Round icon (or short text like a step number), size set with --icon-badge-size */
+.icon-badge {
+
+    /* Layout */
+    display: inline-flex;
+    flex-shrink: 0;
+    width: var(--icon-badge-size, 2.6rem);
+    height: var(--icon-badge-size, 2.6rem);
+
+    /* Content Layout */
+    align-items: center;
+    justify-content: center;
+
+    /* Style */
+    border-radius: var(--radius-pill);
+    background-color: var(--color-pill-bg);
+
+    /* Font */
+    color: var(--color-accent-secondary);
+    font-family: var(--font-family-mono);
+    font-size: 1rem;
+}
